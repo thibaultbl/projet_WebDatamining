@@ -1,0 +1,21 @@
+package Lemmatisation;
+
+import java.io.File;
+
+public class Main3 {
+
+	/**
+	 * @param args
+	 */
+	public static void main(String[] args) {
+		File folder=new File("/home/thibault/Documents/cours/WebDataMining/webDatamining sources/data_mining_project/Doc/vrac");
+		for (final File fileEntry : folder.listFiles()) {
+	        if (fileEntry.isDirectory()) {
+	           // listFilesForFolder(fileEntry);
+	        } else {
+	        	result=countWordFile(fileEntry);
+	        }
+		}
+
+
+}

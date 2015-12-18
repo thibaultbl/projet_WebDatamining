@@ -1,0 +1,11 @@
+-------------------------------------------------------------------------------
+Test set: org.annolab.tt4j.DefaultModelResolverTest
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 1, Errors: 0, Skipped: 0, Time elapsed: 0.04 sec <<< FAILURE! - in org.annolab.tt4j.DefaultModelResolverTest
+testGetModel(org.annolab.tt4j.DefaultModelResolverTest)  Time elapsed: 0.007 sec  <<< FAILURE!
+org.junit.ComparisonFailure: expected:<src[/test/resources/]dummyModel.par> but was:<src[\test\resources\]dummyModel.par>
+	at org.junit.Assert.assertEquals(Assert.java:125)
+	at org.junit.Assert.assertEquals(Assert.java:147)
+	at org.annolab.tt4j.DefaultModelResolverTest.verifyModel(DefaultModelResolverTest.java:67)
+	at org.annolab.tt4j.DefaultModelResolverTest.testGetModel(DefaultModelResolverTest.java:35)
+

@@ -1,0 +1,46 @@
+package metier;
+
+import java.io.UnsupportedEncodingException;
+import java.util.ArrayList;
+
+import org.annolab.tt4j.TokenHandler;
+import org.annolab.tt4j.TreeTaggerWrapper;
+
+public class main2 {
+
+	/**
+	 * @param args
+	 */
+	private static String OUTPUT="/home/thibault/Documents/cours/WebDataMining/webDatamining sources/data_mining_project/Doc/result";
+	private static String DIRNAME="/home/thibault/Documents/cours/WebDataMining/webDatamining sources/data_mining_project/Doc/vrac";
+	private static String FILENAME=DIRNAME+"texte.95-1.txt";
+
+	
+
+	private static void tag(ArrayList words, final String filename) throws UnsupportedEncodingException
+	{
+		String res="";
+	//	TreeTaggerWrapper tt=new TreeTaggerWrapper<String>();
+		TreeTaggerWrapper tt1=new TreeTaggerWrapper<String>();
+		
+		try{
+			tt.setModel("/home/thibault/Documents/cours/WebDataMining/webDatamining sources/TreeTagger/lib/french-utf8.par");
+			tt.setHandler( new TokenHandler<String>() {
+				String res;
+				public void token(String token, String pos, String lemma)
+				{
+					res=lemma;
+				}
+			});
+			tt.process(null);
+		}
+		catch(IOException ex)
+	}
+	
+
+	public static void main(String[] args) {
+
+	}
+	
+
+}

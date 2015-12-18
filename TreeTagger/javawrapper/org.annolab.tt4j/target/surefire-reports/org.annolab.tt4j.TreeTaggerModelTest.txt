@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.annolab.tt4j.TreeTaggerModelTest
+-------------------------------------------------------------------------------
+Tests run: 13, Failures: 0, Errors: 0, Skipped: 10, Time elapsed: 28.289 sec - in org.annolab.tt4j.TreeTaggerModelTest

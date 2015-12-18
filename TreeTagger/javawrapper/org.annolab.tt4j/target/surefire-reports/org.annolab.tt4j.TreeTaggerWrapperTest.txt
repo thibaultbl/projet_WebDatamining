@@ -1,0 +1,4 @@
+-------------------------------------------------------------------------------
+Test set: org.annolab.tt4j.TreeTaggerWrapperTest
+-------------------------------------------------------------------------------
+Tests run: 7, Failures: 0, Errors: 0, Skipped: 7, Time elapsed: 0.061 sec - in org.annolab.tt4j.TreeTaggerWrapperTest

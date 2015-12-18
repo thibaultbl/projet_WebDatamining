@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<projectDescription>
+	<name>.org.eclipse.jdt.core.external.folders</name>
+	<comment></comment>
+	<projects>
+	</projects>
+	<buildSpec>
+	</buildSpec>
+	<natures>
+	</natures>
+	<linkedResources>
+		<link>
+			<name>.link0</name>
+			<type>2</type>
+			<location>/home/thibault/Documents/cours/WebDataMining/webDatamining sources/TreeTagger/javawrapper/org.annolab.tt4j/target/classes</location>
+		</link>
+	</linkedResources>
+</projectDescription>
