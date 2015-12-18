@@ -2,6 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/J2SE-1.5"/>
-	<classpathentry kind="lib" path="/home/thibault/Documents/cours/WebDataMining/webDatamining sources/TreeTagger/javawrapper/org.annolab.tt4j/target/classes"/>
+	<classpathentry kind="lib" path="/home/jean-baptiste/Documents/WebDatamining/TreeTagger/javawrapper/org.annolab.tt4j/target/classes"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
