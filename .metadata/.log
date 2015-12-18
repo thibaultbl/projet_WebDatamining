@@ -34,3 +34,183 @@ Command-line arguments:  -os linux -ws gtk -arch x86_64
 
 !ENTRY org.eclipse.ui 2 2 2015-12-18 14:11:01.713
 !MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+!SESSION 2015-12-18 14:14:49.294 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2015-12-18 14:19:38.033
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:21:18.805
+!MESSAGE Widget is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:417)
+	at org.eclipse.swt.widgets.Text.getTextChars(Text.java:1249)
+	at org.eclipse.swt.widgets.Text.getText(Text.java:1193)
+	at org.eclipse.egit.ui.UIUtils$2.updateProposals(UIUtils.java:291)
+	at org.eclipse.egit.ui.internal.components.RepositorySelectionPage.getGitRepositoryInfo(RepositorySelectionPage.java:1018)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard.executeCloneOperation(AbstractGitCloneWizard.java:433)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard.access$2(AbstractGitCloneWizard.java:424)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard$6.run(AbstractGitCloneWizard.java:403)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.core 4 0 2015-12-18 14:21:56.753
+!MESSAGE An exception occurred during push on URI https://github.com/thibaultbl/projet_WebDatamining: An internal Exception occurred during push: Source ref refs/heads/master doesnt resolve to any object.
+!STACK 0
+org.eclipse.jgit.api.errors.JGitInternalException: Exception caught during execution of push command
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:172)
+	at org.eclipse.egit.core.op.PushOperation.run(PushOperation.java:227)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI.execute(PushOperationUI.java:145)
+	at org.eclipse.egit.ui.internal.push.PushOperationUI$1.run(PushOperationUI.java:202)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: java.io.IOException: Source ref refs/heads/master doesnt resolve to any object.
+	at org.eclipse.jgit.transport.RemoteRefUpdate.<init>(RemoteRefUpdate.java:285)
+	at org.eclipse.jgit.transport.RemoteRefUpdate.<init>(RemoteRefUpdate.java:189)
+	at org.eclipse.jgit.transport.Transport.findRemoteRefUpdatesFor(Transport.java:605)
+	at org.eclipse.jgit.transport.Transport.findRemoteRefUpdatesFor(Transport.java:1143)
+	at org.eclipse.jgit.api.PushCommand.call(PushCommand.java:148)
+	... 4 more
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:22:52.989
+!MESSAGE Widget is disposed
+!STACK 0
+org.eclipse.swt.SWTException: Widget is disposed
+	at org.eclipse.swt.SWT.error(SWT.java:4361)
+	at org.eclipse.swt.SWT.error(SWT.java:4276)
+	at org.eclipse.swt.SWT.error(SWT.java:4247)
+	at org.eclipse.swt.widgets.Widget.error(Widget.java:480)
+	at org.eclipse.swt.widgets.Widget.checkWidget(Widget.java:417)
+	at org.eclipse.swt.widgets.Text.getTextChars(Text.java:1249)
+	at org.eclipse.swt.widgets.Text.getText(Text.java:1193)
+	at org.eclipse.egit.ui.UIUtils$2.updateProposals(UIUtils.java:291)
+	at org.eclipse.egit.ui.internal.components.RepositorySelectionPage.getGitRepositoryInfo(RepositorySelectionPage.java:1018)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard.executeCloneOperation(AbstractGitCloneWizard.java:433)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard.access$2(AbstractGitCloneWizard.java:424)
+	at org.eclipse.egit.ui.internal.clone.AbstractGitCloneWizard$6.run(AbstractGitCloneWizard.java:403)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:23:08.054
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:102)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	... 2 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-12-18 14:23:08.055
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:23:08.056
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:102)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	... 2 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-12-18 14:23:08.056
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:23:52.662
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:102)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	... 2 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-12-18 14:23:52.662
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:23:52.662
+!MESSAGE Nothing to fetch.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Nothing to fetch.
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:102)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+Caused by: org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	... 2 more
+!SUBENTRY 1 org.eclipse.egit.ui 4 0 2015-12-18 14:23:52.662
+!MESSAGE Nothing to fetch.
+!STACK 0
+org.eclipse.jgit.errors.TransportException: Nothing to fetch.
+	at org.eclipse.jgit.transport.Transport.fetch(Transport.java:1038)
+	at org.eclipse.jgit.api.FetchCommand.call(FetchCommand.java:129)
+	at org.eclipse.egit.core.op.FetchOperation.run(FetchOperation.java:128)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI.execute(FetchOperationUI.java:99)
+	at org.eclipse.egit.ui.internal.fetch.FetchOperationUI$1.run(FetchOperationUI.java:117)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+
+!ENTRY org.eclipse.egit.ui 4 0 2015-12-18 14:25:59.984
+!MESSAGE The current branch is not configured for pull
+!STACK 0
+org.eclipse.jgit.api.errors.InvalidConfigurationException: No value for key branch.master.merge found in configuration
+	at org.eclipse.jgit.api.PullCommand.call(PullCommand.java:167)
+	at org.eclipse.egit.core.op.PullOperation$1.run(PullOperation.java:90)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2344)
+	at org.eclipse.core.internal.resources.Workspace.run(Workspace.java:2326)
+	at org.eclipse.egit.core.op.PullOperation.execute(PullOperation.java:121)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI.execute(PullOperationUI.java:117)
+	at org.eclipse.egit.ui.internal.pull.PullOperationUI$1.run(PullOperationUI.java:92)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:54)
+!SESSION 2015-12-18 14:55:31.500 -----------------------------------------------
+eclipse.buildId=debbuild
+java.version=1.8.0_66
+java.vendor=Oracle Corporation
+BootLoader constants: OS=linux, ARCH=x86_64, WS=gtk, NL=fr_FR
+Command-line arguments:  -data /home/thibault/Documents/cours/WebDataMining/webDatamining sources -os linux -ws gtk -arch x86_64
+
+!ENTRY org.eclipse.ui 2 2 2015-12-18 15:04:14.620
+!MESSAGE Invalid property category path: ValidationPropertiesPage (bundle: org.eclipse.wst.xml.ui, propertyPage: org.eclipse.wst.xml.ui.propertyPage.project.validation)
