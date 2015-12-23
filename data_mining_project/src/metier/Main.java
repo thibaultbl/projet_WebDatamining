@@ -14,9 +14,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-import org.annolab.tt4j.TokenHandler;
-import org.annolab.tt4j.TreeTaggerWrapper;
-
 public class Main {
 
 	/**
