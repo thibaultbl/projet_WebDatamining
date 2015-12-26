@@ -11,10 +11,9 @@ import java.io.UnsupportedEncodingException;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Enumeration;
 import java.util.HashMap;
 import java.util.Hashtable;
-import java.util.Iterator;
+import java.util.Map.Entry;
 import java.util.Set;
 import java.util.StringTokenizer;
 
@@ -78,7 +77,7 @@ public class Main_idf {
 
 			}
 		}*/
-		
+
 		try {
 			resultatFinal();
 		} catch (IOException e) {
@@ -103,8 +102,9 @@ public class Main_idf {
 	}
 
 	public static void resultatFinal() throws IOException {
-		Hashtable table = new Hashtable();
-		//Hashtable talb = new Hashtable();
+		//table contenant le nombre d'occurence par mot dans l'ensemble du corpus
+		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
+		//Table contenant l'ensemble des documents contenant au moins une occurence du mot
 		HashMap<String, ArrayList<String>> talb = new HashMap<String, ArrayList<String>>();
 		ArrayList<String> listId = null;
 
@@ -113,18 +113,9 @@ public class Main_idf {
 		HashMap<Integer, String> id = identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
 
-
-		/*	BufferedReader entree = new BufferedReader(new InputStreamReader(new FileInputStream(file), charset));
-				String ligne;
-				StringTokenizer st;
-				String mot;
-				int nbOcc;*/
-
 		for (final File f : filesInDir) {
 
-			if (f.isDirectory()) {
-
-			} else {
+			if (f.isDirectory()==false) {
 
 				BufferedReader entree = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
 				String ligne;
@@ -141,9 +132,10 @@ public class Main_idf {
 						st.nextToken();
 						st.nextToken();
 						mot = st.nextToken();
+						mot=normalize(mot);
 						if (table.containsKey(mot))
 						{
-							nbOcc = ((Integer)table.get(mot)).intValue();
+							nbOcc = table.get(mot).intValue();
 							nbOcc++;
 						}
 						else  {
@@ -151,10 +143,12 @@ public class Main_idf {
 						}
 						table.put(mot, new Integer(nbOcc));
 						//talb.put(mot, f.getName());
-						
+
 						if(talb.containsKey(mot)){
-							talb.get(mot).add(f.getName());
-							talb.put(mot, listId);
+							if(talb.get(mot).contains(f.getName())==false ){
+								talb.get(mot).add(f.getName());
+							}
+
 						}
 						else{
 							listId=new ArrayList<String>();
@@ -164,20 +158,21 @@ public class Main_idf {
 					}
 				}
 
-				Enumeration lesMots = table.keys();
-				Set mesBurnes = talb.keySet();
-				Iterator iter = mesBurnes.iterator();
-
-				String lol = null;
-				while (lesMots.hasMoreElements() && iter.hasNext())
-				{
-					mot = (String)lesMots.nextElement();
-					nbOcc = ((Integer)table.get(mot)).intValue();
-					lol = talb.get(iter.next()).toString();
-					System.out.println("Mot : " + mot + " | Nombre d'occurences (corpus) : " + nbOcc + " | Source : " + lol);
-				}
+				entree.close();
 			}
+			
 		}
+		
+		for(Entry<String, ArrayList<String>> entry : talb.entrySet()) {
+		    String key = entry.getKey();
+		    ArrayList<String> value = entry.getValue();
+
+			System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
+
+		    // do what you have to do here
+		    // In your case, an other loop.
+		}
+
 	}
 
 	public static String normalize(String string){
@@ -258,60 +253,57 @@ public class Main_idf {
 		return matIDF;
 	}
 
-
-
-	
 	public static HashMap<String, Integer> nombreDocumentsContenantTerme(File folder){
 		HashMap<String, Integer> result=new HashMap<String, Integer>();
 		HashMap<String, Boolean> temp=new HashMap<String, Boolean>();
 		for (final File fileEntry : folder.listFiles()) {
 			temp=new HashMap<String, Boolean>();
-	        if (fileEntry.isDirectory()) {
-	           // listFilesForFolder(fileEntry);
-	        } else {
-	        	String text[];
-	    		String word;
-	    		//lecture du fichier texte	
-	    		InputStream ips=null;
-	    		try {
-	    			ips = new FileInputStream(fileEntry);
-	    		} catch (FileNotFoundException e1) {
-	    			e1.printStackTrace();
-	    		} 
-	    		InputStreamReader ipsr=null;
-	    		try {
-	    			ipsr = new InputStreamReader(ips, "ISO-8859-1");
-	    		} catch (UnsupportedEncodingException e1) {
-	    			e1.printStackTrace();
-	    		}
-	    		BufferedReader br = new BufferedReader(ipsr);
-	    		String line;
-	    		try {
-	    			while (((line = br.readLine())!=null) )
-	    			 {
-	    			           text= line.split("\t");
-	    			           word=text[2];
-	    			           word=normalize(word);
-	    			           if(temp.containsKey(word)==false){
-	    			        	   if (result.containsKey(word) ) {
-		    					    	result.replace(word, result.get(word), (Integer)result.get(word)+1);
-		    					    } else {
-		    					    	result.put(word, 1);
-		    					    }
-	    			           }
-	    					    temp.put(word, true);
-	    			}
-	    		} catch (IOException e1) {
-	    			// TODO Auto-generated catch block
-	    			e1.printStackTrace();
-	    		}
-	    		try {
-	    			br.close();
-	    		} catch (IOException e1) {
-	    			// TODO Auto-generated catch block
-	    			e1.printStackTrace();
-	    		} 
-	        }
+			if (fileEntry.isDirectory()) {
+				// listFilesForFolder(fileEntry);
+			} else {
+				String text[];
+				String word;
+				//lecture du fichier texte	
+				InputStream ips=null;
+				try {
+					ips = new FileInputStream(fileEntry);
+				} catch (FileNotFoundException e1) {
+					e1.printStackTrace();
+				} 
+				InputStreamReader ipsr=null;
+				try {
+					ipsr = new InputStreamReader(ips, "ISO-8859-1");
+				} catch (UnsupportedEncodingException e1) {
+					e1.printStackTrace();
+				}
+				BufferedReader br = new BufferedReader(ipsr);
+				String line;
+				try {
+					while (((line = br.readLine())!=null) )
+					{
+						text= line.split("\t");
+						word=text[2];
+						word=normalize(word);
+						if(temp.containsKey(word)==false){
+							if (result.containsKey(word) ) {
+								result.replace(word, result.get(word), (Integer)result.get(word)+1);
+							} else {
+								result.put(word, 1);
+							}
+						}
+						temp.put(word, true);
+					}
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				}
+				try {
+					br.close();
+				} catch (IOException e1) {
+					// TODO Auto-generated catch block
+					e1.printStackTrace();
+				} 
+			}
 		}
 		return result;
 	}
