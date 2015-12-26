@@ -259,57 +259,59 @@ public class Main_idf {
 	}
 
 
+
+	
 	public static HashMap<String, Integer> nombreDocumentsContenantTerme(File folder){
 		HashMap<String, Integer> result=new HashMap<String, Integer>();
 		HashMap<String, Boolean> temp=new HashMap<String, Boolean>();
 		for (final File fileEntry : folder.listFiles()) {
 			temp=new HashMap<String, Boolean>();
-			if (fileEntry.isDirectory()) {
-				// listFilesForFolder(fileEntry);
-			} else {
-				String text[];
-				String word;
-				//lecture du fichier texte	
-				InputStream ips=null;
-				try {
-					ips = new FileInputStream(fileEntry);
-				} catch (FileNotFoundException e1) {
-					e1.printStackTrace();
-				} 
-				InputStreamReader ipsr=null;
-				try {
-					ipsr = new InputStreamReader(ips, "ISO-8859-1");
-				} catch (UnsupportedEncodingException e1) {
-					e1.printStackTrace();
-				}
-				BufferedReader br = new BufferedReader(ipsr);
-				String line;
-				try {
-					while (((line = br.readLine())!=null) )
-					{
-						text= line.split("\t");
-						word=text[2];
-						word=normalize(word);
-						if(temp.containsKey(word)==false){
-							if (result.containsKey(word) ) {
-								result.replace(word, result.get(word), (Integer)result.get(word)+1);
-							} else {
-								result.put(word, 1);
-							}
-						}
-						temp.put(word, true);
-					}
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				}
-				try {
-					br.close();
-				} catch (IOException e1) {
-					// TODO Auto-generated catch block
-					e1.printStackTrace();
-				} 
-			}
+	        if (fileEntry.isDirectory()) {
+	           // listFilesForFolder(fileEntry);
+	        } else {
+	        	String text[];
+	    		String word;
+	    		//lecture du fichier texte	
+	    		InputStream ips=null;
+	    		try {
+	    			ips = new FileInputStream(fileEntry);
+	    		} catch (FileNotFoundException e1) {
+	    			e1.printStackTrace();
+	    		} 
+	    		InputStreamReader ipsr=null;
+	    		try {
+	    			ipsr = new InputStreamReader(ips, "ISO-8859-1");
+	    		} catch (UnsupportedEncodingException e1) {
+	    			e1.printStackTrace();
+	    		}
+	    		BufferedReader br = new BufferedReader(ipsr);
+	    		String line;
+	    		try {
+	    			while (((line = br.readLine())!=null) )
+	    			 {
+	    			           text= line.split("\t");
+	    			           word=text[2];
+	    			           word=normalize(word);
+	    			           if(temp.containsKey(word)==false){
+	    			        	   if (result.containsKey(word) ) {
+		    					    	result.replace(word, result.get(word), (Integer)result.get(word)+1);
+		    					    } else {
+		    					    	result.put(word, 1);
+		    					    }
+	    			           }
+	    					    temp.put(word, true);
+	    			}
+	    		} catch (IOException e1) {
+	    			// TODO Auto-generated catch block
+	    			e1.printStackTrace();
+	    		}
+	    		try {
+	    			br.close();
+	    		} catch (IOException e1) {
+	    			// TODO Auto-generated catch block
+	    			e1.printStackTrace();
+	    		} 
+	        }
 		}
 		return result;
 	}
