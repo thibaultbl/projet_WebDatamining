@@ -115,6 +115,8 @@ public class Main_idf {
 	 * @throws IOException
 	 */
 
+	
+	
 	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc) throws IOException {
 		//table contenant le nombre d'occurence par mot dans l'ensemble du corpus
 		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
@@ -142,12 +144,14 @@ public class Main_idf {
 
 				while ((ligne = entree.readLine()) != null)
 				{
-					st = new StringTokenizer(ligne, "\t");
+					String text[]= ligne.split("\t");
+					mot=text[2];
+					/*st = new StringTokenizer(ligne, "\t");
 					while(st.hasMoreTokens())
 					{
 						st.nextToken();
 						st.nextToken();
-						mot = st.nextToken();
+						mot = st.nextToken();*/
 						mot=normalize(mot);
 						if (table.containsKey(mot))
 						{
@@ -171,7 +175,7 @@ public class Main_idf {
 							listId.add(f.getName());
 							talb.put(mot, listId);
 						}
-					}
+					//}
 				}
 
 				entree.close();
