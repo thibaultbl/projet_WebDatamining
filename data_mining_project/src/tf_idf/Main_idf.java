@@ -15,6 +15,7 @@ import java.util.Collections;
 import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
 import java.util.Map.Entry;
@@ -84,10 +85,19 @@ public class Main_idf {
 
 		try {
 			//On repére les termes qui apparaissent au moins 800 fois dans le corpus ou dans plus de 10 textes différents
+			String path = "Doc/lemmatisation";
+			Hashtable<String, HashMap<Integer, ArrayList<Integer>>> nbOccurence=nbOccurence(path);
+			System.out.println(nbOccurence);
+			//on affiche les id associé à chaque documents
+			File file = new File(path);
+			HashMap<String, Integer> id = identifiantFichier(file);
+			System.out.println("ID : "+id);
+			
+			//on affiche les termes trop fréquent selon des seuils rentrés en paramétres
 			double thresholdCorpus=800;
 			double thresholdNbDoc=10;
-			ArrayList<String> termToExclude=termTooFrequent(thresholdCorpus, thresholdNbDoc);
-			System.out.println(termToExclude);
+			ArrayList<String> tooFrequentTerm=termTooFrequent(thresholdCorpus, thresholdNbDoc, nbOccurence);
+			System.out.println("too frequent : "+tooFrequentTerm);
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
@@ -96,15 +106,14 @@ public class Main_idf {
 
 	}
 
-	public static HashMap<Integer, String> identifiantFichier(File folder) {
+	public static HashMap<String, Integer> identifiantFichier(File folder) {
 		// Va lister tous les fichiers dans le répertoire et leur attribue un ID
-		HashMap<Integer, String> id = new HashMap<Integer, String>();
+		HashMap<String, Integer> id = new HashMap<String, Integer>();
 		int i = 1;
 		for (final File entry : folder.listFiles()) {
-			if (entry.isDirectory()) {
-
-			} else {
-				id.put(i, entry.getName());
+			if (entry.isDirectory()==false) {
+				id.put(entry.getName(), i );
+				i++;
 			}
 		}
 		return id;
@@ -114,21 +123,23 @@ public class Main_idf {
 	 * <pour détecter les termes apparaissant trop fréquemment dans le corpus ou dans un nombre de textes trop important
 	 * @throws IOException
 	 */
-
-	
-	
-	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc) throws IOException {
+	public static Hashtable<String, HashMap<Integer, ArrayList<Integer>>> nbOccurence(String path) throws IOException {
 		//table contenant le nombre d'occurence par mot dans l'ensemble du corpus
 		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
 		//Table contenant l'ensemble des documents contenant au moins une occurence du mot
-		HashMap<String, ArrayList<String>> talb = new HashMap<String, ArrayList<String>>();
-		ArrayList<String> listId = null;
+		HashMap<String, ArrayList<Integer>> talb = new HashMap<String, ArrayList<Integer>>();
+		ArrayList<Integer> listId = null;
+		//HashMap visant à associer chaque fichier à un ID
+		Hashtable<String, Integer> idFile = new Hashtable<String, Integer>();
+		//Hashmap fusion de table et talb pour le résultat final, le premier element de value est le nombre d'occurence dans le document
+		Hashtable<String, HashMap<Integer, ArrayList<Integer>>> result = new Hashtable<String, HashMap<Integer, ArrayList<Integer>>>();
+
 		
 		ArrayList<String> termeFrequent=new ArrayList<String>();
 
-		String path = "Doc/lemmatisation";
+
 		File file = new File(path);
-		HashMap<Integer, String> id = identifiantFichier(file);
+		HashMap<String, Integer> id = identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
 
 		for (final File f : filesInDir) {
@@ -165,14 +176,14 @@ public class Main_idf {
 						//talb.put(mot, f.getName());
 
 						if(talb.containsKey(mot)){
-							if(talb.get(mot).contains(f.getName())==false ){
-								talb.get(mot).add(f.getName());
+							if(talb.get(mot).contains(id.get(f.getName()))==false ){
+								talb.get(mot).add(id.get(f.getName()));
 							}
 
 						}
 						else{
-							listId=new ArrayList<String>();
-							listId.add(f.getName());
+							listId=new ArrayList<Integer>();
+							listId.add(id.get(f.getName()));
 							talb.put(mot, listId);
 						}
 					//}
@@ -184,21 +195,37 @@ public class Main_idf {
 		}
 		
 		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
-		
+		HashMap<Integer, ArrayList<Integer>> temp;
 		//on renvoi une liste contenant les termes avec trop d'apparitions dans le corpus ou dans un nombre de doculent trop important
 		for(int i=0;i<table2.size();i++){
 			 String key = table2.get(i).getKey();
 			 int value = table.get(key);
 			 
-			System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
-			if((table.get(key)>=thresholdCorpus)||(talb.get(key).size()>=thresholdNbDoc)){
-				termeFrequent.add(key);
-			}
-			
+			//System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
+			temp= new HashMap<Integer, ArrayList<Integer>>();
+			temp.put(table.get(key), talb.get(key));
+			result.put(key, temp);
 		}
+		return result;
+	}
+	
+	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc, Hashtable<String, HashMap<Integer, ArrayList<Integer>>> frequence){
+		ArrayList<String> termeFrequent=new ArrayList<String>();
+		
+		Set keys=frequence.keySet();	
+		String key;
+		HashMap<Integer, ArrayList<Integer>> temp;
+		
+		Iterator iter = keys.iterator();
+		while (iter.hasNext()) {
+		    key=iter.next().toString();
+		    temp= frequence.get(key);
+		    if((temp.keySet().iterator().next()>= thresholdCorpus)||(temp.get(temp.keySet().iterator().next()).size()>=thresholdNbDoc)){
+		    	termeFrequent.add(key);
+		    }
+		}
+		
 		return termeFrequent;
-		
-		
 	}
 	 
 	public static List<Map.Entry<String, Integer>> sortMapValues2(Map<String, Integer> map){
