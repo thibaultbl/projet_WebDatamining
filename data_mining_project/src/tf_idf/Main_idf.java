@@ -11,8 +11,12 @@ import java.io.UnsupportedEncodingException;
 import java.text.Normalizer;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
 import java.util.HashMap;
 import java.util.Hashtable;
+import java.util.List;
+import java.util.Map;
 import java.util.Map.Entry;
 import java.util.Set;
 import java.util.StringTokenizer;
@@ -163,18 +167,29 @@ public class Main_idf {
 			
 		}
 		
-		for(Entry<String, ArrayList<String>> entry : talb.entrySet()) {
-		    String key = entry.getKey();
-		    ArrayList<String> value = entry.getValue();
-
+		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
+		
+		for(int i=0;i<table2.size();i++){
+			 String key = table2.get(i).getKey();
+			 int value = table.get(key);
+			 
 			System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
 
-		    // do what you have to do here
-		    // In your case, an other loop.
 		}
-
+		
 	}
+	 
+	public static List<Map.Entry<String, Integer>> sortMapValues2(Map<String, Integer> map){
+	    //Sort Map.Entry by value
+	    List<Map.Entry<String, Integer>> result = new ArrayList(map.entrySet());
+	    Collections.sort(result, new Comparator<Map.Entry<String, Integer>>(){
+	        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+	            return o2.getValue() - o1.getValue();
+	    }});
 
+	    return result;  
+	}
+	
 	public static String normalize(String string){
 		string=string.toLowerCase();
 		string = Normalizer.normalize(string, Normalizer.Form.NFD);
