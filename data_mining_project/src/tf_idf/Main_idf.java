@@ -83,7 +83,12 @@ public class Main_idf {
 		}*/
 
 		try {
-			resultatFinal();
+			//On repére les termes qui apparaissent au moins 800 fois dans le corpus ou dans plus de 10 textes différents
+			double thresholdCorpus=800;
+			double thresholdNbDoc=10;
+			ArrayList<String> termToExclude=termTooFrequent(thresholdCorpus, thresholdNbDoc);
+			System.out.println(termToExclude);
+			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -104,13 +109,20 @@ public class Main_idf {
 		}
 		return id;
 	}
+	
+	/**
+	 * <pour détecter les termes apparaissant trop fréquemment dans le corpus ou dans un nombre de textes trop important
+	 * @throws IOException
+	 */
 
-	public static void resultatFinal() throws IOException {
+	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc) throws IOException {
 		//table contenant le nombre d'occurence par mot dans l'ensemble du corpus
 		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
 		//Table contenant l'ensemble des documents contenant au moins une occurence du mot
 		HashMap<String, ArrayList<String>> talb = new HashMap<String, ArrayList<String>>();
 		ArrayList<String> listId = null;
+		
+		ArrayList<String> termeFrequent=new ArrayList<String>();
 
 		String path = "Doc/lemmatisation";
 		File file = new File(path);
@@ -169,13 +181,19 @@ public class Main_idf {
 		
 		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
 		
+		//on renvoi une liste contenant les termes avec trop d'apparitions dans le corpus ou dans un nombre de doculent trop important
 		for(int i=0;i<table2.size();i++){
 			 String key = table2.get(i).getKey();
 			 int value = table.get(key);
 			 
 			System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
-
+			if((table.get(key)>=thresholdCorpus)||(talb.get(key).size()>=thresholdNbDoc)){
+				termeFrequent.add(key);
+			}
+			
 		}
+		return termeFrequent;
+		
 		
 	}
 	 
