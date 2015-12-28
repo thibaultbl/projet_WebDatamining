@@ -23,5 +23,7 @@ public abstract class Noeud {
 	public ArrayList<Noeud> getNoeudsFils() {
 		return noeudsFils;
 	}
+	
+	
 
 }

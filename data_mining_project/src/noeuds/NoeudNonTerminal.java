@@ -15,4 +15,8 @@ public class NoeudNonTerminal extends Noeud{
 		return lettre;
 	}
 	
+	@Override
+	public String toString() {
+		return String.valueOf(lettre);
+	}
 }

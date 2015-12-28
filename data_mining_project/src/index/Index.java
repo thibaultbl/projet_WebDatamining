@@ -18,10 +18,13 @@ public class Index {
 	private ArrayList<Noeud> debutTerme;
 
 	public Index(String path) throws IOException {
-		this.InitialiserIndex(path);
+		debutTerme=this.InitialiserIndex(path);
 	}
 
-
+	@Override
+	public String toString() {
+		return "debut terme :"+debutTerme;
+	}
 
 
 	public static HashMap<String, Integer> identifiantFichier(File folder) {
@@ -138,6 +141,10 @@ public class Index {
 		string=string.replace(".",  "");
 		string=string.replace(";",  "");
 		return string;
+	}
+
+	public ArrayList<Noeud> getDebutTerme() {
+		return debutTerme;
 	}
 
 
