@@ -1,16 +1,18 @@
 package noeuds;
 
 
-public class Noeud {
+public abstract class Noeud {
 	
-	private NoeudNonTerminal noeudPere;
+	private Noeud noeudPere;
 	
-	public Noeud(NoeudNonTerminal noeudPere) {
+	public Noeud(Noeud noeudPere) {
 		super();
 		this.noeudPere = noeudPere;
 	}
 
-	public NoeudNonTerminal getNoeudPere() {
+	public Noeud getNoeudPere() {
 		return noeudPere;
 	}
+	
+	public abstract char getLettre();
 }

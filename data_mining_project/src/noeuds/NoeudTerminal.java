@@ -7,7 +7,7 @@ public class NoeudTerminal extends Noeud{
 	private HashMap<String, ArrayList<Integer>> indexPositions;
 	private String terme;
 	
-	public NoeudTerminal(String lettre, NoeudNonTerminal noeudPere) {
+	public NoeudTerminal(String lettre, Noeud noeudPere) {
 		super(noeudPere);
 		this.terme = this.recupererTerme();
 	}
@@ -20,7 +20,7 @@ public class NoeudTerminal extends Noeud{
 	
 	// récupère le terme du noeud terminal en remontant dans l'arbre
 	public String recupererTerme(){
-		NoeudNonTerminal noeud = this.getNoeudPere();
+		Noeud noeud = this.getNoeudPere();
 		String terme = "";
 		terme = noeud.getLettre() + terme;
 		while(noeud.getNoeudPere()!=null){
@@ -38,5 +38,11 @@ public class NoeudTerminal extends Noeud{
 		HashMap<String, ArrayList<Integer>> indexPositions = new HashMap<String, ArrayList<Integer>>();
 		//TODO
 		return indexPositions;
+	}
+	
+	@Override
+	public char getLettre() {
+		// TODO Auto-generated method stub
+		return 0;
 	}
 }

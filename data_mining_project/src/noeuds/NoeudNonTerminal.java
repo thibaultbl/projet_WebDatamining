@@ -6,7 +6,7 @@ public class NoeudNonTerminal extends Noeud{
 	private ArrayList<Noeud> noeudsFils;
 	private char lettre;
 	
-	public NoeudNonTerminal(char lettre, NoeudNonTerminal noeudPere) {
+	public NoeudNonTerminal(char lettre, Noeud noeudPere) {
 		super(noeudPere);
 		this.lettre = lettre;
 	}
