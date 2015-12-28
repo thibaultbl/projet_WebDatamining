@@ -1,22 +1,18 @@
 package main;
 
-import noeuds.Noeud;
-import noeuds.NoeudNonTerminal;
-import noeuds.NoeudTerminal;
+import java.io.IOException;
+
+import index.Index;
 
 public class main {
 
 	/**
 	 * @param args
+	 * @throws IOException 
 	 */
-	public static void main(String[] args) {
-		char[] s1="nom".toCharArray();
-		Noeud noeud1=new NoeudNonTerminal(s1[0], null);
-		Noeud noeud2=new NoeudNonTerminal(s1[1], noeud1);
-		Noeud noeud3=new NoeudNonTerminal(s1[2], noeud2);
-		NoeudTerminal noeud4=new NoeudTerminal(noeud3);
-		
-		System.out.println(noeud4.getTerme());
+	public static void main(String[] args) throws IOException {
+		String path="Doc/lemmatisation";
+		Index index=new Index(path);
 
 	}
 
