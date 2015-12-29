@@ -159,6 +159,39 @@ public class Index {
 
 		return result;
 	}
+	
+	public void deleteTerm(String mot){
+		//1 - on se place dans le noeud terminal correspondant au terme
+		Noeud temp;
+		char[] arrayChar=mot.toCharArray();
+		int trouve=-1;
+		for(int j=0;j<debutTerme.size();j++){
+			if(arrayChar[0]==debutTerme.get(j).getLettre()){
+				trouve=j;
+			}
+		}
+		temp=debutTerme.get(trouve);
+		for(int i=1;i<arrayChar.length;i++){
+			trouve=-1;
+			for(int k=0;k<temp.getNoeudsFils().size();k++){
+				if(temp.getNoeudsFils().get(k).getLettre()==arrayChar[i]){
+					trouve=k;
+				}
+			}
+			temp=temp.getNoeudsFils().get(trouve);
+		}
+		
+		//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
+		int g=0;
+		Noeud temp2=temp.getNoeudPere();
+		while((temp2.getNoeudsFils().size()<2)&&(g<mot.toCharArray().length)){
+			temp2.getNoeudsFils().remove(temp);
+			temp2=temp.getNoeudPere();
+			g++;
+		}
+
+		
+	}
 
 	public static String normalize(String string){
 		string=string.toLowerCase();

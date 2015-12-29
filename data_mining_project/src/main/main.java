@@ -30,6 +30,22 @@ public class main {
 		
 		File file = new File(path);
 		System.out.println(Index.identifiantFichier(file));
+		
+		index.deleteTerm("monica");
+		
+System.out.println("------------------------------------");
+		
+		temp=index.getDebutTerme().get(0);
+		temp=temp.getNoeudsFils().get(0);
+		temp=temp.getNoeudsFils().get(0);
+		temp=temp.getNoeudsFils().get(0);
+		temp=temp.getNoeudsFils().get(1);
+		while(temp.getNoeudsFils().size()>0){
+			System.out.println(temp);
+			temp=temp.getNoeudsFils().get(0);
+		}
+		System.out.println("*************************************************");
+		System.out.println(((NoeudTerminal)temp).getTerme());
 
 
 		/*temp=index.getDebutTerme().get(0);
