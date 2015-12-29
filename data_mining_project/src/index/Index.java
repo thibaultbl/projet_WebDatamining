@@ -49,6 +49,9 @@ public class Index {
 		char[] decomposition;
 		int trouve;
 		int j;
+		int positionLigne;
+		ArrayList<Integer> tempPosition;
+		HashMap<Integer, ArrayList<Integer>> hashmapTemp;
 		Noeud temp;
 
 		File file = new File(path);
@@ -57,7 +60,7 @@ public class Index {
 
 		for (final File f : filesInDir) 
 		{
-			System.out.println("file : "+f.getName());
+			positionLigne=0;
 
 			if (f.isDirectory()==false) 
 			{
@@ -69,6 +72,7 @@ public class Index {
 				//pour chaque ligne dans lématisation
 				while ((ligne = entree.readLine()) != null)
 				{
+					positionLigne++;
 					//On récupére le mot lématiser
 					String text[]= ligne.split("\t");
 					mot=text[2];
@@ -94,8 +98,6 @@ public class Index {
 						}
 						j=1;
 						temp=result.get(trouve);
-						System.out.println("***************************");
-						System.out.println(temp.getLettre());
 						//jusqu'à la fin du mot
 						while(j<decomposition.length){
 
@@ -116,12 +118,36 @@ public class Index {
 							}
 							temp=temp.getNoeudsFils().get(trouve);
 							j++;
-							System.out.println(temp.getLettre());
 						}
 
 						//On crée le noeud terminal
-						temp.getNoeudsFils().add(new NoeudTerminal(temp));
-
+						trouve=-1;
+						for(int i=0; i<temp.getNoeudsFils().size();i++){
+							if(temp.getNoeudsFils().get(i) instanceof NoeudTerminal){
+								trouve=i;
+							}
+						}
+						
+						if(trouve==-1){
+							temp.getNoeudsFils().add(new NoeudTerminal(temp));
+							trouve=temp.getNoeudsFils().size()-1;
+							temp=temp.getNoeudsFils().get(trouve);
+							
+						}
+						else{
+							temp=temp.getNoeudsFils().get(trouve);
+						}
+						//On modifie les éléemnts ud noeud terminal
+						((NoeudTerminal)temp).setFrequenceCorpus((((NoeudTerminal)temp).getFrequenceCorpus())+1);
+						if(((NoeudTerminal)temp).getIndexPositions().containsKey(id.get(f.getName()))){
+							((NoeudTerminal)temp).getIndexPositions().get(id.get(f.getName())).add(Integer.valueOf(positionLigne));
+						}
+						else{
+							tempPosition=new ArrayList<Integer>();
+							tempPosition.add(positionLigne);
+							((NoeudTerminal)temp).getIndexPositions().put(id.get(f.getName()),tempPosition);
+						}
+							
 
 					}
 				}

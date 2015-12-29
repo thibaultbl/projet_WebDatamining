@@ -6,18 +6,20 @@ import java.util.HashMap;
 public class NoeudTerminal extends Noeud{
 	//Hashmap contenant l'ensemble des documents (id) contenant le terme avec l'index des positions
 	
-	private HashMap<String, HashMap<Integer, ArrayList<Integer>>> indexPositions;
+	private HashMap<Integer, ArrayList<Integer>> indexPositions;
 	private String terme;
 	private int frequenceCorpus;
 	
 	public NoeudTerminal(Noeud noeudPere) {
 		super(noeudPere);
 		this.terme = this.recupererTerme();
+		this.frequenceCorpus=0;
+		indexPositions=new HashMap<Integer, ArrayList<Integer>>();
 	}
-	public HashMap<String, HashMap<Integer, ArrayList<Integer>>> getIndexPositions() {
+	public HashMap<Integer, ArrayList<Integer>> getIndexPositions() {
 		return indexPositions;
 	}
-	public void setIndexPositions(HashMap<String, HashMap<Integer, ArrayList<Integer>>> indexPositions) {
+	public void setIndexPositions(HashMap<Integer, ArrayList<Integer>>indexPositions) {
 		this.indexPositions = indexPositions;
 	}
 	
@@ -49,4 +51,14 @@ public class NoeudTerminal extends Noeud{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	
+	public int getFrequenceCorpus() {
+		return frequenceCorpus;
+	}
+	
+	public void setFrequenceCorpus(int frequenceCorpus) {
+		this.frequenceCorpus = frequenceCorpus;
+	}
+	
+	
 }
