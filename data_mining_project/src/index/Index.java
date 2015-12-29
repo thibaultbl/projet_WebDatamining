@@ -19,6 +19,14 @@ public class Index {
 
 	public Index(String path) throws IOException {
 		debutTerme=this.InitialiserIndex(path);
+		//on supprime les termes trop fréquents de l'index
+		/**
+		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
+		 */
+		termTooFrequent frequent=new termTooFrequent(path, 800, 10 );
+		for(int i=0; i<frequent.getFrequentTerm().size();i++){
+			this.deleteTerm(frequent.getFrequentTerm().get(i));
+		}
 	}
 
 	@Override
@@ -41,7 +49,7 @@ public class Index {
 	}
 
 	/**
-	 * <pour détecter les termes apparaissant trop fréquemment dans le corpus ou dans un nombre de textes trop important
+	 * Pour initialiser l'arbre d'index
 	 * @throws IOException
 	 */
 	public static ArrayList<Noeud> InitialiserIndex(String path) throws IOException {
@@ -151,8 +159,6 @@ public class Index {
 
 					}
 				}
-
-
 			}
 
 		}
@@ -160,16 +166,26 @@ public class Index {
 		return result;
 	}
 	
+	/**
+	 * Pour supprimer un terme dans l'index
+	 * @param mot
+	 */
+	
 	public void deleteTerm(String mot){
 		//1 - on se place dans le noeud terminal correspondant au terme
 		Noeud temp;
 		char[] arrayChar=mot.toCharArray();
 		int trouve=-1;
-		for(int j=0;j<debutTerme.size();j++){
-			if(arrayChar[0]==debutTerme.get(j).getLettre()){
-				trouve=j;
-			}
+		if(arrayChar.length<=0){
+			return;
 		}
+			for(int j=0;j<debutTerme.size();j++){
+				if(arrayChar[0]==debutTerme.get(j).getLettre()){
+					trouve=j;
+				}
+			}
+		
+		
 		temp=debutTerme.get(trouve);
 		for(int i=1;i<arrayChar.length;i++){
 			trouve=-1;
@@ -183,14 +199,17 @@ public class Index {
 		
 		//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
 		int g=0;
-		Noeud temp2=temp.getNoeudPere();
-		while((temp2.getNoeudsFils().size()<2)&&(g<mot.toCharArray().length)){
-			temp2.getNoeudsFils().remove(temp);
-			temp2=temp.getNoeudPere();
-			g++;
+		if(temp.getNoeudPere()!=null){
+			Noeud temp2=temp.getNoeudPere();
+			while((temp2.getNoeudsFils().size()<2)&&(g<mot.toCharArray().length)){
+				temp2.getNoeudsFils().remove(temp);
+				temp2=temp.getNoeudPere();
+				g++;
+			}
 		}
-
-		
+		else{
+			debutTerme.remove(debutTerme.indexOf(temp));
+		}
 	}
 
 	public static String normalize(String string){

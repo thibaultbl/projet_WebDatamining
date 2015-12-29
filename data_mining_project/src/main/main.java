@@ -15,6 +15,8 @@ public class main {
 	 * @throws IOException 
 	 */
 	public static void main(String[] args) throws IOException {
+		
+		
 		String path="Doc/lemmatisation";
 		Index index=new Index(path);
 		System.out.println("------------------------------------");
