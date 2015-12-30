@@ -32,7 +32,7 @@ public class main {
 		temp=temp.getNoeudsFils().get(0);
 		System.out.println(temp);
 		System.out.println("nb fils : "+temp.getNoeudsFils().size());
-		temp=temp.getNoeudsFils().get(0);
+		temp=temp.getNoeudsFils().get(1);
 		while(temp.getNoeudsFils().size()>0){
 			System.out.println(temp);
 			temp=temp.getNoeudsFils().get(0);
@@ -42,6 +42,49 @@ public class main {
 		System.out.println(((NoeudTerminal)temp).getTerme());
 		
 		index.deleteTerm("avoir");
+		
+
+		System.out.println(index);
+		System.out.println("------------------------------------");
+		
+		temp=index.getDebutTerme().get(2);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		System.out.println("nb fils : "+temp.getNoeudsFils().size());
+		temp=temp.getNoeudsFils().get(0);
+		while(temp.getNoeudsFils().size()>0){
+			System.out.println(temp);
+			temp=temp.getNoeudsFils().get(0);
+		}
+		System.out.println("*************************************************");
+		System.out.println(temp.getNoeudsFils());
+		System.out.println(((NoeudTerminal)temp).getTerme());
+		
+index.deleteTerm("avocat");
+		
+
+		System.out.println(index);
+		System.out.println("------------------------------------");
+		
+		temp=index.getDebutTerme().get(2);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		System.out.println("nb fils : "+temp.getNoeudsFils().size());
+		temp=temp.getNoeudsFils().get(0);
+		while(temp.getNoeudsFils().size()>0){
+			System.out.println(temp);
+			temp=temp.getNoeudsFils().get(0);
+		}
+		System.out.println("*************************************************");
+		System.out.println(temp.getNoeudsFils());
+		System.out.println(((NoeudTerminal)temp).getTerme());
+		
 		
 	}
 
