@@ -19,9 +19,17 @@ public class main {
 		
 		String path="Doc/lemmatisation";
 		Index index=new Index(path);
+		System.out.println(index);
 		System.out.println("------------------------------------");
 		
-		Noeud temp=index.getDebutTerme().get(0);
+		Noeud temp=index.getDebutTerme().get(2);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		temp=temp.getNoeudsFils().get(0);
+		System.out.println(temp);
+		System.out.println("nb fils : "+temp.getNoeudsFils().size());
+		temp=temp.getNoeudsFils().get(1);
 		while(temp.getNoeudsFils().size()>0){
 			System.out.println(temp);
 			temp=temp.getNoeudsFils().get(0);
@@ -30,11 +38,14 @@ public class main {
 		System.out.println(((NoeudTerminal)temp).getTerme());
 		System.out.println(((NoeudTerminal)temp).getIndexPositions());
 		
-		File file = new File(path);
-		System.out.println(Index.identifiantFichier(file));
+		index.deleteTerm("¢");
+		System.out.println(index);
+		index.deleteTerm("¢");
 		
-		index.deleteTerm("monica");
 		
+		
+		
+		/*
 System.out.println("------------------------------------");
 		
 		temp=index.getDebutTerme().get(0);
@@ -50,7 +61,7 @@ System.out.println("------------------------------------");
 		System.out.println(((NoeudTerminal)temp).getTerme());
 
 
-		/*temp=index.getDebutTerme().get(0);
+		temp=index.getDebutTerme().get(0);
 		System.out.println(temp);
 		temp=temp.getNoeudsFils().get(1);
 		while(temp.getNoeudsFils().size()>0){
