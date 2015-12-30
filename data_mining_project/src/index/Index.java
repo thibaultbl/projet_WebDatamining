@@ -24,7 +24,7 @@ public class Index {
 		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
 		 */
 
-		termTooFrequent frequent=new termTooFrequent(path, 800, 10 );
+		termTooFrequent frequent=new termTooFrequent(path, 1200, 100 );
 		for(int i=0; i<frequent.getFrequentTerm().size();i++){
 			this.deleteTerm(frequent.getFrequentTerm().get(i));
 		}
@@ -228,7 +228,7 @@ public class Index {
 		this.debutTerme = debutTerme;
 	}
 
-	public Noeud getNoeudTerminal(String terme){
+	public NoeudTerminal getNoeudTerminal(String terme){
 		Noeud temp=null;
 
 		//on cherche le noeud terminal correspondant au terme
@@ -270,7 +270,7 @@ public class Index {
 			System.out.println("le terme "+terme+" n'est pas dans l'index");
 		}
 
-		return temp;
+		return (NoeudTerminal)temp;
 
 	}
 }
