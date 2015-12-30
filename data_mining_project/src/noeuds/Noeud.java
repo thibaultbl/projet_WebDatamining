@@ -6,7 +6,7 @@ import java.util.ArrayList;
 public abstract class Noeud {
 	
 	private Noeud noeudPere;
-	private ArrayList<Noeud> noeudsFils;
+	protected ArrayList<Noeud> noeudsFils;
 	
 	public Noeud(Noeud noeudPere) {
 		super();

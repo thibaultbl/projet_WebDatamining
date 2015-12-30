@@ -23,11 +23,11 @@ public class Index {
 		/**
 		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
 		 */
-		/*
+
 		termTooFrequent frequent=new termTooFrequent(path, 800, 10 );
 		for(int i=0; i<frequent.getFrequentTerm().size();i++){
 			this.deleteTerm(frequent.getFrequentTerm().get(i));
-		}*/
+		}
 	}
 
 	@Override
@@ -85,6 +85,7 @@ public class Index {
 					//On récupére le mot lématiser
 					String text[]= ligne.split("\t");
 					mot=text[2];
+
 					//on le normalise à nouveau (étape inutile si la lématisation à été faite correctement)
 					mot=normalize(mot);		
 
@@ -136,12 +137,12 @@ public class Index {
 								trouve=i;
 							}
 						}
-						
+
 						if(trouve==-1){
 							temp.getNoeudsFils().add(new NoeudTerminal(temp));
 							trouve=temp.getNoeudsFils().size()-1;
 							temp=temp.getNoeudsFils().get(trouve);
-							
+
 						}
 						else{
 							temp=temp.getNoeudsFils().get(trouve);
@@ -156,7 +157,7 @@ public class Index {
 							tempPosition.add(positionLigne);
 							((NoeudTerminal)temp).getIndexPositions().put(id.get(f.getName()),tempPosition);
 						}
-							
+
 
 					}
 				}
@@ -166,87 +167,97 @@ public class Index {
 
 		return result;
 	}
-	
+
 	/**
 	 * Pour supprimer un terme dans l'index
 	 * @param mot
 	 */
-	
+
 	public void deleteTerm(String mot){
 		//1 - on se place dans le noeud terminal correspondant au terme
 		Noeud temp;
 		char[] arrayChar=mot.toCharArray();
 		int trouve=-1;
+		//Si il s'agit d'une chaine vide on ne fait rien
 		if(arrayChar.length<=0){
 			return;
 		}
-			for(int j=0;j<debutTerme.size();j++){
-				if(arrayChar[0]==debutTerme.get(j).getLettre()){
-					trouve=j;
+		for(int j=0;j<debutTerme.size();j++){
+			if(arrayChar[0]==debutTerme.get(j).getLettre()){
+				trouve=j;
+			}
+		}
+
+		if(trouve !=-1){
+			temp=debutTerme.get(trouve);
+			for(int i=1;i<arrayChar.length;i++){
+				trouve=-1;
+				for(int k=0;k<temp.getNoeudsFils().size();k++){
+					if(temp.getNoeudsFils().get(k).getLettre()==arrayChar[i]){
+						trouve=k;
+					}
+				}
+				if(trouve==-1){
+					return;
+				}
+				temp=temp.getNoeudsFils().get(trouve);
+			}
+			for(int k=0;k<temp.getNoeudsFils().size();k++){
+				if(temp.getNoeudsFils().get(k) instanceof NoeudTerminal){
+					trouve=k;
 				}
 			}
-		
-			if(trouve !=-1){
-				temp=debutTerme.get(trouve);
-				for(int i=1;i<arrayChar.length;i++){
-					trouve=-1;
-					for(int k=0;k<temp.getNoeudsFils().size();k++){
-						if(temp.getNoeudsFils().get(k).getLettre()==arrayChar[i]){
-							trouve=k;
-						}
-					}
-					temp=temp.getNoeudsFils().get(trouve);
-				}
-				
-				//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
-				int g=0;
-
-				if(temp.getNoeudPere()!=null){
-					Noeud temp2=temp.getNoeudPere();
-					Noeud temp3=temp;
-					while((temp2.getNoeudsFils().size()<2)&&(g<mot.toCharArray().length)){
-						temp2.getNoeudsFils().remove(temp3);
-						temp3=temp2;
-						temp2=temp2.getNoeudPere();
-						g++;
-					}
+			temp=temp.getNoeudsFils().get(trouve);
+			//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
+			int g=0;
+	
+			if(temp.getNoeudPere().getNoeudPere()!=null){
+				Noeud temp2=temp.getNoeudPere();
+				Noeud temp3=temp;
+				while((temp2.getNoeudsFils().size()<2)&&(g<arrayChar.length)){
 					temp2.getNoeudsFils().remove(temp3);
-					for(int i=0;i<temp2.getNoeudsFils().size();i++){
-						if(temp2.getNoeudsFils().get(i) instanceof NoeudTerminal){
-							temp2.getNoeudsFils().remove(i);
-						}
+					temp3=temp2;
+					temp2=temp2.getNoeudPere();
+					g++;
+				}
+				temp2.getNoeudsFils().remove(temp3);
+				
+				
+				for(int i=0;i<temp2.getNoeudsFils().size();i++){
+					if(temp2.getNoeudsFils().get(i) instanceof NoeudTerminal){
+						temp2.getNoeudsFils().remove(i);
 					}
-					
-					
 				}
-				else{
-					System.out.println("delete debut terme : "+debutTerme.indexOf(temp));
-					debutTerme.remove(debutTerme.indexOf(temp));
-				}
+
+
 			}
 			else{
-				System.out.println("le terme "+mot+" n'est pas dans l'index");
+				System.out.println("delete debut terme : "+debutTerme.get(debutTerme.indexOf(temp.getNoeudPere())));
+				debutTerme.remove(debutTerme.indexOf(temp.getNoeudPere()));
 			}
-		
-		
-	}
-
-	public static String normalize(String string){
-		string=string.toLowerCase();
-		string = Normalizer.normalize(string, Normalizer.Form.NFD);
-		string=string.replace(",",  "");
-		string=string.replace(".",  "");
-		string=string.replace(";",  "");
-		return string;
-	}
-
-	public ArrayList<Noeud> getDebutTerme() {
-		return debutTerme;
-	}
-	
-	public void setDebutTerme(ArrayList<Noeud> debutTerme) {
-		this.debutTerme = debutTerme;
+		}
+		else{
+			System.out.println("le terme "+mot+" n'est pas dans l'index");
+		}
 	}
 
 
-}
+		public static String normalize(String string){
+			string=string.toLowerCase();
+			string = Normalizer.normalize(string, Normalizer.Form.NFD);
+			string=string.replace(",",  "");
+			string=string.replace(".",  "");
+			string=string.replace(";",  "");
+			return string;
+		}
+
+		public ArrayList<Noeud> getDebutTerme() {
+			return debutTerme;
+		}
+
+		public void setDebutTerme(ArrayList<Noeud> debutTerme) {
+			this.debutTerme = debutTerme;
+		}
+
+
+	}
