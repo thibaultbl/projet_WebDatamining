@@ -175,42 +175,12 @@ public class Index {
 
 	public void deleteTerm(String mot){
 		//1 - on se place dans le noeud terminal correspondant au terme
-		Noeud temp;
+		Noeud temp=this.getNoeudTerminal(mot);
 		char[] arrayChar=mot.toCharArray();
-		int trouve=-1;
-		//Si il s'agit d'une chaine vide on ne fait rien
-		if(arrayChar.length<=0){
-			return;
-		}
-		for(int j=0;j<debutTerme.size();j++){
-			if(arrayChar[0]==debutTerme.get(j).getLettre()){
-				trouve=j;
-			}
-		}
 
-		if(trouve !=-1){
-			temp=debutTerme.get(trouve);
-			for(int i=1;i<arrayChar.length;i++){
-				trouve=-1;
-				for(int k=0;k<temp.getNoeudsFils().size();k++){
-					if(temp.getNoeudsFils().get(k).getLettre()==arrayChar[i]){
-						trouve=k;
-					}
-				}
-				if(trouve==-1){
-					return;
-				}
-				temp=temp.getNoeudsFils().get(trouve);
-			}
-			for(int k=0;k<temp.getNoeudsFils().size();k++){
-				if(temp.getNoeudsFils().get(k) instanceof NoeudTerminal){
-					trouve=k;
-				}
-			}
-			temp=temp.getNoeudsFils().get(trouve);
-			//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
+		//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
+		if(temp!=null){
 			int g=0;
-	
 			if(temp.getNoeudPere().getNoeudPere()!=null){
 				Noeud temp2=temp.getNoeudPere();
 				Noeud temp3=temp;
@@ -221,8 +191,8 @@ public class Index {
 					g++;
 				}
 				temp2.getNoeudsFils().remove(temp3);
-				
-				
+
+
 				for(int i=0;i<temp2.getNoeudsFils().size();i++){
 					if(temp2.getNoeudsFils().get(i) instanceof NoeudTerminal){
 						temp2.getNoeudsFils().remove(i);
@@ -232,32 +202,77 @@ public class Index {
 
 			}
 			else{
-				System.out.println("delete debut terme : "+debutTerme.get(debutTerme.indexOf(temp.getNoeudPere())));
 				debutTerme.remove(debutTerme.indexOf(temp.getNoeudPere()));
 			}
 		}
+
+	}
+
+
+
+
+	public static String normalize(String string){
+		string=string.toLowerCase();
+		string = Normalizer.normalize(string, Normalizer.Form.NFD);
+		string=string.replace(",",  "");
+		string=string.replace(".",  "");
+		string=string.replace(";",  "");
+		return string;
+	}
+
+	public ArrayList<Noeud> getDebutTerme() {
+		return debutTerme;
+	}
+
+	public void setDebutTerme(ArrayList<Noeud> debutTerme) {
+		this.debutTerme = debutTerme;
+	}
+
+	public Noeud getNoeudTerminal(String terme){
+		Noeud temp=null;
+
+		//on cherche le noeud terminal correspondant au terme
+		//1 - on se place dans le noeud terminal correspondant au terme
+		char[] arrayChar=terme.toCharArray();
+		int trouve=-1;
+		//Si il s'agit d'une chaine vide on ne fait rien
+		if(arrayChar.length<=0){
+			return null;
+		}
+		for(int j=0;j<this.getDebutTerme().size();j++){
+			if(arrayChar[0]==this.getDebutTerme().get(j).getLettre()){
+				trouve=j;
+			}
+		}
+
+		if(trouve !=-1){
+			temp=this.getDebutTerme().get(trouve);
+			for(int i=1;i<arrayChar.length;i++){
+				trouve=-1;
+				for(int k=0;k<temp.getNoeudsFils().size();k++){
+					if(temp.getNoeudsFils().get(k).getLettre()==arrayChar[i]){
+						trouve=k;
+					}
+				}
+				if(trouve==-1){
+					return null;
+				}
+				temp=temp.getNoeudsFils().get(trouve);
+			}
+			for(int k=0;k<temp.getNoeudsFils().size();k++){
+				if(temp.getNoeudsFils().get(k) instanceof NoeudTerminal){
+					trouve=k;
+				}
+			}
+			temp=temp.getNoeudsFils().get(trouve);
+		}
 		else{
-			System.out.println("le terme "+mot+" n'est pas dans l'index");
-		}
-	}
-
-
-		public static String normalize(String string){
-			string=string.toLowerCase();
-			string = Normalizer.normalize(string, Normalizer.Form.NFD);
-			string=string.replace(",",  "");
-			string=string.replace(".",  "");
-			string=string.replace(";",  "");
-			return string;
+			System.out.println("le terme "+terme+" n'est pas dans l'index");
 		}
 
-		public ArrayList<Noeud> getDebutTerme() {
-			return debutTerme;
-		}
-
-		public void setDebutTerme(ArrayList<Noeud> debutTerme) {
-			this.debutTerme = debutTerme;
-		}
-
+		return temp;
 
 	}
+}
+
+
