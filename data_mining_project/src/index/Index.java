@@ -14,6 +14,8 @@ import noeuds.Noeud;
 import noeuds.NoeudNonTerminal;
 import noeuds.NoeudTerminal;
 
+import com.google.common.collect.HashBiMap;
+
 public class Index {
 	private ArrayList<Noeud> debutTerme;
 
@@ -36,9 +38,9 @@ public class Index {
 	}
 
 
-	public static HashMap<String, Integer> identifiantFichier(File folder) {
+	public static HashBiMap<String, Integer> identifiantFichier(File folder) {
 		// Va lister tous les fichiers dans le répertoire et leur attribue un ID
-		HashMap<String, Integer> id = new HashMap<String, Integer>();
+		HashBiMap<String, Integer> id = HashBiMap.create(folder.list().length);
 		int i = 1;
 		for (final File entry : folder.listFiles()) {
 			if (entry.isDirectory()==false) {
@@ -64,7 +66,7 @@ public class Index {
 		Noeud temp;
 
 		File file = new File(path);
-		HashMap<String, Integer> id = identifiantFichier(file);
+		HashBiMap<String, Integer> id = identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
 
 		for (final File f : filesInDir) 

@@ -18,6 +18,8 @@ import java.util.Set;
 import java.util.StringTokenizer;
 import java.util.Map.Entry;
 
+import com.google.common.collect.HashBiMap;
+
 import noeuds.Noeud;
 
 public class termTooFrequent {
@@ -44,7 +46,7 @@ public class termTooFrequent {
 
 
 		File file = new File(path);
-		HashMap<String, Integer> id = Index.identifiantFichier(file);
+		HashBiMap<String, Integer> id = Index.identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
 
 		for (final File f : filesInDir) {

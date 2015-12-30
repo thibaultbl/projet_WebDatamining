@@ -5,9 +5,13 @@ import index.Index;
 import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Map;
 
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
+
+import com.google.common.collect.HashBiMap;
 
 import search.search;
 
@@ -22,20 +26,31 @@ public class main {
 		
 		String path="Doc/lemmatisation";
 		Index index=new Index(path);
-		System.out.println(index.identifiantFichier(new File(path)));
+		HashBiMap<String, Integer> id=index.identifiantFichier(new File(path));
+		System.out.println(id);
 		
 		String requete=JOptionPane.showInputDialog ("Rentrez votre requête ici");
 		//"avocat syndicat"
 
 		HashMap<Integer, Double> testSearch=search.searchTerm(index, requete, path);
-		System.out.println(testSearch);
+		//printMap(testSearch);
 		final JFrame frame = new JFrame();
 
 		// Release the window and quit the application when it has been closed
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		JOptionPane.showMessageDialog(frame, testSearch);
+		JOptionPane.showMessageDialog(frame, printMap(testSearch, id));
 
-
+	}
+	
+	public static String printMap(Map mp, HashBiMap<String, Integer> id) {
+	    Iterator it = mp.entrySet().iterator();
+	    String str="";
+	    while (it.hasNext()) {
+	        Map.Entry pair = (Map.Entry)it.next();
+	       str=str+id.inverse().get(pair.getKey())+"(id="+ pair.getKey()+ ") = " + pair.getValue();
+	        it.remove(); // avoids a ConcurrentModificationException
+	    }
+	    return str;
 	}
 	
 	
