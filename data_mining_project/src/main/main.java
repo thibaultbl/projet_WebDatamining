@@ -4,6 +4,7 @@ import index.Index;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.Map;
@@ -32,14 +33,15 @@ public class main {
 		String requete=JOptionPane.showInputDialog ("Rentrez votre requête ici");
 		//"avocat syndicat"
 
-		HashMap<Integer, Double> testSearch=search.searchTerm(index, requete, path);
+		HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
+		
 		//printMap(testSearch);
 		final JFrame frame = new JFrame();
 
 		// Release the window and quit the application when it has been closed
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+		System.out.println(testSearch);
 		JOptionPane.showMessageDialog(frame, printMap(testSearch, id));
-
 	}
 	
 	public static String printMap(Map mp, HashBiMap<String, Integer> id) {

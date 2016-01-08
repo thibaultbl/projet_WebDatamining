@@ -12,9 +12,9 @@ import noeuds.NoeudTerminal;
 
 public abstract class search {
 
-	public static HashMap<Integer, Double> searchTerm(Index index, String terme, String path){
-		HashMap<Integer, Double> idf=new HashMap<Integer, Double>();
-		double idf_value;
+	public static HashMap<Integer, ArrayList<Double>> searchTerm(Index index, String terme, String path){
+		HashMap<Integer, ArrayList<Double>> idf=new HashMap<Integer, ArrayList<Double>>();
+		ArrayList<Double> idf_value;
 		//nombre total de documents
 		int n=Index.identifiantFichier(new File(path)).size() ;
 		String text[]= terme.split(" ");
@@ -40,10 +40,11 @@ public abstract class search {
 
 			for (Iterator<Integer> it = keys.iterator(); it.hasNext(); ) {
 				Integer f = it.next();
-				idf_value=0;
+				idf_value=new ArrayList<Double>();
 				//pour chaque termes de la requête
 				for(int j=0;j<list.size();j++){
-					idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
+					idf_value.add(((list.get(j).getIndexPositions().get(f).size())/Math.log10(Index.getSizeFile().get(f)))*Math.log10(n/list.get(j).getIndexPositions().size()));
+					//idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
 				}
 				idf.put(f, idf_value);
 			}
@@ -92,5 +93,11 @@ public abstract class search {
 			}
 		}
 		return idf;
+	}
+	
+	public ArrayList<Integer> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
+		
+		
+		return null;
 	}
 }

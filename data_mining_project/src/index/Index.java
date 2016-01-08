@@ -18,6 +18,7 @@ import com.google.common.collect.HashBiMap;
 
 public class Index {
 	private ArrayList<Noeud> debutTerme;
+	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
 
 	public Index(String path) throws IOException {
 		debutTerme=this.InitialiserIndex(path);
@@ -120,8 +121,6 @@ public class Index {
 										trouve=i;
 									}
 								}
-
-
 							}
 							//Si il n'existe pas on le crée
 							if(trouve ==-1){
@@ -159,12 +158,10 @@ public class Index {
 							tempPosition.add(positionLigne);
 							((NoeudTerminal)temp).getIndexPositions().put(id.get(f.getName()),tempPosition);
 						}
-
-
 					}
 				}
 			}
-
+			sizeFile.put(id.get(f.getName()), positionLigne);
 		}
 
 		return result;
@@ -274,6 +271,11 @@ public class Index {
 
 		return (NoeudTerminal)temp;
 
+	}
+	
+	
+	public static HashMap<Integer, Integer> getSizeFile() {
+		return sizeFile;
 	}
 }
 
