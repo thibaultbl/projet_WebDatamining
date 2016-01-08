@@ -96,7 +96,12 @@ public abstract class search {
 	}
 	
 	public ArrayList<Integer> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
-		
+		 Iterator it = searchTermResult.entrySet().iterator();
+		    while (it.hasNext()) {
+		    	HashMap.Entry pair = (HashMap.Entry)it.next();
+		       
+		        it.remove(); // avoids a ConcurrentModificationException
+		    }
 		
 		return null;
 	}
