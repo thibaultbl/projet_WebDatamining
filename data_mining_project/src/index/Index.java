@@ -10,6 +10,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.StringTokenizer;
 
+import javax.swing.JOptionPane;
+
 import noeuds.Noeud;
 import noeuds.NoeudNonTerminal;
 import noeuds.NoeudTerminal;
@@ -21,7 +23,7 @@ public class Index {
 	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
 
 	public Index(String path) throws IOException {
-		termTooFrequent frequent=new termTooFrequent(path, 1200, 100 );
+		termTooFrequent frequent=new termTooFrequent(path, 1200, 100);
 		debutTerme=this.InitialiserIndex(path, frequent);
 		
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
@@ -32,7 +34,6 @@ public class Index {
 		/**
 		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
 		 */
-
 	}
 
 	@Override
@@ -275,8 +276,14 @@ public class Index {
 		else{
 			System.out.println("le terme "+terme+" n'est pas dans l'index");
 		}
-
-		return (NoeudTerminal)temp;
+		try{
+			return (NoeudTerminal)temp;
+		}
+		catch(ClassCastException e){
+			JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
+                    JOptionPane.ERROR_MESSAGE);
+		}
+		return null;
 
 	}
 	
