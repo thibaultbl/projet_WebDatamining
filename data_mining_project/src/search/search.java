@@ -95,14 +95,26 @@ public abstract class search {
 		return idf;
 	}
 	
-	public ArrayList<Integer> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
+	public ArrayList<Double> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
+		ArrayList<Double> result = new ArrayList<Double>();
+		int k=1;
 		 Iterator it = searchTermResult.entrySet().iterator();
+		 HashMap.Entry pair = (HashMap.Entry)it.next();
+	    	for(int i=0;i<((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).size();i++){
+	    		result.add((((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).get(i)));
+	    	}
+	    	 it.remove(); // avoids a ConcurrentModificationException
 		    while (it.hasNext()) {
-		    	HashMap.Entry pair = (HashMap.Entry)it.next();
-		       
-		        it.remove(); // avoids a ConcurrentModificationException
+		    	k++;
+		    	pair = (HashMap.Entry)it.next();
+		    	for(int i=0;i<((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).size();i++){
+		    		result.set(i, (result.get(i)+((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).get(i)));
+		    	}
+		        it.remove(); 
 		    }
-		
+		    for(int i=0; i<result.size();i++ ){
+		    	result.set(i, (result.get(i)/k));
+		    }
 		return null;
 	}
 }
