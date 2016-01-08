@@ -47,7 +47,7 @@ public class main {
 	    String str="";
 	    while (it.hasNext()) {
 	        Map.Entry pair = (Map.Entry)it.next();
-	       str=str+id.inverse().get(pair.getKey())+"(id="+ pair.getKey()+ ") = " + pair.getValue();
+	       str=str+"Texte contenant les termes : "+id.inverse().get(pair.getKey())+" (id="+ pair.getKey()+ ") avec un score de match de " + pair.getValue()+System.getProperty("line.separator");
 	        it.remove(); // avoids a ConcurrentModificationException
 	    }
 	    return str;
