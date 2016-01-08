@@ -34,6 +34,7 @@ public class Main {
 		//"avocat syndicat"
 
 		HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
+		ArrayList<Double> idfMoy=search.idfMoy(testSearch);
 		
 		//printMap(testSearch);
 		final JFrame frame = new JFrame();
@@ -41,12 +42,14 @@ public class Main {
 		// Release the window and quit the application when it has been closed
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
 		System.out.println(testSearch);
-		JOptionPane.showMessageDialog(frame, printMap(testSearch, id));
+		JOptionPane.showMessageDialog(frame, printMap(testSearch, id, idfMoy));
 	}
 	
-	public static String printMap(Map mp, HashBiMap<String, Integer> id) {
+	public static String printMap(Map mp, HashBiMap<String, Integer> id, ArrayList<Double> idfMoy) {
 	    Iterator it = mp.entrySet().iterator();
 	    String str="";
+	    String idfMoyList="les idf moyennes sont :"+idfMoy;
+	    System.out.println(idfMoyList);
 	    while (it.hasNext()) {
 	        Map.Entry pair = (Map.Entry)it.next();
 	       str=str+"Texte contenant les termes : "+id.inverse().get(pair.getKey())+" (id="+ pair.getKey()+ ") avec un score de match de " + pair.getValue()+System.getProperty("line.separator");

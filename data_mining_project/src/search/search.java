@@ -6,6 +6,7 @@ import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Iterator;
+import java.util.Map;
 import java.util.Set;
 
 import noeuds.NoeudTerminal;
@@ -95,26 +96,24 @@ public abstract class search {
 		return idf;
 	}
 	
-	public ArrayList<Double> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
+	public static ArrayList<Double> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult){
 		ArrayList<Double> result = new ArrayList<Double>();
 		int k=1;
 		 Iterator it = searchTermResult.entrySet().iterator();
-		 HashMap.Entry pair = (HashMap.Entry)it.next();
-	    	for(int i=0;i<((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).size();i++){
-	    		result.add((((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).get(i)));
+		HashMap.Entry<Integer, ArrayList<Double>> pair = (HashMap.Entry<Integer, ArrayList<Double>>)it.next();
+	    	for(int i=0;i<pair.getValue().size() ;i++){
+	    		result.add(pair.getValue().get(i));
 	    	}
-	    	 it.remove(); // avoids a ConcurrentModificationException
 		    while (it.hasNext()) {
 		    	k++;
 		    	pair = (HashMap.Entry)it.next();
-		    	for(int i=0;i<((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).size();i++){
-		    		result.set(i, (result.get(i)+((HashMap<Integer, ArrayList<Double>>)pair).get(pair.getKey()).get(i)));
+		    	for(int i=0;i<pair.getValue().size() ;i++){
+		    		result.set(i, (result.get(i)+pair.getValue().get(i)));
 		    	}
-		        it.remove(); 
 		    }
 		    for(int i=0; i<result.size();i++ ){
 		    	result.set(i, (result.get(i)/k));
 		    }
-		return null;
+		return result;
 	}
 }
