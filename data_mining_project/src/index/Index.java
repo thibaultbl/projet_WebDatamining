@@ -22,7 +22,6 @@ public class Index {
 
 	public Index(String path) throws IOException {
 		termTooFrequent frequent=new termTooFrequent(path, 1200, 100 );
-		
 		debutTerme=this.InitialiserIndex(path, frequent);
 		
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){

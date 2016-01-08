@@ -2,6 +2,7 @@ package test;
 
 import static org.junit.Assert.assertEquals;
 import index.Index;
+import index.termTooFrequent;
 
 import java.io.File;
 import java.io.IOException;
@@ -18,7 +19,9 @@ public class IndexTest {
 
 		String path="Doc/lemmatisation";
 		Index index=new Index(path);
-		index.setDebutTerme(Index.InitialiserIndex(path));
+		termTooFrequent frequent=new termTooFrequent(path, 500, 8 );
+		index.setDebutTerme(Index.InitialiserIndex(path, frequent));
+		
 
 		Noeud temp=index.getDebutTerme().get(2);
 		temp=temp.getNoeudsFils().get(0);

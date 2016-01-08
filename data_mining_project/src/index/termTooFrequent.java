@@ -28,6 +28,7 @@ public class termTooFrequent {
 	
 	public termTooFrequent(String path, int thresholdCorpus, int thresholdNbDoc) throws IOException {
 		frequentTerm=termTooFrequent(thresholdCorpus, thresholdNbDoc, nbOccurence(path));
+		
 	}
 	
 	public static Hashtable<String, HashMap<Integer, ArrayList<Integer>>> nbOccurence(String path) throws IOException {
@@ -64,35 +65,52 @@ public class termTooFrequent {
 				{
 					String text[]= ligne.split("\t");
 					mot=text[2];
-					/*st = new StringTokenizer(ligne, "\t");
-					while(st.hasMoreTokens())
-					{
-						st.nextToken();
-						st.nextToken();
-						mot = st.nextToken();*/
-						mot=normalize(mot);
-						if (table.containsKey(mot))
+					
+					if(!((text[1].substring(0, 3).equals("DET"))||(text[1].substring(0, 3).equals("PRP"))||(text[1].substring(0, 3).equals("PUN")))){
+						
+						/*st = new StringTokenizer(ligne, "\t");
+						while(st.hasMoreTokens())
 						{
-							nbOcc = table.get(mot).intValue();
-							nbOcc++;
-						}
-						else  {
-							nbOcc = 1;
-						}
-						table.put(mot, new Integer(nbOcc));
-						//talb.put(mot, f.getName());
-
-						if(talb.containsKey(mot)){
-							if(talb.get(mot).contains(id.get(f.getName()))==false ){
-								talb.get(mot).add(id.get(f.getName()));
+							st.nextToken();
+							st.nextToken();
+							mot = st.nextToken();*/
+							mot=normalize(mot);
+							
+							
+							
+							if (table.containsKey(mot))
+							{
+								nbOcc = table.get(mot).intValue();
+								nbOcc++;
 							}
+							else  {
+								nbOcc = 1;
+							}
+							table.put(mot, new Integer(nbOcc));
+							//talb.put(mot, f.getName());
 
-						}
-						else{
-							listId=new ArrayList<Integer>();
-							listId.add(id.get(f.getName()));
-							talb.put(mot, listId);
-						}
+							if(talb.containsKey(mot)){
+								if(talb.get(mot).contains(id.get(f.getName()))==false ){
+									talb.get(mot).add(id.get(f.getName()));
+								}
+
+							}
+							else{
+								listId=new ArrayList<Integer>();
+								listId.add(id.get(f.getName()));
+								talb.put(mot, listId);
+							}
+					}
+					else{
+						nbOcc=-1;
+						table.put(mot, new Integer(nbOcc));
+						listId=new ArrayList<Integer>();
+						listId.add(id.get(f.getName()));
+						talb.put(mot, listId);
+					}
+					
+					
+					
 					//}
 				}
 
@@ -107,8 +125,6 @@ public class termTooFrequent {
 		for(int i=0;i<table2.size();i++){
 			 String key = table2.get(i).getKey();
 			 int value = table.get(key);
-			 
-			//System.out.println("Mot : " + key + " | Nombre d'occurences (corpus) : " + table.get(key) + " | Source : " + talb.get(key));
 			temp= new HashMap<Integer, ArrayList<Integer>>();
 			temp.put(table.get(key), talb.get(key));
 			result.put(key, temp);
@@ -139,6 +155,8 @@ public class termTooFrequent {
 	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc, Hashtable<String, HashMap<Integer, ArrayList<Integer>>> frequence){
 		ArrayList<String> termeFrequent=new ArrayList<String>();
 		
+		
+		
 		Set keys=frequence.keySet();	
 		String key;
 		HashMap<Integer, ArrayList<Integer>> temp;
@@ -147,11 +165,13 @@ public class termTooFrequent {
 		while (iter.hasNext()) {
 		    key=iter.next().toString();
 		    temp= frequence.get(key);
-		    if((temp.keySet().iterator().next()>= thresholdCorpus)||(temp.get(temp.keySet().iterator().next()).size()>=thresholdNbDoc)){
+		    if(temp.keySet().contains(-1)){
+		    	termeFrequent.add(key);
+		    }
+		    else if((temp.keySet().iterator().next()>= thresholdCorpus)||(temp.get(temp.keySet().iterator().next()).size()>=thresholdNbDoc)){
 		    	termeFrequent.add(key);
 		    }
 		}
-		
 		return termeFrequent;
 	}
 	
