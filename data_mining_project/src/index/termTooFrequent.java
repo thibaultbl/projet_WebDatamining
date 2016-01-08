@@ -162,7 +162,6 @@ public class termTooFrequent {
 		//on aprcourt tous les noeuds terminaux
 		for(int i=0; i<index.getDebutTerme().size();i++){
 			temp=index.getDebutTerme().get(i);
-			
 		}
 		
 		return result;

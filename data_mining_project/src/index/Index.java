@@ -21,16 +21,19 @@ public class Index {
 	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
 
 	public Index(String path) throws IOException {
-		debutTerme=this.InitialiserIndex(path);
+		termTooFrequent frequent=new termTooFrequent(path, 1200, 100 );
+		
+		debutTerme=this.InitialiserIndex(path, frequent);
+		
+		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
+			this.deleteTerm(frequent.getFrequentTerm().get(i));
+		}*/
+		
 		//on supprime les termes trop fréquents de l'index
 		/**
 		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
 		 */
 
-		termTooFrequent frequent=new termTooFrequent(path, 1200, 100 );
-		for(int i=0; i<frequent.getFrequentTerm().size();i++){
-			this.deleteTerm(frequent.getFrequentTerm().get(i));
-		}
 	}
 
 	@Override
@@ -56,8 +59,9 @@ public class Index {
 	 * Pour initialiser l'arbre d'index
 	 * @throws IOException
 	 */
-	public static ArrayList<Noeud> InitialiserIndex(String path) throws IOException {
+	public static ArrayList<Noeud> InitialiserIndex(String path, termTooFrequent frequent) throws IOException {
 		ArrayList<Noeud> result=new ArrayList<Noeud>();
+	
 		char[] decomposition;
 		int trouve;
 		int j;
@@ -91,74 +95,78 @@ public class Index {
 
 					//on le normalise à nouveau (étape inutile si la lématisation à été faite correctement)
 					mot=normalize(mot);		
+					
+					if(!frequent.getFrequentTerm().contains(mot)){
+						//on décompose le mot
+						decomposition=mot.toCharArray();
 
-					//on décompose le mot
-					decomposition=mot.toCharArray();
-
-					//on regarde si le noeud correspondant à la première lettre du mot existe déja
-					if(decomposition.length>0){
-
-						trouve=-1;
-						for(int i=0;i<result.size();i++){
-							if(result.get(i).getLettre()==decomposition[0]){
-								trouve=i;
-							}
-						}
-						//Si il n'existe pas on le crée
-						if(trouve ==-1){
-							result.add(new NoeudNonTerminal(decomposition[0], null));
-							trouve=result.size()-1;
-						}
-						j=1;
-						temp=result.get(trouve);
-						//jusqu'à la fin du mot
-						while(j<decomposition.length){
+						//on regarde si le noeud correspondant à la première lettre du mot existe déja
+						if(decomposition.length>0){
 
 							trouve=-1;
-							if(temp.getNoeudsFils()!=null){
-								for(int i=0;i<temp.getNoeudsFils().size();i++){
-									if(temp.getNoeudsFils().get(i).getLettre()==decomposition[j]){
-										trouve=i;
-									}
+							for(int i=0;i<result.size();i++){
+								if(result.get(i).getLettre()==decomposition[0]){
+									trouve=i;
 								}
 							}
 							//Si il n'existe pas on le crée
 							if(trouve ==-1){
-								temp.getNoeudsFils().add(new NoeudNonTerminal(decomposition[j], temp));
+								result.add(new NoeudNonTerminal(decomposition[0], null));
+								trouve=result.size()-1;
+							}
+							j=1;
+							temp=result.get(trouve);
+							//jusqu'à la fin du mot
+							while(j<decomposition.length){
+
+								trouve=-1;
+								if(temp.getNoeudsFils()!=null){
+									for(int i=0;i<temp.getNoeudsFils().size();i++){
+										if(temp.getNoeudsFils().get(i).getLettre()==decomposition[j]){
+											trouve=i;
+										}
+									}
+								}
+								//Si il n'existe pas on le crée
+								if(trouve ==-1){
+									temp.getNoeudsFils().add(new NoeudNonTerminal(decomposition[j], temp));
+									trouve=temp.getNoeudsFils().size()-1;
+								}
+								temp=temp.getNoeudsFils().get(trouve);
+								j++;
+							}
+
+							//On crée le noeud terminal
+							trouve=-1;
+							for(int i=0; i<temp.getNoeudsFils().size();i++){
+								if(temp.getNoeudsFils().get(i) instanceof NoeudTerminal){
+									trouve=i;
+								}
+							}
+
+							if(trouve==-1){
+								temp.getNoeudsFils().add(new NoeudTerminal(temp));
 								trouve=temp.getNoeudsFils().size()-1;
+								temp=temp.getNoeudsFils().get(trouve);
+
 							}
-							temp=temp.getNoeudsFils().get(trouve);
-							j++;
-						}
-
-						//On crée le noeud terminal
-						trouve=-1;
-						for(int i=0; i<temp.getNoeudsFils().size();i++){
-							if(temp.getNoeudsFils().get(i) instanceof NoeudTerminal){
-								trouve=i;
+							else{
+								temp=temp.getNoeudsFils().get(trouve);
 							}
-						}
-
-						if(trouve==-1){
-							temp.getNoeudsFils().add(new NoeudTerminal(temp));
-							trouve=temp.getNoeudsFils().size()-1;
-							temp=temp.getNoeudsFils().get(trouve);
-
-						}
-						else{
-							temp=temp.getNoeudsFils().get(trouve);
-						}
-						//On modifie les éléemnts ud noeud terminal
-						((NoeudTerminal)temp).setFrequenceCorpus((((NoeudTerminal)temp).getFrequenceCorpus())+1);
-						if(((NoeudTerminal)temp).getIndexPositions().containsKey(id.get(f.getName()))){
-							((NoeudTerminal)temp).getIndexPositions().get(id.get(f.getName())).add(Integer.valueOf(positionLigne));
-						}
-						else{
-							tempPosition=new ArrayList<Integer>();
-							tempPosition.add(positionLigne);
-							((NoeudTerminal)temp).getIndexPositions().put(id.get(f.getName()),tempPosition);
+							//On modifie les éléemnts ud noeud terminal
+							((NoeudTerminal)temp).setFrequenceCorpus((((NoeudTerminal)temp).getFrequenceCorpus())+1);
+							if(((NoeudTerminal)temp).getIndexPositions().containsKey(id.get(f.getName()))){
+								((NoeudTerminal)temp).getIndexPositions().get(id.get(f.getName())).add(Integer.valueOf(positionLigne));
+							}
+							else{
+								tempPosition=new ArrayList<Integer>();
+								tempPosition.add(positionLigne);
+								((NoeudTerminal)temp).getIndexPositions().put(id.get(f.getName()),tempPosition);
+							}
 						}
 					}
+
+					
 				}
 			}
 			sizeFile.put(id.get(f.getName()), positionLigne);
