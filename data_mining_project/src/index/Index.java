@@ -253,6 +253,7 @@ public class Index {
 		}
 
 		if(trouve !=-1){
+
 			temp=this.getDebutTerme().get(trouve);
 			for(int i=1;i<arrayChar.length;i++){
 				trouve=-1;
@@ -271,7 +272,14 @@ public class Index {
 					trouve=k;
 				}
 			}
-			temp=temp.getNoeudsFils().get(trouve);
+			 try
+			 {
+				temp=temp.getNoeudsFils().get(trouve);
+			}
+			 catch(IndexOutOfBoundsException e){
+				 JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
+		                    JOptionPane.ERROR_MESSAGE);
+			 }
 		}
 		else{
 			System.out.println("le terme "+terme+" n'est pas dans l'index");
