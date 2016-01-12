@@ -32,7 +32,9 @@ public class Main {
 		String requete=JOptionPane.showInputDialog ("Rentrez votre requête ici");
 		//"avocat syndicat"
 
+		//on récupére les valeurs des documents suite à la requête
 		HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
+		//on calcule la valeur moyenne des termes recherhcés dans l'ednsemble du corpus
 		ArrayList<Double> idfMoy=search.idfMoy(testSearch);
 		
 		//printMap(testSearch);
@@ -55,6 +57,11 @@ public class Main {
 	        it.remove(); // avoids a ConcurrentModificationException
 	    }
 	    return str;
+	}
+	
+	public void comparaisonVecteur(HashMap<Integer, ArrayList<Double>> docValue, ArrayList<Double> termeMeanValue){
+		
+		
 	}
 	
 	

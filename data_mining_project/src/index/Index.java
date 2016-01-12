@@ -19,7 +19,9 @@ import noeuds.NoeudTerminal;
 import com.google.common.collect.HashBiMap;
 
 public class Index {
+	//liste des noeus initiaux (correspondant à la première lettre de chaque terme présent dans l'index)
 	private ArrayList<Noeud> debutTerme;
+	//liste contenant la taille de chaque fichier
 	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
 
 	public Index(String path) throws IOException {
