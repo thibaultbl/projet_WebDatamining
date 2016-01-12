@@ -34,7 +34,7 @@ public class Main {
 
 		//on récupére les valeurs des documents suite à la requête
 		HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
-		//on calcule la valeur moyenne des termes recherhcés dans l'ednsemble du corpus
+		//on calcule la valeur moyenne des termes recherchés dans l'ednsemble du corpus
 		ArrayList<Double> idfMoy=search.idfMoy(testSearch);
 		
 		//printMap(testSearch);

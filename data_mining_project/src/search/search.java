@@ -5,6 +5,7 @@ import index.Index;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Map;
 import java.util.NoSuchElementException;
@@ -16,11 +17,20 @@ import noeuds.NoeudTerminal;
 
 public abstract class search {
 
+	/**
+	 * Retourne le tf-idf par documents et par terme recherché
+	 * @param index
+	 * @param terme
+	 * @param path
+	 * @return
+	 */
 	public static HashMap<Integer, ArrayList<Double>> searchTerm(Index index, String terme, String path){
 		HashMap<Integer, ArrayList<Double>> idf=new HashMap<Integer, ArrayList<Double>>();
 		ArrayList<Double> idf_value;
+		
 		//nombre total de documents
 		int n=Index.identifiantFichier(new File(path)).size() ;
+		
 		String text[]= terme.split(" ");
 		NoeudTerminal temp;
 		ArrayList<NoeudTerminal> list=new  ArrayList<NoeudTerminal>();
@@ -36,9 +46,11 @@ public abstract class search {
 		}
 
 		if(list.size()>0){
-			Set<Integer> keys=list.get(0).getIndexPositions().keySet();
+			Set<Integer> keys=new HashSet<Integer>();
+			keys.addAll(list.get(0).getIndexPositions().keySet());
 			for(int i=1;i<list.size();i++){
-				keys.retainAll(list.get(i).getIndexPositions().keySet());
+				keys.addAll(list.get(i).getIndexPositions().keySet());
+				//keys.retainAll(list.get(i).getIndexPositions().keySet());
 			}
 			//pour chaque documents contenant tous les termes
 
@@ -47,7 +59,12 @@ public abstract class search {
 				idf_value=new ArrayList<Double>();
 				//pour chaque termes de la requête
 				for(int j=0;j<list.size();j++){
-					idf_value.add(((list.get(j).getIndexPositions().get(f).size())/Math.log10(Index.getSizeFile().get(f)))*Math.log10(n/list.get(j).getIndexPositions().size()));
+					if(list.get(j).getIndexPositions().get(f)==null){
+						idf_value.add((double)0);
+					}
+					else{
+						idf_value.add(((list.get(j).getIndexPositions().get(f).size())/Math.log10(Index.getSizeFile().get(f)))*Math.log10(n/list.get(j).getIndexPositions().size()));
+					}
 					//idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
 				}
 				idf.put(f, idf_value);
@@ -56,49 +73,12 @@ public abstract class search {
 		return idf;
 	}
 	
-	public static HashMap<Integer, Double> searchTermNear(Index index, String terme, String path, int position){
-		HashMap<Integer, Double> idf=new HashMap<Integer, Double>();
-		double idf_value;
-		//nombre total de documents
-		int n=Index.identifiantFichier(new File(path)).size() ;
-		String text[]= terme.split(" ");
-		NoeudTerminal temp;
-		ArrayList<NoeudTerminal> list=new  ArrayList<NoeudTerminal>();
-		//on récupére tous les noeuds terminaux liés à chacun des termes présent dans la requêtes
-		for(int i=0;i<text.length;i++){
-			temp=(NoeudTerminal)index.getNoeudTerminal(text[i]);
-			if(temp != null){
-				list.add(temp);
-			}
-			else{
-				System.out.println("le terme "+text[i]+" n'est pas dans l'index");
-			}
-		}
-
-		if(list.size()>0){
-			Set<Integer> keys=list.get(0).getIndexPositions().keySet();
-			for(int i=1;i<list.size();i++){
-				keys.retainAll(list.get(i).getIndexPositions().keySet());
-			}
-			//pour chaque documents contenant tous les termes
-			
-			// 1 - on ne garde que les documents ayant les termes rapprochés de X position
-			
-
-			// 2 - On calcule les indices idf
-			for (Iterator<Integer> it = keys.iterator(); it.hasNext(); ) {
-				Integer f = it.next();
-				idf_value=0;
-				//pour chaque termes de la requête
-				for(int j=0;j<list.size();j++){
-					idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
-				}
-				idf.put(f, idf_value);
-			}
-		}
-		return idf;
-	}
 	
+	/**
+	 * Calcule et renvoi le tf-idf moyen 
+	 * @param searchTermResult
+	 * @return
+	 */
 	public static ArrayList<Double> idfMoy(HashMap<Integer, ArrayList<Double>> searchTermResult)  {
 		ArrayList<Double> result = new ArrayList<Double>();
 		int k=1;
