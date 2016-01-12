@@ -25,11 +25,11 @@ public class Index {
 	public Index(String path) throws IOException {
 		termTooFrequent frequent=new termTooFrequent(path, 1200, 100);
 		debutTerme=this.InitialiserIndex(path, frequent);
-		
+
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
 			this.deleteTerm(frequent.getFrequentTerm().get(i));
 		}*/
-		
+
 		//on supprime les termes trop fréquents de l'index
 		/**
 		 * Possibilité d'ajouter des termes directement ici : déterminants, ...
@@ -42,6 +42,11 @@ public class Index {
 	}
 
 
+	/**
+	 * Function qui associe un id à un nom de fichier
+	 * @param folder
+	 * @return
+	 */
 	public static HashBiMap<String, Integer> identifiantFichier(File folder) {
 		// Va lister tous les fichiers dans le répertoire et leur attribue un ID
 		HashBiMap<String, Integer> id = HashBiMap.create(folder.list().length);
@@ -61,7 +66,7 @@ public class Index {
 	 */
 	public static ArrayList<Noeud> InitialiserIndex(String path, termTooFrequent frequent) throws IOException {
 		ArrayList<Noeud> result=new ArrayList<Noeud>();
-	
+
 		char[] decomposition;
 		int trouve;
 		int j;
@@ -95,7 +100,7 @@ public class Index {
 
 					//on le normalise à nouveau (étape inutile si la lématisation à été faite correctement)
 					mot=normalize(mot);		
-					
+
 					if(!frequent.getFrequentTerm().contains(mot)){
 						//on décompose le mot
 						decomposition=mot.toCharArray();
@@ -166,7 +171,7 @@ public class Index {
 						}
 					}
 
-					
+
 				}
 			}
 			sizeFile.put(id.get(f.getName()), positionLigne);
@@ -179,7 +184,6 @@ public class Index {
 	 * Pour supprimer un terme dans l'index
 	 * @param mot
 	 */
-
 	public void deleteTerm(String mot){
 		//1 - on se place dans le noeud terminal correspondant au terme
 		Noeud temp=this.getNoeudTerminal(mot);
@@ -217,7 +221,11 @@ public class Index {
 
 
 
-
+	/**
+	 * Function to normalize a string (delete punctuation and change in lower case)
+	 * @param string
+	 * @return
+	 */
 	public static String normalize(String string){
 		string=string.toLowerCase();
 		string = Normalizer.normalize(string, Normalizer.Form.NFD);
@@ -235,6 +243,11 @@ public class Index {
 		this.debutTerme = debutTerme;
 	}
 
+	/**
+	 * Function to return the terminal node for a particular string
+	 * @param terme
+	 * @return
+	 */
 	public NoeudTerminal getNoeudTerminal(String terme){
 		Noeud temp=null;
 
@@ -272,14 +285,14 @@ public class Index {
 					trouve=k;
 				}
 			}
-			 try
-			 {
+			try
+			{
 				temp=temp.getNoeudsFils().get(trouve);
 			}
-			 catch(IndexOutOfBoundsException e){
-				 JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
-		                    JOptionPane.ERROR_MESSAGE);
-			 }
+			catch(IndexOutOfBoundsException e){
+				JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
+						JOptionPane.ERROR_MESSAGE);
+			}
 		}
 		else{
 			System.out.println("le terme "+terme+" n'est pas dans l'index");
@@ -289,13 +302,13 @@ public class Index {
 		}
 		catch(ClassCastException e){
 			JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
-                    JOptionPane.ERROR_MESSAGE);
+					JOptionPane.ERROR_MESSAGE);
 		}
 		return null;
 
 	}
-	
-	
+
+
 	public static HashMap<Integer, Integer> getSizeFile() {
 		return sizeFile;
 	}
