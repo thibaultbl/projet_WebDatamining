@@ -7,12 +7,12 @@ public class NoeudTerminal extends Noeud{
 	//Hashmap contenant l'ensemble des documents (id) contenant le terme avec l'index des positions
 	
 	private HashMap<Integer, ArrayList<Integer>> indexPositions;
-	private String terme;
+	//private String terme;
 	private int frequenceCorpus;
 	
 	public NoeudTerminal(Noeud noeudPere) {
 		super(noeudPere);
-		this.terme = this.recupererTerme();
+		//this.terme = this.recupererTerme();
 		this.frequenceCorpus=0;
 		indexPositions=new HashMap<Integer, ArrayList<Integer>>();
 	}
@@ -36,7 +36,7 @@ public class NoeudTerminal extends Noeud{
 	}
 	
 	public String getTerme() {
-		return terme;
+		return this.recupererTerme();
 	}
 	
 	// calcule l'index des positions
