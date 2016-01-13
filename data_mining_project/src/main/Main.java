@@ -2,6 +2,7 @@ package main;
 
 import index.Index;
 
+import java.awt.Color;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
@@ -12,9 +13,9 @@ import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
-import com.google.common.collect.HashBiMap;
-
 import search.search;
+
+import com.google.common.collect.HashBiMap;
 
 public class Main {
 
@@ -37,14 +38,16 @@ public class Main {
 		//on calcule la valeur moyenne des termes recherchés dans l'ednsemble du corpus
 		//ArrayList<Double> idfMoy=search.idfMoy(testSearch);
 		ArrayList<Double> idfMoy=search.idfRequest(index, requete, path, testSearch);
+		HashMap<Double, Integer> docSimilarity=search.computeSimilarity(testSearch, idfMoy);
+		System.out.println(docSimilarity);
+		String orderedList=search.displayOrderedFile(docSimilarity, new File(path));
 		
 		//printMap(testSearch);
 		final JFrame frame = new JFrame();
 
 		// Release the window and quit the application when it has been closed
 		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		System.out.println(testSearch);
-		JOptionPane.showMessageDialog(frame, printMap(testSearch, id, idfMoy));
+		JOptionPane.showMessageDialog(frame, orderedList);
 	}
 	
 	public static String printMap(Map mp, HashBiMap<String, Integer> id, ArrayList<Double> idfMoy) {
@@ -59,12 +62,7 @@ public class Main {
 	    }
 	    return str;
 	}
-	
-	public void comparaisonVecteur(HashMap<Integer, ArrayList<Double>> docValue, ArrayList<Double> termeMeanValue){
 		
-		
-	}
-	
 	
 
 }

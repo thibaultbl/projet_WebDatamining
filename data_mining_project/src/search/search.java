@@ -5,6 +5,7 @@ import index.Index;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -13,8 +14,11 @@ import java.util.Map;
 import java.util.NoSuchElementException;
 import java.util.Set;
 import java.util.SortedSet;
+import java.util.TreeSet;
 
 import javax.swing.JOptionPane;
+
+import com.google.common.collect.HashBiMap;
 
 import noeuds.NoeudTerminal;
 
@@ -198,6 +202,56 @@ public abstract class search {
 		return occurences;
 	}
 	
+	/**
+	 * Pour comaprer les vecteurs des documents avec le vecteur de la requête
+	 * @param testSearch => vecteur des tf-idf des documetns
+	 * @param idfMoy => vecteur des tf-idf de la requête
+	 * @return une HashMap<Valeur de la similarité, ID document>
+	 */
+	public static HashMap<Double, Integer> computeSimilarity(HashMap<Integer, ArrayList<Double>> testSearch, ArrayList<Double> idfMoy){
+		double somme;
+		double q;
+		double n;
+		//l'objet à retourner
+		HashMap<Double, Integer> result=new HashMap<Double, Integer>();
+		
+		// on parcours la HashMap
+		Set cles = testSearch.keySet();
+		Iterator<Integer> it = cles.iterator();
+		while (it.hasNext()){
+		   Integer cle = it.next(); 
+		   ArrayList<Double> valeur = testSearch.get(cle); 
+		   // on compare le vecteur de chaque fichier avec le vecteur de la requête
+		   somme=0;
+		   q=0;
+		   n=0;
+		   for(int i=0;i<valeur.size();i++){
+			   somme=somme+valeur.get(i)*idfMoy.get(i);
+			   q=q+Math.pow(valeur.get(i), 2);
+			   n=n+Math.pow(idfMoy.get(i), 2);
+		   }
+		   q=Math.sqrt(q);
+		   n=Math.sqrt(n);
+		   result.put((somme/(q*n)), cle);
+		   
+		}
+		return result;
+	}
+	
+	/**
+	 * Pour afficher les résultats du plus similaire au moins similaire
+	 */
+	public static String displayOrderedFile(HashMap<Double, Integer> listFileValue, File path){
+		HashBiMap<String, Integer> id=Index.identifiantFichier(path);
+		String str="";
+		SortedSet<Double> keys=new TreeSet<Double>(Collections.reverseOrder());
+		keys = (new TreeSet<Double>(listFileValue.keySet())).descendingSet();
+		for (Double key : keys) { 
+		   Integer value = listFileValue.get(key);
+		   str=str+"Fichier : "+id.inverse().get(value)+" ( id : "+value+" )"+" indice de similarité : "+key+"\n";
+		}
+		return str;
+	}
 	
 	
 }
