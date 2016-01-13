@@ -47,6 +47,7 @@ public class termTooFrequent {
 
 
 		File file = new File(path);
+
 		HashBiMap<String, Integer> id = Index.identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
 

@@ -4,12 +4,13 @@ import java.util.ArrayList;
 
 
 public abstract class Noeud {
-	
+	private static int nbNoeud=0;
 	private Noeud noeudPere;
 	protected ArrayList<Noeud> noeudsFils;
 	
 	public Noeud(Noeud noeudPere) {
 		super();
+		nbNoeud++;
 		this.noeudPere = noeudPere;
 		this.noeudsFils=new ArrayList<Noeud>();
 	}
@@ -24,6 +25,9 @@ public abstract class Noeud {
 		return noeudsFils;
 	}
 	
+	public static int getNbNoeud() {
+		return nbNoeud;
+	}
 	
 
 }

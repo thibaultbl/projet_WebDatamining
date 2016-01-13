@@ -25,7 +25,8 @@ public class Index {
 	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
 
 	public Index(String path) throws IOException {
-		termTooFrequent frequent=new termTooFrequent(path, 1200, 100);
+		termTooFrequent frequent=new termTooFrequent(path, 1000000000, 100000000);
+		
 		debutTerme=this.InitialiserIndex(path, frequent);
 
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
@@ -55,7 +56,7 @@ public class Index {
 		int i = 1;
 		for (final File entry : folder.listFiles()) {
 			if (entry.isDirectory()==false) {
-				id.put(entry.getName(), i );
+				id.put(entry.getName(), entry.getName().hashCode() );
 				i++;
 			}
 		}

@@ -18,9 +18,9 @@ import java.util.TreeSet;
 
 import javax.swing.JOptionPane;
 
-import com.google.common.collect.HashBiMap;
-
 import noeuds.NoeudTerminal;
+
+import com.google.common.collect.HashBiMap;
 
 public abstract class search {
 
@@ -75,7 +75,7 @@ public abstract class search {
 						idf_value.add((double)0);
 					}
 					else{
-						idf_value.add(((list.get(j).getIndexPositions().get(f).size())/Math.log10(Index.getSizeFile().get(f)))*Math.log10(n/list.get(j).getIndexPositions().size()));
+						idf_value.add(((list.get(j).getIndexPositions().get(f).size())/Math.sqrt(Index.getSizeFile().get(f)))*Math.log10(n/list.get(j).getIndexPositions().size()));
 					}
 					//idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
 				}
@@ -233,7 +233,9 @@ public abstract class search {
 		
 
 		for(int i=0;i<list.size();i++){
-			idf_value.add(((nbOccurenceTerm.get(list.get(i).getTerme()))/Math.log10(requestSize))*Math.log10(n/list.get(i).getIndexPositions().size()));
+			idf_value.add(((nbOccurenceTerm.get(list.get(i).getTerme()))/Math.sqrt(requestSize))*Math.log10(n/list.get(i).getIndexPositions().size()));
+			System.out.println(nbOccurenceTerm.get(list.get(i).getTerme()));
+			System.out.println();
 		}
 
 	
@@ -286,7 +288,10 @@ public abstract class search {
 		double q;
 		double n;
 		//l'objet à retourner
-		HashMap<Double, Integer> result=new HashMap<Double, Integer>();
+		
+		HashBiMap<Double, Integer> result=HashBiMap.create(testSearch.size());
+		HashMap<Double, Integer> resultFinal=new HashMap<Double, Integer>();
+		//ArrayList<Integer> nomFichier=new ArrayList<Integer>();
 		
 		// on parcours la HashMap
 		Set cles = testSearch.keySet();
@@ -294,21 +299,30 @@ public abstract class search {
 		while (it.hasNext()){
 		   Integer cle = it.next(); 
 		   ArrayList<Double> valeur = testSearch.get(cle); 
-		   // on compare le vecteur de chaque fichier avec le vecteur de la requête
-		   somme=0;
-		   q=0;
-		   n=0;
-		   for(int i=0;i<valeur.size();i++){
-			   somme=somme+valeur.get(i)*idfMoy.get(i);
-			   q=q+Math.pow(valeur.get(i), 2);
-			   n=n+Math.pow(idfMoy.get(i), 2);
+		   if(idfMoy.size()<=1){
+			  // nomFichier.add(cle);
+			   result.put(valeur.get(0), cle);
 		   }
-		   q=Math.sqrt(q);
-		   n=Math.sqrt(n);
-		   result.put((somme/(q*n)), cle);
-		   
+		   else {
+			   // on compare le vecteur de chaque fichier avec le vecteur de la requête
+			   somme=0;
+			   q=0;
+			   n=0;
+			   for(int i=0;i<valeur.size();i++){
+				   somme=somme+valeur.get(i)*idfMoy.get(i);
+				   q=q+Math.pow(valeur.get(i), 2);
+				   n=n+Math.pow(idfMoy.get(i), 2);
+			   }
+			   q=Math.sqrt(q);
+			   n=Math.sqrt(n);
+			   
+			   result.put((somme/(q*n)), cle);
+			   
+		   }
+		  
 		}
-		return result;
+		resultFinal.putAll(result);
+		return resultFinal;
 	}
 	
 	/**

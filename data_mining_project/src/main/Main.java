@@ -13,6 +13,9 @@ import java.util.Map;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 
+import noeuds.Noeud;
+import noeuds.NoeudTerminal;
+
 import search.search;
 
 import com.google.common.collect.HashBiMap;
@@ -25,7 +28,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		
-		String path="Doc/lemmatisation";
+		String path="Doc/lemmatisation_full";
 		Index index=new Index(path);
 		HashBiMap<String, Integer> id=index.identifiantFichier(new File(path));
 		//System.out.println(id);
@@ -39,9 +42,17 @@ public class Main {
 		//ArrayList<Double> idfMoy=search.idfMoy(testSearch);
 		ArrayList<Double> idfMoy=search.idfRequest(index, requete, path, testSearch);
 		HashMap<Double, Integer> docSimilarity=search.computeSimilarity(testSearch, idfMoy);
-		System.out.println(docSimilarity);
+	//	System.out.println(docSimilarity);
 		String orderedList=search.displayOrderedFile(docSimilarity, new File(path));
 		
+		System.out.println(testSearch);
+		//System.out.println(idfMoy);
+	//	System.out.println(docSimilarity);
+		
+		System.out.println("Noeud.getNbNoeud() : "+Noeud.getNbNoeud());
+		System.out.println("Noeud.getNbNoeudTerminaux() : "+NoeudTerminal.getNbNoeudTerminaux());
+
+
 		//printMap(testSearch);
 		final JFrame frame = new JFrame();
 

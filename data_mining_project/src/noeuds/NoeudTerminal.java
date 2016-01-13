@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class NoeudTerminal extends Noeud{
+	
+	//varaible contenant le nombre de noeuds terminaux crées
+	private static int nbNoeudTerminaux=0;
+	
 	//Hashmap contenant l'ensemble des documents (id) contenant le terme avec l'index des positions
 	
 	private HashMap<Integer, ArrayList<Integer>> indexPositions;
@@ -12,6 +16,7 @@ public class NoeudTerminal extends Noeud{
 	
 	public NoeudTerminal(Noeud noeudPere) {
 		super(noeudPere);
+		this.nbNoeudTerminaux++;
 		//this.terme = this.recupererTerme();
 		this.frequenceCorpus=0;
 		indexPositions=new HashMap<Integer, ArrayList<Integer>>();
@@ -59,6 +64,9 @@ public class NoeudTerminal extends Noeud{
 	public void setFrequenceCorpus(int frequenceCorpus) {
 		this.frequenceCorpus = frequenceCorpus;
 	}
-	
+
+	public static int getNbNoeudTerminaux() {
+		return nbNoeudTerminaux;
+	}
 	
 }
