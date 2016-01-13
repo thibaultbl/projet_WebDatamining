@@ -66,7 +66,7 @@ public class termTooFrequent {
 					String text[]= ligne.split("\t");
 					mot=text[2];
 					
-					if(!((text[1].substring(0, 3).equals("DET"))||(text[1].substring(0, 3).equals("PRP"))||(text[1].substring(0, 3).equals("PUN")))){
+					if(!((text[1].substring(0, 3).equals("DET"))||(text[1].substring(0, 3).equals("PRP"))||(text[1].substring(0, 3).equals("PUN"))||(text[1].substring(0, 3).equals("PRO"))||(text[1].substring(0, 3).equals("SEN")))){
 						
 						/*st = new StringTokenizer(ligne, "\t");
 						while(st.hasMoreTokens())

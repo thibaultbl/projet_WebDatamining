@@ -292,18 +292,18 @@ public class Index {
 				temp=temp.getNoeudsFils().get(trouve);
 			}
 			catch(IndexOutOfBoundsException e){
-				JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
+				JOptionPane.showMessageDialog(null, "Le terme \""+terme +"\" n'est pas dans l'index", "Le terme \""+terme +"\" n'est pas dans l'index",
 						JOptionPane.ERROR_MESSAGE);
 			}
 		}
 		else{
-			System.out.println("le terme "+terme+" n'est pas dans l'index");
+			System.out.println("Le terme \""+terme +"\" n'est pas dans l'index");
 		}
 		try{
 			return (NoeudTerminal)temp;
 		}
 		catch(ClassCastException e){
-			JOptionPane.showMessageDialog(null, "Le terme recherché n'est pas dans l'index", "Le terme recherché n'est pas dans l'index",
+			JOptionPane.showMessageDialog(null, "Le terme \""+terme +"\" n'est pas dans l'index", "Le terme \""+terme +"\" n'est pas dans l'index",
 					JOptionPane.ERROR_MESSAGE);
 		}
 		return null;
