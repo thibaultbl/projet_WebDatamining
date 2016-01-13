@@ -84,6 +84,79 @@ public abstract class search {
 		}
 		return idf;
 	}
+	
+	public static HashMap<Integer, Double> searchTermNear(Index index, String terme, String path, int position){
+		HashMap<Integer, Double> idf=new HashMap<Integer, Double>();
+		double idf_value;
+		//nombre total de documents
+		int n=Index.identifiantFichier(new File(path)).size() ;
+		String text[]= terme.split(" ");
+		NoeudTerminal temp;
+		ArrayList<NoeudTerminal> list=new  ArrayList<NoeudTerminal>();
+		//on récupére tous les noeuds terminaux liés à chacun des termes présent dans la requêtes
+		for(int i=0;i<text.length;i++){
+			temp=(NoeudTerminal)index.getNoeudTerminal(text[i]);
+			if(temp != null){
+				list.add(temp);
+			}
+			else{
+				System.out.println("le terme "+text[i]+" n'est pas dans l'index");
+			}
+		}
+
+		if(list.size()>0){
+			Set<Integer> keys=list.get(0).getIndexPositions().keySet();
+			for(int i=1;i<list.size();i++){
+				keys.retainAll(list.get(i).getIndexPositions().keySet());
+			}
+			//pour chaque documents contenant tous les termes
+			
+			// 1 - on ne garde que les documents ayant les termes rapprochés de X position
+			int DIFMAX = 5;
+			int difMax;
+			int dif;
+			// pour chaque document
+			for (Iterator<Integer> it = keys.iterator(); it.hasNext(); ) {
+				difMax=999999;
+				Integer f = it.next();
+				// on regarde dans tous les noeuds terminaux si il y au moins une différence inférieure à X
+				for(int i=0;i<list.size();i++){
+					// pour chaque occurence du mot on compare la différence avec les occurences des autres mots
+					for(int j=0;j<list.get(i).getIndexPositions().get(f).size();j++){
+						// on parcourt chaque position de chaque noeud terminal autre
+						for(int k=0;k<list.size();k++){
+							if(k!=i){
+								for(int l=0;l<list.get(k).getIndexPositions().get(f).size();l++){
+									dif=Math.abs(list.get(i).getIndexPositions().get(f).get(j)-list.get(k).getIndexPositions().get(f).get(l));
+									if(dif<difMax){
+										difMax=dif;
+									}
+								}
+							}
+						}
+					}
+				}
+				
+				// si la différence minimale trouvée est supérieure à X alors on retire le document
+				if(difMax>DIFMAX){
+					keys.remove(f);
+				}
+			}
+			
+
+			// 2 - On calcule les indices idf
+			for (Iterator<Integer> it = keys.iterator(); it.hasNext(); ) {
+				Integer f = it.next();
+				idf_value=0;
+				//pour chaque termes de la requête
+				for(int j=0;j<list.size();j++){
+					idf_value=idf_value+(list.get(j).getIndexPositions().get(f).size())*Math.log10(n/list.get(j).getIndexPositions().size());
+				}
+				idf.put(f, idf_value);
+			}
+		}
+		return idf;
+	}
 
 
 	/**
