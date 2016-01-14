@@ -32,33 +32,34 @@ public class Main {
 		Index index=new Index(path);
 		HashBiMap<String, Integer> id=index.identifiantFichier(new File(path));
 		//System.out.println(id);
-		
-		String requete=JOptionPane.showInputDialog ("Rentrez votre requête ici");
-		//"avocat syndicat"
-
-		//on récupére les valeurs des documents suite à la requête
-		HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
-		//on calcule la valeur moyenne des termes recherchés dans l'ednsemble du corpus
-		//ArrayList<Double> idfMoy=search.idfMoy(testSearch);
-		ArrayList<Double> idfMoy=search.idfRequest(index, requete, path, testSearch);
-		HashMap<Double, Integer> docSimilarity=search.computeSimilarity(testSearch, idfMoy);
-	//	System.out.println(docSimilarity);
-		String orderedList=search.displayOrderedFile(docSimilarity, new File(path));
-		
-		System.out.println(testSearch);
-		//System.out.println(idfMoy);
-	//	System.out.println(docSimilarity);
-		
 		System.out.println("Noeud.getNbNoeud() : "+Noeud.getNbNoeud());
 		System.out.println("Noeud.getNbNoeudTerminaux() : "+NoeudTerminal.getNbNoeudTerminaux());
+		
+		while(1<2){
+			String requete=JOptionPane.showInputDialog ("Rentrez votre requête ici");
+			//"avocat syndicat"
+
+			//on récupére les valeurs des documents suite à la requête
+			HashMap<Integer, ArrayList<Double>> testSearch=search.searchTerm(index, requete, path);
+			//on calcule la valeur moyenne des termes recherchés dans l'ednsemble du corpus
+			//ArrayList<Double> idfMoy=search.idfMoy(testSearch);
+			ArrayList<Double> idfMoy=search.idfRequest(index, requete, path, testSearch);
+			HashMap<Double, Integer> docSimilarity=search.computeSimilarity(testSearch, idfMoy);
+			String orderedList=search.displayOrderedFile(docSimilarity, new File(path));
+			
+			System.out.println(testSearch);
+			
+			
 
 
-		//printMap(testSearch);
-		final JFrame frame = new JFrame();
+			//printMap(testSearch);
+			final JFrame frame = new JFrame();
 
-		// Release the window and quit the application when it has been closed
-		frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
-		JOptionPane.showMessageDialog(frame, orderedList);
+			// Release the window and quit the application when it has been closed
+			frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
+			JOptionPane.showMessageDialog(frame, orderedList);
+		}
+		
 	}
 	
 	public static String printMap(Map mp, HashBiMap<String, Integer> id, ArrayList<Double> idfMoy) {
