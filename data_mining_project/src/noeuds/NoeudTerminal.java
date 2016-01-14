@@ -69,4 +69,8 @@ public class NoeudTerminal extends Noeud{
 		return nbNoeudTerminaux;
 	}
 	
+	public static void setNbNoeudTerminaux(int nbNoeudTerminaux) {
+		NoeudTerminal.nbNoeudTerminaux = nbNoeudTerminaux;
+	}
+	
 }

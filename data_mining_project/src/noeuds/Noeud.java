@@ -29,5 +29,9 @@ public abstract class Noeud {
 		return nbNoeud;
 	}
 	
+	public static void setNbNoeud(int nbNoeud) {
+		Noeud.nbNoeud = nbNoeud;
+	}
+	
 
 }

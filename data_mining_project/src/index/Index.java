@@ -3,6 +3,7 @@ package index;
 import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.Normalizer;
@@ -24,16 +25,16 @@ import com.google.common.collect.HashBiMap;
 
 public class Index {
 	//liste des noeus initiaux (correspondant à la première lettre de chaque terme présent dans l'index)
-	private ArrayList<Noeud> debutTerme;
+	private static ArrayList<Noeud> debutTerme;
 	//liste contenant la taille de chaque fichier
 	private static HashMap<Integer, Integer> sizeFile=new HashMap<Integer, Integer>();
-	
+
 	//set contenant l'ensemble des fichers ayant servis à construire l'index
 	private static Set<Integer> fichierParcourus=new HashSet<Integer>();
 
 	public Index(String path) throws IOException {
 		termTooFrequent frequent=new termTooFrequent(path, 1000000000, 100000000);
-		
+
 		debutTerme=this.InitialiserIndex(path, frequent);
 
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
@@ -82,8 +83,8 @@ public class Index {
 
 
 		//liste temporaire des fichiers dans le dossier
-		
-		
+
+
 		for (final File f : filesInDir) 
 		{
 			//on regarde si le fichier à déja été parcourus
@@ -93,47 +94,88 @@ public class Index {
 				result=addFileToIndex(f, result, id, frequent);
 			}
 		}
-		/*
-		//on regarde si des fichiers ont été enlevés
-		Set<Integer> fileToDelete=new HashSet<Integer>();
-		for (Iterator<Integer> it = fichierParcourus.iterator(); it.hasNext(); ) {
-			Integer f = it.next();
-			boolean trouve=false;
-			for(int i=0;i<file.list().length;i++){
-				if(fichierParcourus.contains(file.list()[i].hashCode())) {
-					trouve=true;
-				}
-			}
-			//si le fichier à été supprimé
-			if(trouve==false){
-				//on enléve de l'index les fichiers supprimés du répertoire
-				fileToDelete.add(f);
-				fichierParcourus.remove(it);
-				
-				for (final File f2 : filesInDir) 
-				{
-					//on regarde si le fichier à déja été parcourus
-					if(fileToDelete.contains(f2.getName().hashCode())){
-						//si il à déja été parcourus, on met à jour l'index
-						result=deleteFileToIndex(f2, result);
-					}
-				}
-			}
-		}*/
 		
-		
+		/**
+		 * UpdateOnDelete pour updater aprés suppression
+		 */
+
+		//updateOnDelete(file, result);
+
+
 
 		return result;
 	}
 	
 	/**
+	 * function to launch to update after deleting some file in the directory
+	 * @throws IOException 
+	 * 
+	 */
+	public static void updateOnDelete(File file, ArrayList<Noeud> result) throws IOException{
+		File[] filesInDir = file.listFiles();
+		//on regarde si des fichiers ont été enlevés
+				Set<Integer> fileToDelete=new HashSet<Integer>();
+				for (Iterator<Integer> it = fichierParcourus.iterator(); it.hasNext(); ) {
+					Integer f = it.next();
+					boolean trouve=false;
+					for(int i=0;i<file.list().length;i++){
+						if(fichierParcourus.contains(file.list()[i].hashCode())) {
+							trouve=true;
+						}
+					}
+					//si le fichier à été supprimé
+					if(trouve==false){
+						//on enléve de l'index les fichiers supprimés du répertoire
+						fileToDelete.add(f);
+						fichierParcourus.remove(it);
+
+						for (final File f2 : filesInDir) 
+						{
+							//on regarde si le fichier à déja été parcourus
+							if(fileToDelete.contains(f2.getName().hashCode())){
+								//si il à déja été parcourus, on met à jour l'index
+								result=deleteFileToIndex(f2, result);
+							}
+						}
+					}
+				}
+	}
+
+	/**
 	 * function to update index when some file are deleted from the directory
 	 * @param f
+	 * @throws IOException 
 	 */
-	public static ArrayList<Noeud> deleteFileToIndex(File f, ArrayList<Noeud> result){
+	public static ArrayList<Noeud> deleteFileToIndex(File f, ArrayList<Noeud> result) throws IOException{
+
+		if (f.isDirectory()==false) 
+		{
+			BufferedReader entree = new BufferedReader(new InputStreamReader(new FileInputStream(f)));
+			String ligne;
+			StringTokenizer st;
+			String mot;
+			while ((ligne = entree.readLine()) != null)
+			{
+				//On récupére le mot lématiser
+				String text[]= ligne.split("\t");
+				mot=text[2];
+
+				//on le normalise à nouveau (étape inutile si la lématisation à été faite correctement)
+				mot=normalize(mot);	
+				getNoeudTerminal(mot).setFrequenceCorpus(getNoeudTerminal(mot).getFrequenceCorpus()-1);
+				if(getNoeudTerminal(mot).getFrequenceCorpus()==0){
+					deleteTerm(mot);
+					NoeudTerminal.setNbNoeudTerminaux(NoeudTerminal.getNbNoeudTerminaux()-1);
+					Noeud.setNbNoeud(Noeud.getNbNoeud()-1);
+					}
+				else{
+					getNoeudTerminal(mot).getIndexPositions().remove(f.getName().hashCode());
+				}
+			}
+		}
 		return result;
 	}
-	
+
 	/**
 	 * Fonction pour ajouter un fichier à l'index
 	 * @param f
@@ -143,7 +185,7 @@ public class Index {
 	 * @throws IOException
 	 */
 	public static ArrayList<Noeud> addFileToIndex(File f, ArrayList<Noeud> result, HashBiMap<String, Integer> id, termTooFrequent frequent) throws IOException{
-		
+
 
 		char[] decomposition;
 		int trouve;
@@ -231,7 +273,7 @@ public class Index {
 							temp=temp.getNoeudsFils().get(trouve);
 						}
 						//On modifie les éléemnts ud noeud terminal
-						((NoeudTerminal)temp).setFrequenceCorpus((((NoeudTerminal)temp).getFrequenceCorpus())+1);
+						((NoeudTerminal)temp).setFrequenceCorpus((((NoeudTerminal)temp).getFrequenceCorpus())+1);					
 						if(((NoeudTerminal)temp).getIndexPositions().containsKey(id.get(f.getName()))){
 							((NoeudTerminal)temp).getIndexPositions().get(id.get(f.getName())).add(Integer.valueOf(positionLigne));
 						}
@@ -249,16 +291,16 @@ public class Index {
 		sizeFile.put(id.get(f.getName()), positionLigne);
 		return result;
 	}
-	
+
 
 
 	/**
 	 * Pour supprimer un terme dans l'index
 	 * @param mot
 	 */
-	public void deleteTerm(String mot){
+	public static void deleteTerm(String mot){
 		//1 - on se place dans le noeud terminal correspondant au terme
-		Noeud temp=this.getNoeudTerminal(mot);
+		Noeud temp=getNoeudTerminal(mot);
 		char[] arrayChar=mot.toCharArray();
 
 		//2 - on supprime tous les noeuds jusqu'a ce qu'un noeud ait plusieurs Noeuds fils
@@ -307,7 +349,7 @@ public class Index {
 		return string;
 	}
 
-	public ArrayList<Noeud> getDebutTerme() {
+	public static ArrayList<Noeud> getDebutTerme() {
 		return debutTerme;
 	}
 
@@ -320,7 +362,7 @@ public class Index {
 	 * @param terme
 	 * @return
 	 */
-	public NoeudTerminal getNoeudTerminal(String terme){
+	public static NoeudTerminal getNoeudTerminal(String terme){
 		Noeud temp=null;
 
 		//on cherche le noeud terminal correspondant au terme
@@ -331,15 +373,15 @@ public class Index {
 		if(arrayChar.length<=0){
 			return null;
 		}
-		for(int j=0;j<this.getDebutTerme().size();j++){
-			if(arrayChar[0]==this.getDebutTerme().get(j).getLettre()){
+		for(int j=0;j<getDebutTerme().size();j++){
+			if(arrayChar[0]==getDebutTerme().get(j).getLettre()){
 				trouve=j;
 			}
 		}
 
 		if(trouve !=-1){
 
-			temp=this.getDebutTerme().get(trouve);
+			temp=getDebutTerme().get(trouve);
 			for(int i=1;i<arrayChar.length;i++){
 				trouve=-1;
 				for(int k=0;k<temp.getNoeudsFils().size();k++){
@@ -384,11 +426,11 @@ public class Index {
 	public static HashMap<Integer, Integer> getSizeFile() {
 		return sizeFile;
 	}
-	
 
-	
-	
-	
+
+
+
+
 }
 
 
