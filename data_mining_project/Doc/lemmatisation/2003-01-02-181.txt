@@ -1,0 +1,10 @@
+mme	ADJ	mme
+francine	NOM	francine
+piantoni	ADJ	piantoni
+,	PUN	,
+3	NUM	@card@
+rue	NOM	rue
+de	PRP	de
+la	DET:ART	le
+glacière	NOM	glacière
+.	SENT	.

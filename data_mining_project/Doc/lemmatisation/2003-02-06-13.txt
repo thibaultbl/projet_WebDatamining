@@ -1,0 +1,12 @@
+ouverture	NOM	ouverture
+du	PRP:det	du
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+17	NUM	@card@
+h	ABR	heure
+à	PRP	à
+18	NUM	@card@
+h.	ABR	h.

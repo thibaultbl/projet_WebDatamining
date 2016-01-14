@@ -1,0 +1,8 @@
+office	NOM	office
+religieux	ADJ	religieux
+demain	ADV	demain
+,	PUN	,
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+45	NUM	@card@

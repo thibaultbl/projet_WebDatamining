@@ -1,0 +1,10 @@
+dr	NOM	dr
+delignière	ADJ	delignière
+,	PUN	,
+tél	ABR	téléphone
+:	PUN	:
+03.29	NUM	@card@
+.	SENT	.
+90.80	NUM	@card@
+.	SENT	.
+82	NUM	@card@

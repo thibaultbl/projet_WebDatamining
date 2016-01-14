@@ -1,0 +1,13 @@
+lara	NOM	lara
+fabian	NOM	fabian
+,	PUN	,
+«	PUN:cit	«
+en	PRP	en
+toute	PRO:IND	tout
+intimité	NOM	intimité
+».	ABR	».
+«	PUN:cit	«
+un	DET:ART	un
+homme	NOM	homme
+simple	ADJ	simple
+».	ADJ	».

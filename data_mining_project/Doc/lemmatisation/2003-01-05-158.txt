@@ -1,0 +1,13 @@
+michel	NOM	michel
+galabru	ADJ	galabru
+.	SENT	.
+l'	DET:ART	le
+amours	NOM	amour
+toujours	ADV	toujours
+...	PUN	...
+entre	PRP	entre
+deux	NUM	deux
+scènes	NOM	scène
+de	PRP	de
+ménage	NOM	ménage
+.	SENT	.

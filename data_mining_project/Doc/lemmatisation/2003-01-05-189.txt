@@ -1,0 +1,3 @@
+sélection	NOM	sélection
+didier	ADJ	didier
+hennebois	NOM	hennebois

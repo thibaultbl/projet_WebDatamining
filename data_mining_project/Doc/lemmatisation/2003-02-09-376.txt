@@ -1,0 +1,14 @@
+asnl	NOM	asnl
+bat	VER:pres	battre
+o.	VER:pper	o.
+lyon	NOM	lyon
+:	PUN	:
+1	NUM	@card@
+-	PUN	-
+0	NUM	@card@
+but	NOM	but
+:	PUN	:
+hamdani	ADJ	hamdani
+(	PUN	(
+88	NUM	@card@
+')	NOM	')

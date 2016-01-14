@@ -1,0 +1,17 @@
+demain	ADV	demain
+,	PUN	,
+les	DET:ART	le
+joueurs	NOM	joueur
+de	PRP	de
+l'	DET:ART	le
+équipe	NOM	équipe
+locale	ADJ	local
+accueilleront	VER:futu	accueillir
+tréveray	NOM	tréveray
+.	SENT	.
+coup	NOM	coup
+d'	PRP	de
+envoi	NOM	envoi
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

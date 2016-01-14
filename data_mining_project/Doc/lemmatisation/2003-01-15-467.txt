@@ -1,0 +1,16 @@
+le	DET:ART	le
+bibliobus	NOM	bibliobus
+départemental	ADJ	départemental
+sera	VER:futu	être
+de	PRP	de
+passage	NOM	passage
+devant	PRP	devant
+la	DET:ART	le
+mairie	NOM	mairie
+,	PUN	,
+jeudi	NOM	jeudi
+16	NUM	@card@
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+15	NUM	@card@

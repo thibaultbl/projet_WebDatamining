@@ -1,0 +1,10 @@
+ce	PRO:DEM	ce
+soir	NOM	soir
+,	PUN	,
+messe	NOM	messe
+à	PRP	à
+18	NUM	@card@
+h	ABR	heure
+à	PRP	à
+montiers	NOM	montiers
+.	SENT	.

@@ -1,0 +1,13 @@
+messe	NOM	messe
+à	PRP	à
+ménil	NOM	ménil
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+(	PUN	(
+fête	NOM	fête
+patronale	ADJ	patronal
+et	KON	et
+baptème	NOM	baptème
+).	ADJ	).

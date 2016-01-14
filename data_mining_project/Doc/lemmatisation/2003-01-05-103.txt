@@ -1,0 +1,16 @@
+le	DET:ART	le
+prochain	ADJ	prochain
+ramassage	NOM	ramassage
+des	PRP:det	du
+objets	NOM	objet
+encombrants	ADJ	encombrant
+aura	VER:futu	avoir
+lieu	NOM	lieu
+mardi	NOM	mardi
+14	NUM	@card@
+janvier	NOM	janvier
+à	PRP	à
+partir	VER:infi	partir
+de	PRP	de
+8	NUM	@card@
+h.	ABR	h.

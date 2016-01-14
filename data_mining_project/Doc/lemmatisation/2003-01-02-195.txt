@@ -1,0 +1,8 @@
+marie-pierre	NOM	marie-pierre
+jeandel	NOM	jeandel
+,	PUN	,
+12	NUM	@card@
+rue	NOM	rue
+de	PRP	de
+nancy	NOM	nancy
+.	SENT	.

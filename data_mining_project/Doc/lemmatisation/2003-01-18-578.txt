@@ -1,0 +1,14 @@
+cérémonie	NOM	cérémonie
+des	PRP:det	du
+v	NOM	v
+	ADJ	
+ux	ADJ	ux
+,	PUN	,
+18	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+la	DET:ART	le
+salle	NOM	salle
+wissang	ADJ	wissang
+.	SENT	.

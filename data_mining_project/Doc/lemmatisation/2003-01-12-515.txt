@@ -1,0 +1,17 @@
+loto	NOM	loto
+des	PRP:det	du
+jsl	NOM	jsl
+:	PUN	:
+dès	PRP	dès
+13	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+l'	DET:ART	le
+espace	NOM	espace
+du	PRP:det	du
+sapeur	NOM	sapeur
+,	PUN	,
+rue	NOM	rue
+parmentier	NOM	parmentier
+.	SENT	.

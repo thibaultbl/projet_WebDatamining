@@ -1,0 +1,13 @@
+l'	DET:ART	le
+association	NOM	association
+cantonale	ADJ	cantonal
+tri	NOM	tri
+assurera	VER:futu	assurer
+la	DET:ART	le
+collecte	NOM	collecte
+des	PRP:det	du
+encombrants	ADJ	encombrant
+jeudi	NOM	jeudi
+23	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

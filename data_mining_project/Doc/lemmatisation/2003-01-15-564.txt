@@ -1,0 +1,17 @@
+emmaüs	NOM	emmaüs
+:	PUN	:
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+17	NUM	@card@
+h	ABR	heure
+,	PUN	,
+hangar	NOM	hangar
+,	PUN	,
+4	NUM	@card@
+rue	NOM	rue
+branly	ADJ	branly
+,	PUN	,
+bric-à-brac	NOM	bric-à-brac
+.	SENT	.

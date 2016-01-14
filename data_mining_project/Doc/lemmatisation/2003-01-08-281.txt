@@ -1,0 +1,16 @@
+pierre	NOM	pierre
+toret	NOM	toret
+:	PUN	:
+03.83	NUM	@card@
+.	SENT	.
+21.62	NUM	@card@
+.	SENT	.
+65	NUM	@card@
+daniel	ADJ	daniel
+pinot	NOM	pinot
+:	PUN	:
+06.81	NUM	@card@
+.	SENT	.
+15.98	NUM	@card@
+.	SENT	.
+22	NUM	@card@

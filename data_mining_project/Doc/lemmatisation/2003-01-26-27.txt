@@ -1,0 +1,4 @@
+messe	NOM	messe
+à	PRP	à
+11	NUM	@card@
+h.	ABR	h.

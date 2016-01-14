@@ -1,0 +1,10 @@
+naissance	NOM	naissance
+lilou	NOM	lilou
+oliati	VER:pper	oliati
+,	PUN	,
+7	NUM	@card@
+rue	NOM	rue
+carnot	NOM	carnot
+à	PRP	à
+royaumeix	NOM	royaumeix
+.	SENT	.

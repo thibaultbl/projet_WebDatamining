@@ -1,0 +1,16 @@
+dimanche	NOM	dimanche
+,	PUN	,
+la	DET:ART	le
+messe	NOM	messe
+sera	VER:futu	être
+célébrée	VER:pper	célébrer
+à	PRP	à
+10	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+en	PRP	en
+l'	DET:ART	le
+église	NOM	église
+de	PRP	de
+combeaufontaine	NOM	combeaufontaine
+.	SENT	.

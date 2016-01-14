@@ -1,0 +1,10 @@
+la	DET:ART	le
+maison	NOM	maison
+de	PRP	de
+mme	ADJ	mme
+berg	NOM	berg
+,	PUN	,
+1	NUM	@card@
+rue	NOM	rue
+acraigne	ADJ	acraigne
+.	SENT	.

@@ -1,0 +1,16 @@
+réunion	NOM	réunion
+philatélique	ADJ	philatélique
+:	PUN	:
+au	PRP:det	au
+centre	NOM	centre
+social	ADJ	social
+schlotterer	VER:infi	schlotterer
+(	PUN	(
+salle	NOM	salle
+merlin	NOM	merlin
+)	PUN	)
+à	PRP	à
+partir	VER:infi	partir
+de	PRP	de
+10	NUM	@card@
+h.	ABR	h.

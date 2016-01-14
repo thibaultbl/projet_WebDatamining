@@ -1,0 +1,17 @@
+décès	NOM	décès
+:	PUN	:
+irène	NOM	irène
+vauthier	NOM	vauthier
+,	PUN	,
+veuve	ADJ	veuf|veuve
+laratte	NOM	laratte
+,	PUN	,
+93	NUM	@card@
+ans	NOM	an
+,	PUN	,
+domiciliée	VER:pper	domicilier
+à	PRP	à
+sauvoy	NOM	sauvoy
+,	PUN	,
+meuse	ADJ	meuse
+.	SENT	.

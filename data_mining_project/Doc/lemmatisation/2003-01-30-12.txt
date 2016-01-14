@@ -1,0 +1,11 @@
+secrétariat	NOM	secrétariat
+ouvert	VER:pper	ouvrir
+au	PRP:det	au
+public	NOM	public
+de	PRP	de
+8	NUM	@card@
+h	ABR	heure
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+30	NUM	@card@

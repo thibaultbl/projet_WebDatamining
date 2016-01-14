@@ -1,0 +1,14 @@
+une	DET:ART	un
+messe	NOM	messe
+sera	VER:futu	être
+célébrée	VER:pper	célébrer
+aujourd'hui	ADV	aujourd'hui
+à	PRP	à
+18	NUM	@card@
+h	ABR	heure
+,	PUN	,
+dans	PRP	dans
+l'	DET:ART	le
+église	NOM	église
+paroissiale	ADJ	paroissial
+.	SENT	.

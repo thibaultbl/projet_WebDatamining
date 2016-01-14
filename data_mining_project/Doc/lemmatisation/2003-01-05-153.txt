@@ -1,0 +1,8 @@
+salons	NOM	salon
+du	PRP:det	du
+mariage	NOM	mariage
+à	PRP	à
+andelnans	NOM	andelnans
+et	KON	et
+mulhouse	NOM	mulhouse
+.	SENT	.

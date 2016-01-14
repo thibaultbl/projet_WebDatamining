@@ -1,0 +1,5 @@
+lire	VER:infi	lire
+en	PRP	en
+page	NOM	page
+faits	VER:pper	faire
+divers	ADJ	divers

@@ -1,0 +1,13 @@
+i	NOM	i
+]	PUN	]
+neufchâteau	NOM	neufchâteau
+:	PUN	:
+le	DET:ART	le
+meuble	NOM	meuble
+vosgien	ADJ	vosgien
+fait	VER:pres	faire
+salon	NOM	salon
+à	PRP	à
+paris	NOM	pari
+en	PRP	en
+neufchâteau	NOM	neufchâteau

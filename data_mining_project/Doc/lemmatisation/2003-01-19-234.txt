@@ -1,0 +1,15 @@
+la	DET:ART	le
+foire	NOM	foire
+mensuelle	ADJ	mensuel
+aura	VER:futu	avoir
+lieu	NOM	lieu
+lundi	NOM	lundi
+20	NUM	@card@
+janvier	NOM	janvier
+,	PUN	,
+place	NOM	place
+du	PRP:det	du
+champ	NOM	champ
+de	PRP	de
+foire	NOM	foire
+.	SENT	.

@@ -1,0 +1,15 @@
+«	PUN:cit	«
+la	DET:ART	le
+vénus	NOM	vénus
+de	PRP	de
+chevilly	NOM	chevilly
+»,	ADJ	»,
+sculpture	NOM	sculpture
+de	PRP	de
+morice	ADJ	morice
+lipsi	NOM	lipsi
+à	PRP	à
+voir	VER:infi	voir
+à	PRP	à
+rosey	NOM	rosey
+.	SENT	.

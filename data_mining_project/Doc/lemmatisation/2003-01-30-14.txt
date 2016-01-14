@@ -1,0 +1,8 @@
+permanence	NOM	permanence
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

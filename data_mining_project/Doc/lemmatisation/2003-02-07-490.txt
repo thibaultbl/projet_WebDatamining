@@ -1,0 +1,15 @@
+la	DET:ART	le
+permanence	NOM	permanence
+du	PRP:det	du
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+du	PRP:det	du
+vendredi	NOM	vendredi
+7	NUM	@card@
+février	NOM	février
+ne	ADV	ne
+sera	VER:futu	être
+pas	ADV	pas
+assurée	VER:pper	assurer
+.	SENT	.

@@ -1,0 +1,15 @@
+décès	NOM	décès
+de	PRP	de
+denis	NOM	denis
+royer	VER:infi	royer
+,	PUN	,
+46	NUM	@card@
+ans	NOM	an
+,	PUN	,
+domicilié	VER:pper	domicilier
+au	PRP:det	au
+20	NUM	@card@
+allée	NOM	allée
+du	PRP:det	du
+beaujolais	NOM	beaujolais
+.	SENT	.

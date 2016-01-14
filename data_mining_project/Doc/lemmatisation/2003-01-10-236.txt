@@ -1,0 +1,17 @@
+la	DET:ART	le
+prochaine	ADJ	prochain
+réunion	NOM	réunion
+du	PRP:det	du
+conseil	NOM	conseil
+municipal	ADJ	municipal
+aura	VER:futu	avoir
+lieu	NOM	lieu
+mardi	NOM	mardi
+14	NUM	@card@
+janvier	NOM	janvier
+à	PRP	à
+20	NUM	@card@
+heures	NOM	heure
+en	PRP	en
+mairie	NOM	mairie
+.	SENT	.

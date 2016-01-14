@@ -1,0 +1,11 @@
+assemblée	NOM	assemblée
+de	PRP	de
+la	DET:ART	le
+pêche	NOM	pêche
+:	PUN	:
+à	PRP	à
+10	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+mairie	NOM	mairie
+.	SENT	.

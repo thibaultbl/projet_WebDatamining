@@ -1,0 +1,8 @@
+séance	NOM	séance
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+18	NUM	@card@
+h	ABR	heure
+à	PRP	à
+19	NUM	@card@
+h.	ABR	h.

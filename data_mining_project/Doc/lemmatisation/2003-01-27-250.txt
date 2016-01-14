@@ -1,0 +1,7 @@
+photos	NOM	photo
+:	PUN	:
+jean-luc	NOM	jean-luc
+gillmé	ADJ	gillmé
+et	KON	et
+michel	ADJ	michel
+léopold	NOM	léopold

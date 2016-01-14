@@ -23,14 +23,14 @@ import com.google.common.collect.HashBiMap;
 import noeuds.Noeud;
 
 public class termTooFrequent {
-	
+
 	private ArrayList<String> frequentTerm;
-	
+
 	public termTooFrequent(String path, int thresholdCorpus, int thresholdNbDoc) throws IOException {
 		frequentTerm=termTooFrequent(thresholdCorpus, thresholdNbDoc, nbOccurence(path));
-		
+
 	}
-	
+
 	public static Hashtable<String, HashMap<Integer, ArrayList<Integer>>> nbOccurence(String path) throws IOException {
 		//table contenant le nombre d'occurence par mot dans l'ensemble du corpus
 		Hashtable<String, Integer> table = new Hashtable<String, Integer>();
@@ -42,7 +42,7 @@ public class termTooFrequent {
 		//Hashmap fusion de table et talb pour le résultat final, le premier element de value est le nombre d'occurence dans le document
 		Hashtable<String, HashMap<Integer, ArrayList<Integer>>> result = new Hashtable<String, HashMap<Integer, ArrayList<Integer>>>();
 
-		
+
 		ArrayList<String> termeFrequent=new ArrayList<String>();
 
 
@@ -69,41 +69,41 @@ public class termTooFrequent {
 					String text[]= ligne.split("\t");
 					mot=text[2];
 					nbMots++;
-					
+
 					if(!((text[1].substring(0, 3).equals("DET"))||(text[1].substring(0, 3).equals("PRP"))||(text[1].substring(0, 3).equals("PUN"))||(text[1].substring(0, 3).equals("PRO"))||(text[1].substring(0, 3).equals("SEN")))){
-						
+
 						/*st = new StringTokenizer(ligne, "\t");
 						while(st.hasMoreTokens())
 						{
 							st.nextToken();
 							st.nextToken();
 							mot = st.nextToken();*/
-							mot=normalize(mot);
-							
-							
-							
-							if (table.containsKey(mot))
-							{
-								nbOcc = table.get(mot).intValue();
-								nbOcc++;
-							}
-							else  {
-								nbOcc = 1;
-							}
-							table.put(mot, new Integer(nbOcc));
-							//talb.put(mot, f.getName());
+						mot=normalize(mot);
 
-							if(talb.containsKey(mot)){
-								if(talb.get(mot).contains(id.get(f.getName()))==false ){
-									talb.get(mot).add(id.get(f.getName()));
-								}
 
+
+						if (table.containsKey(mot))
+						{
+							nbOcc = table.get(mot).intValue();
+							nbOcc++;
+						}
+						else  {
+							nbOcc = 1;
+						}
+						table.put(mot, new Integer(nbOcc));
+						//talb.put(mot, f.getName());
+
+						if(talb.containsKey(mot)){
+							if(talb.get(mot).contains(id.get(f.getName()))==false ){
+								talb.get(mot).add(id.get(f.getName()));
 							}
-							else{
-								listId=new ArrayList<Integer>();
-								listId.add(id.get(f.getName()));
-								talb.put(mot, listId);
-							}
+
+						}
+						else{
+							listId=new ArrayList<Integer>();
+							listId.add(id.get(f.getName()));
+							talb.put(mot, listId);
+						}
 					}
 					else{
 						nbOcc=-1;
@@ -112,49 +112,49 @@ public class termTooFrequent {
 						listId.add(id.get(f.getName()));
 						talb.put(mot, listId);
 					}
-					
-					
-					
+
+
+
 					//}
 				}
 
 				entree.close();
 			}
-			
+
 		}
-		
+
 		System.out.println("Il y a "+nbMots+" mots dans le corpus.");
-		
+
 		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
-		
+
 		for(int i=0;i<100;i++){
 			System.out.println("Terme le plus fréquent n°"+(i+1)+" : "+table2.get(i));
 		}
 		System.out.println("Il y a "+table2.size()+" mots différents dans le corpus.");
-		
+
 		HashMap<Integer, ArrayList<Integer>> temp;
 		//on renvoi une liste contenant les termes avec trop d'apparitions dans le corpus ou dans un nombre de doculent trop important
 		for(int i=0;i<table2.size();i++){
-			 String key = table2.get(i).getKey();
-			 int value = table.get(key);
+			String key = table2.get(i).getKey();
+			int value = table.get(key);
 			temp= new HashMap<Integer, ArrayList<Integer>>();
 			temp.put(table.get(key), talb.get(key));
 			result.put(key, temp);
 		}
 		return result;
 	}
-	
-	public static List<Map.Entry<String, Integer>> sortMapValues2(Map<String, Integer> map){
-	    //Sort Map.Entry by value
-	    List<Map.Entry<String, Integer>> result = new ArrayList(map.entrySet());
-	    Collections.sort(result, new Comparator<Map.Entry<String, Integer>>(){
-	        public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
-	            return o2.getValue() - o1.getValue();
-	    }});
 
-	    return result;  
+	public static List<Map.Entry<String, Integer>> sortMapValues2(Map<String, Integer> map){
+		//Sort Map.Entry by value
+		List<Map.Entry<String, Integer>> result = new ArrayList(map.entrySet());
+		Collections.sort(result, new Comparator<Map.Entry<String, Integer>>(){
+			public int compare(Entry<String, Integer> o1, Entry<String, Integer> o2) {
+				return o2.getValue() - o1.getValue();
+			}});
+
+		return result;  
 	}
-	
+
 	public static String normalize(String string){
 		string=string.toLowerCase();
 		string = Normalizer.normalize(string, Normalizer.Form.NFD);
@@ -163,47 +163,47 @@ public class termTooFrequent {
 		string=string.replace(";",  "");
 		return string;
 	}
-	
+
 	public static ArrayList<String> termTooFrequent(double thresholdCorpus, double thresholdNbDoc, Hashtable<String, HashMap<Integer, ArrayList<Integer>>> frequence){
 		ArrayList<String> termeFrequent=new ArrayList<String>();
-		
-		
-		
+
+
+
 		Set keys=frequence.keySet();	
 		String key;
 		HashMap<Integer, ArrayList<Integer>> temp;
-		
+
 		Iterator iter = keys.iterator();
 		while (iter.hasNext()) {
-		    key=iter.next().toString();
-		    temp= frequence.get(key);
-		    if(temp.keySet().contains(-1)){
-		    	termeFrequent.add(key);
-		    }
-		    else if((temp.keySet().iterator().next()>= thresholdCorpus)||(temp.get(temp.keySet().iterator().next()).size()>=thresholdNbDoc)){
-		    	termeFrequent.add(key);
-		    }
+			key=iter.next().toString();
+			temp= frequence.get(key);
+			if(temp.keySet().contains(-1)){
+				termeFrequent.add(key);
+			}
+			else if((temp.keySet().iterator().next()>= thresholdCorpus)||(temp.get(temp.keySet().iterator().next()).size()>=thresholdNbDoc)){
+				termeFrequent.add(key);
+			}
 		}
-		
+
 		for(int i=0;i<termeFrequent.size();i++){
 			System.out.println("Terme trop fréquent n°"+(i+1)+" : "+termeFrequent.get(i));
 		}
-		
+
 		return termeFrequent;
 	}
-	
+
 	public ArrayList<String> frequentTerm(double thresholdCorpus, double thresholdNbDoc, Index index){
 		ArrayList<String> result = new ArrayList<String>();
 		Noeud temp;
-		
+
 		//on aprcourt tous les noeuds terminaux
 		for(int i=0; i<index.getDebutTerme().size();i++){
 			temp=index.getDebutTerme().get(i);
 		}
-		
+
 		return result;
 	}
-	
+
 	public ArrayList<String> getFrequentTerm() {
 		return frequentTerm;
 	}

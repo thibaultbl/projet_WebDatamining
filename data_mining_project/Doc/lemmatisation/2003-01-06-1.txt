@@ -1,0 +1,10 @@
+galette	NOM	galette
+des	PRP:det	du
+rois	NOM	roi
+d'	PRP	de
+avf	NOM	avf
+accueil	NOM	accueil
+à	PRP	à
+19	NUM	@card@
+h	ABR	heure
+30	NUM	@card@

@@ -1,0 +1,9 @@
+mulhouse	NOM	mulhouse
+le	DET:ART	le
+5	NUM	@card@
+février/19	NOM	février/19
+h	ABR	heure
+jennifer	NOM	jennifer
+parc	NOM	parc
+des	PRP:det	du
+expositions	NOM	exposition

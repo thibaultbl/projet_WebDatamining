@@ -1,0 +1,15 @@
+loto	NOM	loto
+et	KON	et
+galette	NOM	galette
+de	PRP	de
+l'	DET:ART	le
+amicale	ADJ	amical
+aujourd'hui	ADV	aujourd'hui
+à	PRP	à
+14	NUM	@card@
+h	ABR	heure
+,	PUN	,
+salle	NOM	salle
+du	PRP:det	du
+foyer	NOM	foyer
+.	SENT	.

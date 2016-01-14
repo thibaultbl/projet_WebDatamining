@@ -1,0 +1,12 @@
+messe	NOM	messe
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+aujourd'hui	ADV	aujourd'hui
+en	PRP	en
+l'	DET:ART	le
+église	NOM	église
+du	PRP:det	du
+village	NOM	village
+.	SENT	.

@@ -1,0 +1,12 @@
+dr	NOM	dr
+laurent	VER:pres	laurer
+(	PUN	(
+vaucouleurs	NOM	vaucouleurs
+),	NOM	),
+tél	ABR	téléphone
+:	PUN	:
+03.29	NUM	@card@
+.	SENT	.
+89.46	NUM	@card@
+.	SENT	.
+95	NUM	@card@

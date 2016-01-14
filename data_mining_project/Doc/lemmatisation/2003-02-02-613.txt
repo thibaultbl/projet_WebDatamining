@@ -1,0 +1,7 @@
+photos	NOM	photo
+:	PUN	:
+philippe	ADJ	philippe
+briqueleur	NOM	briqueleur
+et	KON	et
+alexandre	NOM	alexandre
+marchi	ADJ	marchi

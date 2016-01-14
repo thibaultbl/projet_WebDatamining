@@ -1,0 +1,14 @@
+20	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+:	PUN	:
+faculté	NOM	faculté
+de	PRP	de
+droit	NOM	droit
+,	PUN	,
+assemblée	NOM	assemblée
+de	PRP	de
+l'	DET:ART	le
+association	NOM	association
+iconographique	ADJ	iconographique
+.	SENT	.

@@ -1,0 +1,7 @@
+sabine	ADJ	sabin
+baurin	NOM	baurin
+,	PUN	,
+6	NUM	@card@
+clos	NOM	clos
+cardinal	ADJ	cardinal
+.	SENT	.

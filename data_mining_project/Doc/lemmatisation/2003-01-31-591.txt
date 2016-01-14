@@ -1,0 +1,168 @@
+faits	NOM	fait
+constatés	VER:pper	constater
+:	PUN	:
+15685	NUM	@card@
+(+	ABR	(+
+4,93 %	NUM	@card@
+).	ABR	).
+faits	NOM	fait
+élucidés	VER:pper	élucider
+:	PUN	:
+5965	NUM	@card@
+(+	ABR	(+
+7,52 %	NUM	@card@
+).	ABR	).
+taux	NOM	tau|taux
+d'	PRP	de
+élucidation	NOM	élucidation
+:	PUN	:
+38,03 %	NUM	@card@
+faits	NOM	fait
+constatés	VER:pper	constater
+en	PRP	en
+zone	NOM	zone
+police	NOM	police
+:	PUN	:
+6972	NUM	@card@
+(-	ABR	(-
+4,34 %	NUM	@card@
+)	PUN	)
+;	PUN	;
+en	PRP	en
+zone	NOM	zone
+gendarmerie	NOM	gendarmerie
+:	PUN	:
+8713	NUM	@card@
+(+	ABR	(+
+13,75 %	NUM	@card@
+)	PUN	)
+vols	NOM	vol
+:	PUN	:
+8986	NUM	@card@
+(+	ABR	(+
+11,56 %	NUM	@card@
+).	ABR	).
+infractions	NOM	infraction
+économiques	ADJ	économique
+et	KON	et
+financières	ADJ	financier
+:	PUN	:
+1706	NUM	@card@
+(-	ABR	(-
+8,92 %	NUM	@card@
+).	ABR	).
+crimes	NOM	crime
+et	KON	et
+délits	NOM	délit
+contre	PRP	contre
+les	DET:ART	le
+personnes	NOM	personne
+:	PUN	:
+1556	NUM	@card@
+(+	ABR	(+
+2,17 %	NUM	@card@
+).	ABR	).
+autres	ADJ	autre
+infractions	NOM	infraction
+:	PUN	:
+3437	NUM	@card@
+(-	ABR	(-
+1,72 %	NUM	@card@
+),	NOM	),
+dont	PRO:REL	dont
+infractions	NOM	infraction
+sur	PRP	sur
+les	DET:ART	le
+stupéfiants	NOM	stupéfiant
+:	PUN	:
+641	NUM	@card@
+(+	ABR	(+
+28,97 %	NUM	@card@
+).	ABR	).
+délinquance	NOM	délinquance
+de	PRP	de
+voie	NOM	voie
+publique	ADJ	publique
+:	PUN	:
+vols	NOM	vol
+à	PRP	à
+main	NOM	main
+armée	VER:pper	armer
+:	PUN	:
+17	NUM	@card@
+(-	ABR	(-
+5,56 %	NUM	@card@
+).	ABR	).
+vols	NOM	vol
+avec	PRP	avec
+violence	NOM	violence
+:	PUN	:
+193	NUM	@card@
+(+	ABR	(+
+45,11 %	NUM	@card@
+).	ABR	).
+cambriolages	NOM	cambriolage
+:	PUN	:
+1960	NUM	@card@
+(+	ABR	(+
+10,24 %	NUM	@card@
+).	ABR	).
+vols	NOM	vol
+à	PRP	à
+la	DET:ART	le
+roulotte	NOM	roulotte
+et	KON	et
+d'	PRP	de
+accessoires	NOM	accessoire
+:	PUN	:
+2452	NUM	@card@
+(+	ABR	(+
+10,90 %	NUM	@card@
+).	ABR	).
+vols	NOM	vol
+d'	PRP	de
+autos	NOM	auto
+:	PUN	:
+437	NUM	@card@
+(+	ABR	(+
+28,06 %	NUM	@card@
+).	ABR	).
+destructions	NOM	destruction
+et	KON	et
+dégradations	NOM	dégradation
+:	PUN	:
+1676	NUM	@card@
+(-	ABR	(-
+13,96 %	NUM	@card@
+).	ABR	).
+personnes	NOM	personne
+mises	VER:pper	mettre
+en	PRP	en
+cause	NOM	cause
+:	PUN	:
+4800	NUM	@card@
+(+	ABR	(+
+3,83 %	NUM	@card@
+).	ABR	).
+nombre	NOM	nombre
+de	PRP	de
+majeurs	ADJ	majeur
+mis	VER:pper	mettre
+en	PRP	en
+cause	NOM	cause
+:	PUN	:
+3642	NUM	@card@
+(+	ABR	(+
+2,68 %	NUM	@card@
+).	ABR	).
+nombre	NOM	nombre
+de	PRP	de
+mineurs	NOM	mineur
+mis	VER:pper	mettre
+en	PRP	en
+cause	NOM	cause
+:	PUN	:
+1158	NUM	@card@
+(+	ABR	(+
+7,62 %	NUM	@card@
+).	ABR	).

@@ -1,0 +1,12 @@
+un	DET:ART	un
+rendez-vous	NOM	rendez-vous
+incontournable	ADJ	incontournable
+:	PUN	:
+le	DET:ART	le
+forum	NOM	forum
+des	PRP:det	du
+sports	NOM	sport
+mécaniques	ADJ	mécanique
+de	PRP	de
+montbéliard	NOM	montbéliard
+.	SENT	.

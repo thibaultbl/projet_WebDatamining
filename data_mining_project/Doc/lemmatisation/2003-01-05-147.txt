@@ -1,0 +1,14 @@
+une	DET:ART	un
+chorégraphie	NOM	chorégraphie
+de	PRP	de
+toméo	NOM	toméo
+vergès	ADJ	vergès
+,	PUN	,
+par	PRP	par
+la	DET:ART	le
+compagnie	NOM	compagnie
+man	NOM	man
+drake	NOM	drake
+,	PUN	,
+paris	NOM	pari
+.	SENT	.

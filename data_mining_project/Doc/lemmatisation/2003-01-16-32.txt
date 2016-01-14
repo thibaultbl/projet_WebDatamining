@@ -1,0 +1,17 @@
+dimanche	NOM	dimanche
+,	PUN	,
+un	DET:ART	un
+office	NOM	office
+religieux	ADJ	religieux
+sera	VER:futu	être
+célébré	VER:pper	célébrer
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+en	PRP	en
+l'	DET:ART	le
+église	NOM	église
+du	PRP:det	du
+village	NOM	village
+.	SENT	.

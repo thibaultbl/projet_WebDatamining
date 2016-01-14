@@ -1,0 +1,8 @@
+un	DET:ART	un
+trio	NOM	trio
+violoncelle	NOM	violoncelle
+,	PUN	,
+clarinette	NOM	clarinette
+et	KON	et
+piano	ADV	piano
+.	SENT	.

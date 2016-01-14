@@ -1,0 +1,17 @@
+ce	PRO:DEM	ce
+soir	NOM	soir
+de	PRP	de
+19	NUM	@card@
+h	ABR	heure
+45	NUM	@card@
+à	PRP	à
+21	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+à	PRP	à
+la	DET:ART	le
+salle	NOM	salle
+polyvalente	ADJ	polyvalent
+de	PRP	de
+mécrin	NOM	mécrin
+.	SENT	.

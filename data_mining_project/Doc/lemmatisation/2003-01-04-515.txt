@@ -1,0 +1,15 @@
+soirée	NOM	soirée
+g'	ADJ	g'
+raines	NOM	raine
+de	PRP	de
+stars	NOM	star
+:	PUN	:
+20	NUM	@card@
+h	ABR	heure
+,	PUN	,
+à	PRP	à
+l'	DET:ART	le
+espace	NOM	espace
+du	PRP:det	du
+sapeur	NOM	sapeur
+.	SENT	.

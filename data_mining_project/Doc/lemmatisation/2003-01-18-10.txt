@@ -1,0 +1,6 @@
+office	NOM	office
+religieux	ADJ	religieux
+aujourd'hui	ADV	aujourd'hui
+à	PRP	à
+18	NUM	@card@
+h.	ABR	h.

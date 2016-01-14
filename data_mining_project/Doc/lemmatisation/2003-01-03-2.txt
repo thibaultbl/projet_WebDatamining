@@ -1,0 +1,15 @@
+reprise	NOM	reprise
+des	PRP:det	du
+entraînements	NOM	entraînement
+senior	ADJ	senior
+ce	PRO:DEM	ce
+jour	NOM	jour
+,	PUN	,
+à	PRP	à
+18	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+au	PRP:det	au
+stade	NOM	stade
+lepage	NOM	lepage
+.	SENT	.

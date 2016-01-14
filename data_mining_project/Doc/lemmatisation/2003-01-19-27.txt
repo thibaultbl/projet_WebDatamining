@@ -1,0 +1,12 @@
+dr	NOM	dr
+gueib	NOM	gueib
+(	PUN	(
+vaucouleurs	NOM	vaucouleurs
+),	NOM	),
+tél	ABR	téléphone
+:	PUN	:
+03.29	NUM	@card@
+.	SENT	.
+89.44	NUM	@card@
+.	SENT	.
+08	NUM	@card@

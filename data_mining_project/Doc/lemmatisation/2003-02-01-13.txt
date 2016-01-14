@@ -1,0 +1,7 @@
+a	VER:pres	avoir
+18	NUM	@card@
+h	ABR	heure
+,	PUN	,
+à	PRP	à
+sommelonne	NOM	sommelonne
+.	SENT	.

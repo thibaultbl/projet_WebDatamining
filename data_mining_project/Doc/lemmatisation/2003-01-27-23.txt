@@ -1,0 +1,9 @@
+poste	NOM	poste
+:	PUN	:
+permanence	NOM	permanence
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

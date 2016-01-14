@@ -1,0 +1,8 @@
+le	DET:ART	le
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+est	VER:pres	être
+fermé	VER:pper	fermer
+aujourd'hui	ADV	aujourd'hui
+.	SENT	.

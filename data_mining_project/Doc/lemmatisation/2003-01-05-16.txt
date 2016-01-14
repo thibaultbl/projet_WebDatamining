@@ -1,0 +1,8 @@
+a	VER:pres	avoir
+15	NUM	@card@
+h	ABR	heure
+,	PUN	,
+salle	NOM	salle
+des	PRP:det	du
+fêtes	NOM	fête
+.	SENT	.

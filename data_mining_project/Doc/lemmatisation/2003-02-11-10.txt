@@ -1,0 +1,16 @@
+m.	ABR	m.
+pinzano	NOM	pinzano
+étant	VER:ppre	être
+momentanément	ADV	momentanément
+absent	ADJ	absent
+,	PUN	,
+les	DET:ART	le
+séances	NOM	séance
+du	PRP:det	du
+mercredi	NOM	mercredi
+sont	VER:pres	être
+suspendues	VER:pper	suspendre
+jusqu'à	NOM	jusqu'à
+nouvel	ADJ	nouveau
+ordre	NOM	ordre
+.	SENT	.

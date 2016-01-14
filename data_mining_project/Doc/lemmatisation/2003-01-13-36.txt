@@ -1,0 +1,14 @@
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+:	PUN	:
+ouvert	VER:pper	ouvrir
+au	PRP:det	au
+public	NOM	public
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+11	NUM	@card@
+h	ABR	heure
+à	PRP	à
+12	NUM	@card@
+h.	ABR	h.

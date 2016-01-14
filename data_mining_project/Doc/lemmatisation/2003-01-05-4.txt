@@ -1,0 +1,14 @@
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+epiphanie	NOM	epiphanie
+,	PUN	,
+messe	NOM	messe
+au	PRP:det	au
+bouchon	NOM	bouchon
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+(	PUN	(
+crèche	NOM	crèche
+vivante	ADJ	vivant
+).	ADJ	).

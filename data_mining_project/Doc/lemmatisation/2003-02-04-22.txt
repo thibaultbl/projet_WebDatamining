@@ -1,0 +1,9 @@
+mairie	NOM	mairie
+:	PUN	:
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+16	NUM	@card@
+h	ABR	heure
+30	NUM	@card@

@@ -1,0 +1,9 @@
+cinéma	NOM	cinéma
+alhambra	NOM	alhambra
+-	PUN	-
+21	NUM	@card@
+h	ABR	heure
+«	PUN:cit	«
+taxi	NOM	taxi
+3	NUM	@card@
+».	ABR	».

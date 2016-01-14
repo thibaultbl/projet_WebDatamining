@@ -1,0 +1,14 @@
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+à	PRP	à
+17	NUM	@card@
+h	ABR	heure
+,	PUN	,
+loto	NOM	loto
+du	PRP:det	du
+foot	NOM	foot
+,	PUN	,
+salle	NOM	salle
+du	PRP:det	du
+pré-rondot	NOM	pré-rondot
+.	SENT	.

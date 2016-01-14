@@ -1,0 +1,8 @@
+le	DET:ART	le
+théâtre	NOM	théâtre
+du	PRP:det	du
+pilier	NOM	pilier
+.	SENT	.
+julie	NOM	julie
+arnold	NOM	arnold
+.	SENT	.

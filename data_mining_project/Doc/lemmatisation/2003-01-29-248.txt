@@ -1,0 +1,10 @@
+mercredis	NOM	mercredi
+récréatifs	ADJ	récréatif
+.	SENT	.
+projet	NOM	projet
+«	PUN:cit	«
+transparences	NOM	transparence
+»,	ADJ	»,
+atelier	NOM	atelier
+théâtre	NOM	théâtre
+.	SENT	.

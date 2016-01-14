@@ -1,0 +1,12 @@
+amiens	NOM	amiens
+-	PUN	-
+niort	NOM	niort
+1	NUM	@card@
+-	PUN	-
+0	NUM	@card@
+châteauroux	NOM	châteauroux
+-	PUN	-
+caen	NOM	caen
+2	NUM	@card@
+-	PUN	-
+1	NUM	@card@

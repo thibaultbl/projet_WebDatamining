@@ -1,0 +1,14 @@
+le	DET:ART	le
+dimanche	NOM	dimanche
+5	NUM	@card@
+janvier	NOM	janvier
+,	PUN	,
+messe	NOM	messe
+à	PRP	à
+l'	DET:ART	le
+église	NOM	église
+saint-pierre	NOM	saint-pierre
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+30	NUM	@card@

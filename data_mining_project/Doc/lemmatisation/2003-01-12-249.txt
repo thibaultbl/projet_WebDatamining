@@ -1,0 +1,9 @@
+loto	NOM	loto
+esls	NOM	esls
+:	PUN	:
+14	NUM	@card@
+h	ABR	heure
+,	PUN	,
+centre	NOM	centre
+erckmann	ADJ	erckmann
+.	SENT	.

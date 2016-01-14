@@ -1,0 +1,15 @@
+mairie	NOM	mairie
+le	DET:ART	le
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+sera	VER:futu	être
+ouvert	VER:pper	ouvrir
+au	PRP:det	au
+public	NOM	public
+de	PRP	de
+10	NUM	@card@
+h	ABR	heure
+à	PRP	à
+12	NUM	@card@
+h.	ABR	h.

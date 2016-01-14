@@ -1,0 +1,13 @@
+luxeuil	NOM	luxeuil
+le	DET:ART	le
+24	NUM	@card@
+janvier/20	NOM	janvier/20
+h	ABR	heure
+30	NUM	@card@
+salut	NOM	salut
+brassens	ADJ	brassens
+avec	PRP	avec
+joël	ADJ	joël
+favreau	NOM	favreau
+espace	NOM	espace
+molière	NOM	molière

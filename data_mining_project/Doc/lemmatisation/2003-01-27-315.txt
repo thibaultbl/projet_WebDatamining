@@ -1,0 +1,13 @@
+i	NOM	i
+]	PUN	]
+martigny-les-bains	ADJ	martigny-les-bains
+:	PUN	:
+mère	NOM	mère
+de	PRP	de
+famille	NOM	famille
+tuée	VER:pper	tuer
+sur	PRP	sur
+la	DET:ART	le
+route	NOM	route
+en	PRP	en
+vosges	ADJ	vosges

@@ -1,0 +1,14 @@
+le	DET:ART	le
+ramassage	NOM	ramassage
+du	PRP:det	du
+papier	NOM	papier
+par	PRP	par
+emmaüs	NOM	emmaüs
+est	VER:pres	être
+reporté	VER:pper	reporter
+exceptionnellement	ADV	exceptionnellement
+au	PRP:det	au
+mercredi	NOM	mercredi
+8	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

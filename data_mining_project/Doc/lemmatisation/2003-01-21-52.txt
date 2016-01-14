@@ -1,0 +1,15 @@
+la	DET:ART	le
+permanence	NOM	permanence
+du	PRP:det	du
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+aura	VER:futu	avoir
+lieu	NOM	lieu
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+16	NUM	@card@
+h.	ABR	h.

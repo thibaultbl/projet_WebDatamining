@@ -1,0 +1,12 @@
+les	DET:ART	le
+standards	NOM	standard
+des	PRP:det	du
+années	NOM	année
+50	NUM	@card@
+-	PUN	-
+60	NUM	@card@
+et	KON	et
+des	PRP:det	du
+compositions	NOM	composition
+originales	ADJ	original
+.	SENT	.

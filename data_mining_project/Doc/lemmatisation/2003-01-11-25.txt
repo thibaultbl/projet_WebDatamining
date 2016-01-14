@@ -1,0 +1,17 @@
+la	DET:ART	le
+messe	NOM	messe
+sera	VER:futu	être
+célébrée	VER:pper	célébrer
+demain	ADV	demain
+à	PRP	à
+la	DET:ART	le
+salle	NOM	salle
+des	PRP:det	du
+fêtes	NOM	fête
+du	PRP:det	du
+village	NOM	village
+,	PUN	,
+qui	PRO:REL	qui
+sera	VER:futu	être
+chauffée	VER:pper	chauffer
+.	SENT	.

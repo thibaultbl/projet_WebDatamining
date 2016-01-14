@@ -1,0 +1,11 @@
+textes	NOM	texte
+et	KON	et
+photos	NOM	photo
+:	PUN	:
+emilie	VER:pres	emilie
+fierobe	ADJ	fierobe
+estelle	NOM	estelle
+galland	VER:subi	galland
+et	KON	et
+krystel	NOM	krystel
+bablee	ADJ	bablee

@@ -1,0 +1,16 @@
+gym	NOM	gym
+volontaire	ADJ	volontaire
+:	PUN	:
+de	PRP	de
+9	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+10	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+la	DET:ART	le
+salle	NOM	salle
+polyvalente	ADJ	polyvalent
+.	SENT	.

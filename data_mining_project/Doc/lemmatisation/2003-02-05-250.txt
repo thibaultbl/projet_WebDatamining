@@ -1,0 +1,16 @@
+mercredis	NOM	mercredi
+récréatifs	ADJ	récréatif
+à	PRP	à
+la	DET:ART	le
+baugerie	NOM	baugerie
+.	SENT	.
+assemblée	NOM	assemblée
+générale	ADJ	général
+de	PRP	de
+crystal-gym	NOM	crystal-gym
+,	PUN	,
+21	NUM	@card@
+h	ABR	heure
+au	PRP:det	au
+cosec	NOM	cosec
+.	SENT	.

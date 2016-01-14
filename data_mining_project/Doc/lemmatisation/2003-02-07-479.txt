@@ -1,0 +1,12 @@
+naissance	NOM	naissance
+aymeric	NOM	aymeric
+jolain	ADJ	jolain
+,	PUN	,
+1	NUM	@card@
+rue	NOM	rue
+de	PRP	de
+la	DET:ART	le
+meselle	NOM	meselle
+à	PRP	à
+lagney	NOM	lagney
+.	SENT	.

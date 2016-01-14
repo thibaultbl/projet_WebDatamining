@@ -1,0 +1,14 @@
+9	NUM	@card@
+h	ABR	heure
+45	NUM	@card@
+:	PUN	:
+théâtre	NOM	théâtre
+,	PUN	,
+concours	NOM	concours
+artistique	ADJ	artistique
+d'	PRP	de
+epinal	NOM	epinal
+(	PUN	(
+flûtes	NOM	flûte
+traversières	ADJ	traversier
+)	PUN	)

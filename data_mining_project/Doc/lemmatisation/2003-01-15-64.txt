@@ -1,0 +1,15 @@
+18	NUM	@card@
+h	ABR	heure
+:	PUN	:
+idee	NOM	idee
+(	PUN	(
+rue	NOM	rue
+j-p	NOM	j-p
+.	SENT	.
+melville	NOM	melville
+),	ABR	),
+conférence	NOM	conférence
+sur	PRP	sur
+la	DET:ART	le
+philatélie	NOM	philatélie
+.	SENT	.

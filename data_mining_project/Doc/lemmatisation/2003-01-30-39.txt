@@ -1,0 +1,16 @@
+ouvert	VER:pper	ouvrir
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+9	NUM	@card@
+h	ABR	heure
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+tél	ABR	téléphone
+:	PUN	:
+03.29	NUM	@card@
+.	SENT	.
+75.90	NUM	@card@
+.	SENT	.
+63	NUM	@card@

@@ -1,0 +1,16 @@
+le	DET:ART	le
+ramassage	NOM	ramassage
+des	PRP:det	du
+objets	NOM	objet
+encombrants	ADJ	encombrant
+sera	VER:futu	être
+effectué	VER:pper	effectuer
+par	PRP	par
+l'	DET:ART	le
+association	NOM	association
+cantonale	ADJ	cantonal
+tri	NOM	tri
+jeudi	NOM	jeudi
+23	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

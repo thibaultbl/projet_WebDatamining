@@ -1,0 +1,15 @@
+assemblée	NOM	assemblée
+générale	ADJ	général
+du	PRP:det	du
+comité	NOM	comité
+des	PRP:det	du
+fêtes	NOM	fête
+aujourd'hui	ADV	aujourd'hui
+à	PRP	à
+14	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+salle	NOM	salle
+des	PRP:det	du
+fêtes	NOM	fête
+.	SENT	.

@@ -1,0 +1,11 @@
+le	DET:ART	le
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+sera	VER:futu	être
+fermé	VER:pper	fermer
+aujourd'hui	ADV	aujourd'hui
+toute	PRO:IND	tout
+la	DET:ART	le
+journée	NOM	journée
+.	SENT	.

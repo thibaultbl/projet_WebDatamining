@@ -1,0 +1,15 @@
+anciens	ADJ	ancien
+combattants	NOM	combattant
+assemblée	NOM	assemblée
+générale	ADJ	général
+annuelle	ADJ	annuel
+prévue	VER:pper	prévoir
+en	PRP	en
+mairie	NOM	mairie
+le	DET:ART	le
+vendredi	NOM	vendredi
+24	NUM	@card@
+janvier	NOM	janvier
+à	PRP	à
+20	NUM	@card@
+h.	ABR	h.

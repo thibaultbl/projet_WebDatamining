@@ -1,0 +1,17 @@
+avis	NOM	avis
+de	PRP	de
+passage	NOM	passage
+,	PUN	,
+lundi	NOM	lundi
+6	NUM	@card@
+janvier	NOM	janvier
+,	PUN	,
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+arrêt	NOM	arrêt
+devant	PRP	devant
+la	DET:ART	le
+mairie	NOM	mairie
+.	SENT	.

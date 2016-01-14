@@ -1,0 +1,17 @@
+football	NOM	football
+acbd	ADJ	acbd
+:	PUN	:
+tournoi	NOM	tournoi
+poussins	NOM	poussin
+,	PUN	,
+salle	NOM	salle
+des	PRP:det	du
+sports	NOM	sport
+du	PRP:det	du
+haut-des-places	NOM	haut-des-places
+dès	PRP	dès
+13	NUM	@card@
+h.	ABR	h.
+entrée	NOM	entrée
+gratuite	ADJ	gratuit
+.	SENT	.

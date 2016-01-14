@@ -1,0 +1,9 @@
+la	DET:ART	le
+famille	NOM	famille
+masson	ADJ	masson
+,	PUN	,
+14	NUM	@card@
+rue	NOM	rue
+des	PRP:det	du
+acacias	NOM	acacia
+.	SENT	.

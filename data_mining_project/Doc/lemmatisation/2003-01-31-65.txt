@@ -1,0 +1,3 @@
+lire	VER:infi	lire
+en	PRP	en
+région	NOM	région

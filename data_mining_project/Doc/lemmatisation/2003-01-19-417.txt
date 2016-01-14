@@ -1,0 +1,11 @@
+le	DET:ART	le
+secrétariat	NOM	secrétariat
+de	PRP	de
+mairie	NOM	mairie
+sera	VER:futu	être
+exceptionnellement	ADV	exceptionnellement
+fermé	VER:pper	fermer
+lundi	NOM	lundi
+20	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

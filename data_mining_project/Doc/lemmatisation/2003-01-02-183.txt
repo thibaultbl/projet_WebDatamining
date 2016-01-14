@@ -1,0 +1,11 @@
+m.	ABR	m.
+et	KON	et
+mme	VER:subi	mme
+jean-marie	NOM	jean-marie
+mahu	NOM	mahu
+,	PUN	,
+73	NUM	@card@
+rue	NOM	rue
+de	PRP	de
+neuves-maisons	NOM	neuves-maisons
+.	SENT	.

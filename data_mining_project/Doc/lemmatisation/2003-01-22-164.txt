@@ -1,0 +1,8 @@
+textes	NOM	texte
+:	PUN	:
+france	NOM	france
+naudin	ADJ	naudin
+photos	NOM	photo
+:	PUN	:
+philippe	ADJ	philippe
+hatron	NOM	hatron

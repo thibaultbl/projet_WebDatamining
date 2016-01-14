@@ -1,0 +1,15 @@
+alexandre	ADJ	alexandre
+kniazev	NOM	kniazev
+,	PUN	,
+un	DET:ART	un
+prodige	NOM	prodige
+du	PRP:det	du
+violoncelle	NOM	violoncelle
+,	PUN	,
+à	PRP	à
+besançon	NOM	besançon
+,	PUN	,
+le	DET:ART	le
+13	NUM	@card@
+février	NOM	février
+.	SENT	.

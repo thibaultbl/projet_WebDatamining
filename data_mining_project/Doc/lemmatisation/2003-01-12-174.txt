@@ -1,0 +1,11 @@
+grandes	ADJ	grand
+sonates	NOM	sonate
+romantiques	ADJ	romantique
+,	PUN	,
+à	PRP	à
+17	NUM	@card@
+h	ABR	heure
+au	PRP:det	au
+théâtre	NOM	théâtre
+municipal	ADJ	municipal
+.	SENT	.

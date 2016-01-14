@@ -1,0 +1,15 @@
+tournoi	NOM	tournoi
+«	PUN:cit	«
+poussins	NOM	poussin
+»	PUN:cit	»
+de	PRP	de
+football	NOM	football
+en	PRP	en
+salle	NOM	salle
+au	PRP:det	au
+cosec	NOM	cosec
+à	PRP	à
+partir	VER:infi	partir
+de	PRP	de
+10	NUM	@card@
+h.	ABR	h.

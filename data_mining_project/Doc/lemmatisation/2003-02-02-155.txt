@@ -1,0 +1,9 @@
+«	PUN:cit	«
+le	DET:ART	le
+peintre	NOM	peintre
+et	KON	et
+la	DET:ART	le
+modèle	NOM	modèle
+»	PUN:cit	»
+de	PRP	de
+picasso	NOM	picasso

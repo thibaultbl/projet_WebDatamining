@@ -1,0 +1,9 @@
+la	DET:ART	le
+famille	NOM	famille
+pouillange	ADJ	pouillange
+,	PUN	,
+6	NUM	@card@
+rue	NOM	rue
+de	PRP	de
+touraine	NOM	touraine
+.	SENT	.

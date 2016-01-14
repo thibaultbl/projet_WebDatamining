@@ -1,0 +1,11 @@
+m.	ABR	m.
+et	KON	et
+mme	VER:subi	mme
+dominique	ADJ	dominique
+gall	NOM	gall
+,	PUN	,
+6	NUM	@card@
+route	NOM	route
+de	PRP	de
+vézelise	NOM	vézelise
+.	SENT	.

@@ -1,0 +1,17 @@
+la	DET:ART	le
+sous-préfecture	NOM	sous-préfecture
+sera	VER:futu	être
+exceptionnellement	ADV	exceptionnellement
+fermée	ADJ	fermé
+vendredi	NOM	vendredi
+matin	NOM	matin
+.	SENT	.
+l'	DET:ART	le
+accueil	NOM	accueil
+des	PRP:det	du
+usagers	NOM	usager
+sera	VER:futu	être
+assuré	VER:pper	assurer
+dès	PRP	dès
+14	NUM	@card@
+h.	ABR	h.

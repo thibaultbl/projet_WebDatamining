@@ -1,0 +1,15 @@
+un	DET:ART	un
+office	NOM	office
+religieux	ADJ	religieux
+sera	VER:futu	être
+célébré	VER:pper	célébrer
+demain	ADV	demain
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+45	NUM	@card@
+en	PRP	en
+l'	DET:ART	le
+église	NOM	église
+paroissiale	ADJ	paroissial
+.	SENT	.

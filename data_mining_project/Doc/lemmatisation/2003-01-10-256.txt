@@ -1,0 +1,12 @@
+la	DET:ART	le
+trésorerie	NOM	trésorerie
+de	PRP	de
+l'	DET:ART	le
+isle-sur-le-doubs	NOM	isle-sur-le-doubs
+sera	VER:futu	être
+exceptionnellement	ADV	exceptionnellement
+fermée	ADJ	fermé
+vendredi	NOM	vendredi
+10	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

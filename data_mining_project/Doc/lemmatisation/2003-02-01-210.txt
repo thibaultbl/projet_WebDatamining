@@ -1,0 +1,13 @@
+lloto	NOM	lloto
+de	PRP	de
+baccarat-dynamic	NOM	baccarat-dynamic
+,	PUN	,
+20	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+la	DET:ART	le
+salle	NOM	salle
+des	PRP:det	du
+fêtes	NOM	fête
+.	SENT	.

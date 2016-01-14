@@ -1,0 +1,11 @@
+cinéma	NOM	cinéma
+alhambra	NOM	alhambra
+a	VER:pres	avoir
+21	NUM	@card@
+h	ABR	heure
+,	PUN	,
+«	PUN:cit	«
+gangs	NOM	gang
+of	VER:impf	of
+new-york	NOM	new-york
+»	PUN:cit	»

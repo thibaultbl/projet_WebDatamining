@@ -1,0 +1,107 @@
+d'	PRP	de
+après	PRP	après
+les	DET:ART	le
+pointages	NOM	pointage
+des	PRP:det	du
+syndicats	NOM	syndicat
+enseignants	ADJ	enseignant
+,	PUN	,
+dans	PRP	dans
+le	DET:ART	le
+département	NOM	département
+,	PUN	,
+le	DET:ART	le
+pourcentage	NOM	pourcentage
+de	PRP	de
+grévistes	NOM	gréviste
+,	PUN	,
+toutes	PRO:IND	tout
+catégories	NOM	catégorie
+confondues	VER:pper	confondre
+était	VER:impf	être
+de	PRP	de
+55	NUM	@card@
+%.	ABR	%.
+un	NUM	un
+chiffre	NOM	chiffre
+record	NOM	record
+largement	ADV	largement
+nuancé	VER:pper	nuancer
+par	PRP	par
+celui	PRO:DEM	celui
+annoncé	VER:pper	annoncer
+comme	ADV	comme
+officiel	ADJ	officiel
+par	PRP	par
+le	DET:ART	le
+rectorat	NOM	rectorat
+de	PRP	de
+22,08 %	NUM	@card@
+.	SENT	.
+a	VER:pres	avoir
+savoir	VER:infi	savoir
+,	PUN	,
+11,19 %	NUM	@card@
+chez	PRP	chez
+les	DET:ART	le
+atoss	NOM	atoss
+(	PUN	(
+17,77	NUM	@card@
+sur	PRP	sur
+l'	DET:ART	le
+académie	NOM	académie
+),	ADJ	),
+ces	PRO:DEM	ce
+et	KON	et
+cec	ADJ	cec
+:	PUN	:
+9,59 %	NUM	@card@
+(	PUN	(
+10,95	NUM	@card@
+),	NOM	),
+aide-éducateurs	NOM	aide-éducateurs
+:	PUN	:
+20,78 %	NUM	@card@
+(	PUN	(
+33,87 %	NUM	@card@
+),	NOM	),
+profs	NOM	prof
+de	PRP	de
+collèges	NOM	collège
+:	PUN	:
+22,11 %	NUM	@card@
+(	PUN	(
+28,17 %	NUM	@card@
+),	NOM	),
+profs	NOM	prof
+de	PRP	de
+lycées	NOM	lycée
+:	PUN	:
+20,56 %	NUM	@card@
+(	PUN	(
+18,61	NUM	@card@
+),	NOM	),
+profs	NOM	prof
+de	PRP	de
+lycées	NOM	lycée
+professionnels	ADJ	professionnel
+:	PUN	:
+22,22 %	NUM	@card@
+,	PUN	,
+instituteurs	NOM	instituteur
+et	KON	et
+professeurs	NOM	professeur
+des	PRP:det	du
+écoles	NOM	école
+:	PUN	:
+33,73 %	NUM	@card@
+(	PUN	(
+36,39 %	NUM	@card@
+)	PUN	)
+et	KON	et
+surveillants	ADJ	surveillant
+:	PUN	:
+36,46 %	NUM	@card@
+(	PUN	(
+46,92 %	NUM	@card@
+).	ABR	).

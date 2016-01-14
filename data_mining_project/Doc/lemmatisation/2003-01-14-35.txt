@@ -1,0 +1,16 @@
+poste	NOM	poste
+la	DET:ART	le
+permanence	NOM	permanence
+de	PRP	de
+la	DET:ART	le
+poste	NOM	poste
+se	PRO:PER	se
+tiendra	VER:futu	tenir
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

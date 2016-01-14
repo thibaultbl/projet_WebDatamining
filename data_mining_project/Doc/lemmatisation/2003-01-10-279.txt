@@ -1,0 +1,2 @@
+en	PRP	en
+région	NOM	région

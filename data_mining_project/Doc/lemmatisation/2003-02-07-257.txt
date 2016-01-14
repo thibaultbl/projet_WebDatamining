@@ -1,0 +1,12 @@
+inscriptions	NOM	inscription
+pour	PRP	pour
+«	PUN:cit	«
+journée	NOM	journée
+beignets	NOM	beignet
+»,	ADJ	»,
+au	PRP:det	au
+club	NOM	club
+des	PRP:det	du
+personnes	NOM	personne
+agées	ADJ	agées
+.	SENT	.

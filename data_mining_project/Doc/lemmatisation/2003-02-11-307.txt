@@ -1,0 +1,14 @@
+i	NOM	i
+]	PUN	]
+neufchâteau	NOM	neufchâteau
+:	PUN	:
+dix	NUM	dix
+ans	NOM	an
+de	PRP	de
+sauvetage	NOM	sauvetage
+de	PRP	de
+cours	NOM	cour|cours
+d'	PRP	de
+eau	NOM	eau
+en	PRP	en
+neufchâteau	NOM	neufchâteau

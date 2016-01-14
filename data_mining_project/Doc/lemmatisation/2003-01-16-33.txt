@@ -1,0 +1,17 @@
+il	PRO:PER	il
+sera	VER:futu	être
+célébré	VER:pper	célébrer
+le	DET:ART	le
+19	NUM	@card@
+janvier	NOM	janvier
+,	PUN	,
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+en	PRP	en
+l'	DET:ART	le
+église	NOM	église
+du	PRP:det	du
+village	NOM	village
+.	SENT	.

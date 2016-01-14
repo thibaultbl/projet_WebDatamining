@@ -1,0 +1,14 @@
+collectionneurs	NOM	collectionneur
+ou	KON	ou
+curieux	ADJ	curieux
+,	PUN	,
+la	DET:ART	le
+fève	NOM	fève
+attire	VER:pres	attirer
+petits	ADJ	petit
+et	KON	et
+grands	ADJ	grand
+.	SENT	.
+photo	NOM	photo
+ludovic	NOM	ludovic
+laude	ADJ	laude

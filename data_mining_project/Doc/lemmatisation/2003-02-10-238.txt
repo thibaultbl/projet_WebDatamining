@@ -1,0 +1,167 @@
+les	DET:ART	le
+élections	NOM	élection
+au	PRP:det	au
+conseil	NOM	conseil
+d'	PRP	de
+administration	NOM	administration
+de	PRP	de
+la	DET:ART	le
+sncf	NOM	sncf
+viennent	VER:pres	venir
+de	PRP	de
+se	PRO:PER	se
+dérouler	VER:infi	dérouler
+.	SENT	.
+sur	PRP	sur
+le	DET:ART	le
+bassin	NOM	bassin
+du	PRP:det	du
+sud-meusien	NOM	sud-meusien
+et	KON	et
+du	PRP:det	du
+toulois	NOM	toulois
+,	PUN	,
+qui	PRO:REL	qui
+couvrent	VER:pres	couvrir
+le	DET:ART	le
+secteur	NOM	secteur
+de	PRP	de
+revigny-sur-ornain-bar-le-duc-nançois-tronville	NOM	revigny-sur-ornain-bar-le-duc-nançois-tronville
+et	KON	et
+lérouville-commercy-pagny-sur-meuse	NOM	lérouville-commercy-pagny-sur-meuse
+et	KON	et
+le	DET:ART	le
+toulois	NOM	toulois
+,	PUN	,
+la	DET:ART	le
+cgt	NOM	cgt
+confirme	VER:pres	confirmer
+son	DET:POS	son
+rang	NOM	rang
+de	PRP	de
+première	NUM	premier
+organisation	NOM	organisation
+syndicale	ADJ	syndical
+avec	PRP	avec
+une	DET:ART	un
+progression	NOM	progression
+de	PRP	de
+16,39 %	NUM	@card@
+sur	PRP	sur
+la	DET:ART	le
+zone	NOM	zone
+géographique	ADJ	géographique
+de	PRP	de
+l'	DET:ART	le
+unité	NOM	unité
+opérationnelle	ADJ	opérationnel
+exploitation	NOM	exploitation
+de	PRP	de
+bar-le-duc	NOM	bar-le-duc
+(	PUN	(
+y	PRO:PER	y
+compris	VER:pper	comprendre
+les	DET:ART	le
+agents	NOM	agent
+commerciens	ADJ	commerciens
+voyageurs	ADJ	voyageur
+).	VER:futu	).
+les	DET:ART	le
+résultats	NOM	résultat
+sont	VER:pres	être
+les	DET:ART	le
+suivants	ADJ	suivant
+:	PUN	:
+inscrits	VER:pper	inscrire
+:	PUN	:
+161	NUM	@card@
+;	PUN	;
+votants	ADJ	votant
+:	PUN	:
+123	NUM	@card@
+(	PUN	(
+76,40 %	NUM	@card@
+)	PUN	)
+;	PUN	;
+nuls	ADJ	nul
+:	PUN	:
+1	NUM	@card@
+(	PUN	(
+0,81 %	NUM	@card@
+)	PUN	)
+;	PUN	;
+exprimés	VER:pper	exprimer
+:	PUN	:
+122	NUM	@card@
+(	PUN	(
+99,19 %	NUM	@card@
+).	ABR	).
+cgt	VER:futu	cgt
+:	PUN	:
+85	NUM	@card@
+(	PUN	(
+69,67 %	NUM	@card@
+),	NOM	),
+cfdt	NOM	cfdt
+:	PUN	:
+27	NUM	@card@
+(	PUN	(
+22,13 %	NUM	@card@
+),	NOM	),
+fo	ADJ	fo
+:	PUN	:
+2	NUM	@card@
+(	PUN	(
+1,64 %	NUM	@card@
+),	NOM	),
+cftc	ADJ	cftc
+:	PUN	:
+2	NUM	@card@
+(	PUN	(
+1,64 %	NUM	@card@
+),	NOM	),
+sud	ADJ	sud
+:	PUN	:
+4	NUM	@card@
+(	PUN	(
+3,28 %	NUM	@card@
+),	NOM	),
+unsa	VER:simp	unsa
+:	PUN	:
+2	NUM	@card@
+(	PUN	(
+1,64 %	NUM	@card@
+),	NOM	),
+cgc	ADJ	cgc
+:	PUN	:
+0	NUM	@card@
+l'	DET:ART	le
+an	NOM	an
+passé	VER:pper	passer
+,	PUN	,
+la	DET:ART	le
+cgt	NOM	cgt
+avait	VER:impf	avoir
+obtenu	VER:pper	obtenir
+53,28 %	NUM	@card@
+des	PRP:det	du
+voix	NOM	voix
+,	PUN	,
+la	DET:ART	le
+cfdt	NOM	cfdt
+29,20 %	NUM	@card@
+,	PUN	,
+fo	NOM	fo
+2,19 %	NUM	@card@
+,	PUN	,
+la	DET:ART	le
+cftc	NOM	cftc
+5,11 %	NUM	@card@
+,	PUN	,
+sud	NOM	sud
+2,92 %	NUM	@card@
+et	KON	et
+l'	PRO:PER	la|le
+unsa	VER:simp	unsa
+7,30 %	NUM	@card@
+.	SENT	.

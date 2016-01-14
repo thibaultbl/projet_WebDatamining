@@ -1,0 +1,14 @@
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+messe	NOM	messe
+à	PRP	à
+9	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+couvertpuis	NOM	couvertpuis
+(	PUN	(
+messe	NOM	messe
+des	PRP:det	du
+enfants	NOM	enfant
+).	ADJ	).

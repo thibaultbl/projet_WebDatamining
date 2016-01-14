@@ -1,0 +1,14 @@
+suite	NOM	suite
+aux	PRP:det	au
+conditions	NOM	condition
+atmosphériques	ADJ	atmosphérique
+,	PUN	,
+la	DET:ART	le
+déchetterie	NOM	déchetterie
+ne	ADV	ne
+sera	VER:futu	être
+pas	ADV	pas
+ouverte	ADJ	ouvert
+samedi	NOM	samedi
+matin	NOM	matin
+.	SENT	.

@@ -1,0 +1,16 @@
+loto	NOM	loto
+du	PRP:det	du
+kiwanis	NOM	kiwanis
+club	NOM	club
+:	PUN	:
+ouverture	NOM	ouverture
+des	PRP:det	du
+portes	NOM	porte
+à	PRP	à
+14	NUM	@card@
+h	ABR	heure
+,	PUN	,
+au	PRP:det	au
+centre	NOM	centre
+erckmann	ADJ	erckmann
+.	SENT	.

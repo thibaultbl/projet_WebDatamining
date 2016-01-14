@@ -1,0 +1,15 @@
+andelnans	NOM	andelnans
+le	DET:ART	le
+2	NUM	@card@
+février/9	NOM	février/9
+h	ABR	heure
+-	PUN	-
+18	NUM	@card@
+h	ABR	heure
+foire	NOM	foire
+aux	PRP:det	au
+antiquités	NOM	antiquité
+parc	NOM	parc
+des	PRP:det	du
+expositions	NOM	exposition
+.	SENT	.

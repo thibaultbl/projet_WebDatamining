@@ -1,0 +1,11 @@
+réunion	NOM	réunion
+du	PRP:det	du
+conseil	NOM	conseil
+municipal	ADJ	municipal
+à	PRP	à
+20	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+en	PRP	en
+mairie	NOM	mairie
+.	SENT	.

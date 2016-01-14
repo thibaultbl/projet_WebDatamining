@@ -1,0 +1,17 @@
+exposition	NOM	exposition
+«	PUN:cit	«
+les	DET:ART	le
+artistes	NOM	artiste
+du	PRP:det	du
+pays	NOM	pays
+de	PRP	de
+charmes	NOM	charme
+»,	ADJ	»,
+peintures	NOM	peinture
+et	KON	et
+aquarelles	NOM	aquarelle
+à	PRP	à
+la	DET:ART	le
+mjc	NOM	mjc
+savouret	ADJ	savouret
+.	SENT	.

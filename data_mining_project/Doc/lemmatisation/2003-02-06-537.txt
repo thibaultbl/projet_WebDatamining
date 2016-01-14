@@ -1,0 +1,12 @@
+tribunal	NOM	tribunal
+:	PUN	:
+13	NUM	@card@
+h	ABR	heure
+,	PUN	,
+palais	NOM	palais
+de	PRP	de
+justice	NOM	justice
+:	PUN	:
+audience	NOM	audience
+correctionnelle	ADJ	correctionnel
+.	SENT	.

@@ -1,0 +1,14 @@
+la	DET:ART	le
+bibliothèque	NOM	bibliothèque
+pour	KON	pour
+tous	PRO:IND	tout
+est	VER:pres	être
+ouverte	VER:pper	ouvrir
+aujourd'hui	ADV	aujourd'hui
+mercredi	NOM	mercredi
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+18	NUM	@card@
+h.	ABR	h.

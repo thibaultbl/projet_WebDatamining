@@ -1,0 +1,4 @@
+lire	VER:infi	lire
+en	PRP	en
+page	NOM	page
+haute-saône	NOM	haute-saône

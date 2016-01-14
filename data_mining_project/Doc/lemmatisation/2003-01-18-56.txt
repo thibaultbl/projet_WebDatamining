@@ -1,0 +1,13 @@
+demain	ADV	demain
+,	PUN	,
+assemblée	NOM	assemblée
+de	PRP	de
+prières	NOM	prière
+à	PRP	à
+l'	DET:ART	le
+église	NOM	église
+saint-pierre	NOM	saint-pierre
+,	PUN	,
+à	PRP	à
+11	NUM	@card@
+h.	ABR	h.

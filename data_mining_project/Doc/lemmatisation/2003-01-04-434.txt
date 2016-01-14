@@ -1,0 +1,14 @@
+il	PRO:PER	il
+sera	VER:futu	être
+fermé	VER:pper	fermer
+du	PRP:det	du
+6	NUM	@card@
+au	PRP:det	au
+12	NUM	@card@
+janvier	NOM	janvier
+inclus	VER:pper	inclure
+pour	PRP	pour
+cause	NOM	cause
+de	PRP	de
+travaux	NOM	travail
+.	SENT	.

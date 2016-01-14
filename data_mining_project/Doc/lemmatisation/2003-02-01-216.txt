@@ -1,0 +1,15 @@
+quartier	NOM	quartier
+sélestat	NOM	sélestat
+:	PUN	:
+13	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+concours	NOM	concours
+de	PRP	de
+belote	NOM	belote
+,	PUN	,
+salle	NOM	salle
+de	PRP	de
+l'	DET:ART	le
+ecureuil	NOM	ecureuil
+.	SENT	.

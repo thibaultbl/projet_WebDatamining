@@ -1,0 +1,12 @@
+le	DET:ART	le
+ramassage	NOM	ramassage
+des	PRP:det	du
+sapins	NOM	sapin
+de	PRP	de
+noël	NOM	noël
+aura	VER:futu	avoir
+lieu	NOM	lieu
+mardi	NOM	mardi
+21	NUM	@card@
+janvier	NOM	janvier
+.	SENT	.

@@ -1,0 +1,10 @@
+m.	ABR	m.
+et	KON	et
+mme	VER:subi	mme
+jean-luc	NOM	jean-luc
+birkenmeier	ADJ	birkenmeier
+,	PUN	,
+place	NOM	place
+lucette	NOM	lucette
+ditsch	ADJ	ditsch
+.	SENT	.

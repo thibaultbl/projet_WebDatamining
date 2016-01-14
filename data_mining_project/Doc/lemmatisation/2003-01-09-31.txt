@@ -1,0 +1,12 @@
+séance	NOM	séance
+de	PRP	de
+gymnastique	NOM	gymnastique
+volontaire	ADJ	volontaire
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+de	PRP	de
+18	NUM	@card@
+h	ABR	heure
+à	PRP	à
+19	NUM	@card@
+h.	ABR	h.

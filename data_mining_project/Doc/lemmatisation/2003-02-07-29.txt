@@ -1,0 +1,17 @@
+dimanche	NOM	dimanche
+9	NUM	@card@
+février	NOM	février
+,	PUN	,
+pagny	VER:pper	pagny
+1	NUM	@card@
+contre	PRP	contre
+ancerville	NOM	ancerville
+:	PUN	:
+match	NOM	match
+à	PRP	à
+15	NUM	@card@
+h	ABR	heure
+au	PRP:det	au
+stade	NOM	stade
+municipal	ADJ	municipal
+.	SENT	.

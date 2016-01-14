@@ -1,0 +1,13 @@
+le	DET:ART	le
+secrétariat	NOM	secrétariat
+est	VER:pres	être
+ouvert	VER:pper	ouvrir
+aujourd'hui	ADV	aujourd'hui
+,	PUN	,
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+à	PRP	à
+16	NUM	@card@
+h	ABR	heure
+30	NUM	@card@

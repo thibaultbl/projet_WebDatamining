@@ -1,0 +1,11 @@
+i	NOM	i
+]	PUN	]
+neufchâteau	NOM	neufchâteau
+:	PUN	:
+dans	PRP	dans
+le	DET:ART	le
+ventre	NOM	ventre
+des	PRP:det	du
+urgences	NOM	urgence
+en	PRP	en
+neufchâteau	NOM	neufchâteau

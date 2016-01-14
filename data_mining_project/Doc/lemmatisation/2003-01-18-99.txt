@@ -1,0 +1,10 @@
+sos	NOM	sos
+familles	NOM	famille
+emmaüs	NOM	emmaüs
+tient	VER:pres	tenir
+ses	DET:POS	son
+permanences	NOM	permanence
+16	NUM	@card@
+rue	NOM	rue
+eiffel	ADJ	eiffel
+.	SENT	.

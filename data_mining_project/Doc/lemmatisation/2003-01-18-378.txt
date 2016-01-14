@@ -1,0 +1,17 @@
+cinéma	NOM	cinéma
+.	SENT	.
+-	PUN	-
+a	VER:pres	avoir
+21	NUM	@card@
+h	ABR	heure
+,	PUN	,
+à	PRP	à
+l'	DET:ART	le
+alhambra	NOM	alhambra
+,	PUN	,
+«	PUN:cit	«
+le	DET:ART	le
+seigneur	NOM	seigneur
+des	PRP:det	du
+anneaux	NOM	anneau
+».	ADJ	».

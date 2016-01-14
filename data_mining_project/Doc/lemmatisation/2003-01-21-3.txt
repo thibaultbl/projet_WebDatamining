@@ -1,0 +1,12 @@
+permanence	NOM	permanence
+de	PRP	de
+la	DET:ART	le
+poste	NOM	poste
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

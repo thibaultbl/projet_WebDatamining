@@ -1,0 +1,16 @@
+l'	DET:ART	le
+indice	NOM	indice
+de	PRP	de
+qualité	NOM	qualité
+de	PRP	de
+l'	DET:ART	le
+air	NOM	air
+est	VER:pres	être
+bon	ADJ	bon
+pour	PRP	pour
+l'	DET:ART	le
+ensemble	NOM	ensemble
+de	PRP	de
+la	DET:ART	le
+semaine	NOM	semaine
+.	SENT	.

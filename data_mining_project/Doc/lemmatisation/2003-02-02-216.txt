@@ -1,0 +1,12 @@
+marie-josé	NOM	marie-josé
+richard	NOM	richard
+,	PUN	,
+d'	PRP	de
+epinal	NOM	epinal
+,	PUN	,
+et	KON	et
+naïs	NOM	naïs
+(	PUN	(
+10	NUM	@card@
+ans	NOM	an
+).	ADJ	).

@@ -1,0 +1,15 @@
+promotion	NOM	promotion
+honneur	NOM	honneur
+:	PUN	:
+thaon	NOM	thaon
+2	NUM	@card@
+-	PUN	-
+sas	NOM	sas
+2	NUM	@card@
+promotion	NOM	promotion
+honneur	NOM	honneur
+régional	ADJ	régional
+:	PUN	:
+plombières	ADJ	plombier
+-	PUN	-
+xertigny	NAM	xertigny

@@ -1,0 +1,15 @@
+société	NOM	société
+philatélique	ADJ	philatélique
+:	PUN	:
+20	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+assemblée	NOM	assemblée
+générale	ADJ	général
+,	PUN	,
+salle	NOM	salle
+de	PRP	de
+justice	NOM	justice
+de	PRP	de
+paix	NOM	paix
+.	SENT	.

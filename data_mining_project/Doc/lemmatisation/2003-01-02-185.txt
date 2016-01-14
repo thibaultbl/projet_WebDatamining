@@ -1,0 +1,11 @@
+mme	VER:cond	mme
+et	KON	et
+m.	VER:subi	m.
+gilbert	NOM	gilbert
+kelsch	ADJ	kelsch
+,	PUN	,
+8	NUM	@card@
+rue	NOM	rue
+des	PRP:det	du
+acacias	NOM	acacia
+.	SENT	.

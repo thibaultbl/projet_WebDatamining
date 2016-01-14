@@ -1,0 +1,9 @@
+marie-jeanne	NOM	marie-jeanne
+thouvenin	NOM	thouvenin
+,	PUN	,
+6	NUM	@card@
+place	NOM	place
+de	PRP	de
+la	DET:ART	le
+république	NOM	république
+.	SENT	.

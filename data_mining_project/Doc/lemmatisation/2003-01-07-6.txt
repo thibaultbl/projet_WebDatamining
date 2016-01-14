@@ -1,0 +1,14 @@
+le	DET:ART	le
+bureau	NOM	bureau
+de	PRP	de
+poste	NOM	poste
+sera	VER:futu	être
+ouvert	VER:pper	ouvrir
+aujourd'hui	ADV	aujourd'hui
+de	PRP	de
+14	NUM	@card@
+h	ABR	heure
+15	NUM	@card@
+à	PRP	à
+15	NUM	@card@
+h.	ABR	h.

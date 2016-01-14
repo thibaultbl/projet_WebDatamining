@@ -1,0 +1,12 @@
+conseil	NOM	conseil
+communautaire	ADJ	communautaire
+:	PUN	:
+18	NUM	@card@
+h	ABR	heure
+,	PUN	,
+à	PRP	à
+l'	DET:ART	le
+espace	NOM	espace
+du	PRP:det	du
+sapeur	NOM	sapeur
+.	SENT	.

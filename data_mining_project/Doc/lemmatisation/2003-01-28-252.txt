@@ -1,0 +1,16 @@
+permanence	NOM	permanence
+caf	NOM	caf
+,	PUN	,
+de	PRP	de
+9	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+à	PRP	à
+11	NUM	@card@
+h	ABR	heure
+30	NUM	@card@
+au	PRP:det	au
+centre	NOM	centre
+médico	NOM	médico
+social	ADJ	social
+.	SENT	.

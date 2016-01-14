@@ -1,0 +1,3 @@
+sélection	NOM	sélection
+pascal	ADJ	pascal
+deloyes	NOM	deloyes

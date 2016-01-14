@@ -1,0 +1,11 @@
+conseil	NOM	conseil
+municipal	ADJ	municipal
+,	PUN	,
+à	PRP	à
+19	NUM	@card@
+h	ABR	heure
+,	PUN	,
+à	PRP	à
+la	DET:ART	le
+mairie	NOM	mairie
+.	SENT	.

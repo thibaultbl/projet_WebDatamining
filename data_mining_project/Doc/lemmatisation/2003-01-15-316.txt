@@ -1,0 +1,16 @@
+le	DET:ART	le
+troisième	NUM	troisième
+âge	NOM	âge
+organise	VER:pres	organiser
+son	DET:POS	son
+loto	NOM	loto
+ce	PRO:DEM	ce
+mercredi	NOM	mercredi
+,	PUN	,
+à	PRP	à
+14	NUM	@card@
+h	ABR	heure
+,	PUN	,
+salle	NOM	salle
+marie-fallot	NOM	marie-fallot
+.	SENT	.

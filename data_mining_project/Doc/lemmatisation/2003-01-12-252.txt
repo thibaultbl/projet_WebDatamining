@@ -1,0 +1,14 @@
+football	NOM	football
+:	PUN	:
+tournoi	NOM	tournoi
+walibi	NOM	walibi
+dès	PRP	dès
+14	NUM	@card@
+h	ABR	heure
+,	PUN	,
+salle	NOM	salle
+des	PRP:det	du
+sports	NOM	sport
+du	PRP:det	du
+haut-des-places	NOM	haut-des-places
+.	SENT	.
