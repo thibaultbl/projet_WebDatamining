@@ -50,6 +50,8 @@ public class termTooFrequent {
 
 		HashBiMap<String, Integer> id = Index.identifiantFichier(file);
 		File[] filesInDir = file.listFiles();
+		System.out.println("Il y a "+filesInDir.length+" fichiers.");
+		int nbMots = 0;
 
 		for (final File f : filesInDir) {
 
@@ -66,6 +68,7 @@ public class termTooFrequent {
 				{
 					String text[]= ligne.split("\t");
 					mot=text[2];
+					nbMots++;
 					
 					if(!((text[1].substring(0, 3).equals("DET"))||(text[1].substring(0, 3).equals("PRP"))||(text[1].substring(0, 3).equals("PUN"))||(text[1].substring(0, 3).equals("PRO"))||(text[1].substring(0, 3).equals("SEN")))){
 						
@@ -119,6 +122,8 @@ public class termTooFrequent {
 			}
 			
 		}
+		
+		System.out.println("Il y a "+nbMots+" mots dans le corpus.");
 		
 		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
 		HashMap<Integer, ArrayList<Integer>> temp;
