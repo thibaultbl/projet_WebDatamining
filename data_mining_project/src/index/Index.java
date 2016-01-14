@@ -27,6 +27,8 @@ public class Index {
 	public Index(String path) throws IOException {
 		termTooFrequent frequent=new termTooFrequent(path, 1000000000, 100000000);
 		
+		System.out.println(frequent.getFrequentTerm().size()+" termes trop fréquents sont supprimés.");
+		
 		debutTerme=this.InitialiserIndex(path, frequent);
 
 		/*for(int i=0; i<frequent.getFrequentTerm().size();i++){
@@ -310,7 +312,6 @@ public class Index {
 		return null;
 
 	}
-
 
 	public static HashMap<Integer, Integer> getSizeFile() {
 		return sizeFile;

@@ -126,6 +126,12 @@ public class termTooFrequent {
 		System.out.println("Il y a "+nbMots+" mots dans le corpus.");
 		
 		List<Map.Entry<String, Integer>> table2=sortMapValues2(table);
+		
+		for(int i=0;i<100;i++){
+			System.out.println("Terme le plus fréquent n°"+(i+1)+" : "+table2.get(i));
+		}
+		System.out.println("Il y a "+table2.size()+" mots différents dans le corpus.");
+		
 		HashMap<Integer, ArrayList<Integer>> temp;
 		//on renvoi une liste contenant les termes avec trop d'apparitions dans le corpus ou dans un nombre de doculent trop important
 		for(int i=0;i<table2.size();i++){
@@ -178,6 +184,11 @@ public class termTooFrequent {
 		    	termeFrequent.add(key);
 		    }
 		}
+		
+		for(int i=0;i<termeFrequent.size();i++){
+			System.out.println("Terme trop fréquent n°"+(i+1)+" : "+termeFrequent.get(i));
+		}
+		
 		return termeFrequent;
 	}
 	

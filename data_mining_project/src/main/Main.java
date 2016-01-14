@@ -28,7 +28,7 @@ public class Main {
 	 */
 	public static void main(String[] args) throws IOException {
 		
-		String path="Doc/lemmatisation_full";
+		String path="Doc/lemmatisation";
 		Index index=new Index(path);
 		HashBiMap<String, Integer> id=index.identifiantFichier(new File(path));
 		//System.out.println(id);
